@@ -1,0 +1,55 @@
+[project]
+name = 'verified-dex-amm'
+description = 'Verified DEX/AMM with Trusted Pool Registry - Showcasing Clarity 4 features'
+authors = ['DEX Team']
+telemetry = true
+cache_dir = './.cache'
+requirements = []
+[contracts.sip-010-trait]
+path = 'contracts/traits/sip-010-trait.clar'
+clarity_version = 4
+epoch = 'latest'
+
+[contracts.pool-trait]
+path = 'contracts/traits/pool-trait.clar'
+clarity_version = 4
+epoch = 'latest'
+
+[contracts.math-lib]
+path = 'contracts/utils/math-lib.clar'
+clarity_version = 4
+epoch = 'latest'
+
+[contracts.dex-core]
+path = 'contracts/dex-core.clar'
+clarity_version = 4
+epoch = 'latest'
+
+[contracts.registry]
+path = 'contracts/registry.clar'
+clarity_version = 4
+epoch = 'latest'
+
+[contracts.standard-pool]
+path = 'contracts/standard-pool.clar'
+clarity_version = 4
+epoch = 'latest'
+
+[contracts.twap-oracle]
+path = 'contracts/twap-oracle.clar'
+clarity_version = 4
+epoch = 'latest'
+[repl.analysis]
+passes = ['check_checker']
+
+[repl.analysis.lints]
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
+
+[repl.remote_data]
+enabled = false
+api_url = 'https://api.hiro.so'
