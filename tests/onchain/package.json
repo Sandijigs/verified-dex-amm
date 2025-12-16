@@ -1,0 +1,30 @@
+{
+  "name": "verified-dex-amm-onchain-tests",
+  "version": "1.0.0",
+  "description": "On-chain integration tests for Verified DEX/AMM on Stacks Testnet",
+  "main": "testnet-integration.ts",
+  "scripts": {
+    "test": "ts-node testnet-integration.ts",
+    "test:bash": "./test-onchain.sh"
+  },
+  "keywords": [
+    "stacks",
+    "clarity",
+    "dex",
+    "amm",
+    "testnet",
+    "testing"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@stacks/transactions": "^6.13.0",
+    "@stacks/network": "^6.13.0",
+    "cross-fetch": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
