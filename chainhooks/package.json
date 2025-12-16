@@ -1,0 +1,36 @@
+{
+  "name": "verified-dex-amm-chainhooks",
+  "version": "1.0.0",
+  "description": "Hiro Chainhooks integration for monitoring Verified DEX/AMM smart contract events on Stacks",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "register": "node register-hooks.js",
+    "monitor": "node event-monitor.js"
+  },
+  "keywords": [
+    "stacks",
+    "chainhooks",
+    "hiro",
+    "dex",
+    "amm",
+    "clarity",
+    "blockchain",
+    "events",
+    "monitoring"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@hirosystems/chainhooks-client": "^1.7.0",
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "axios": "^1.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

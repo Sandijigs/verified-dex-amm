@@ -1,0 +1,36 @@
+{
+  "chain": "stacks",
+  "uuid": "verified-dex-twap-oracle-003",
+  "name": "Verified DEX/AMM - TWAP Oracle Events Monitor",
+  "version": 1,
+  "networks": {
+    "testnet": {
+      "if_this": {
+        "scope": "print_event",
+        "contract_identifier": "ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.twap-oracle",
+        "contains": "observation"
+      },
+      "then_that": {
+        "http_post": {
+          "url": "http://localhost:3001/chainhooks/twap-events",
+          "authorization_header": "Bearer YOUR_SECRET_TOKEN"
+        }
+      },
+      "start_block": 0
+    },
+    "mainnet": {
+      "if_this": {
+        "scope": "print_event",
+        "contract_identifier": "YOUR_MAINNET_ADDRESS.twap-oracle",
+        "contains": "observation"
+      },
+      "then_that": {
+        "http_post": {
+          "url": "https://your-production-url.com/chainhooks/twap-events",
+          "authorization_header": "Bearer YOUR_SECRET_TOKEN"
+        }
+      },
+      "start_block": 0
+    }
+  }
+}

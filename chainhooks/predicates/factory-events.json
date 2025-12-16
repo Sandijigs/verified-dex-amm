@@ -1,0 +1,36 @@
+{
+  "chain": "stacks",
+  "uuid": "verified-dex-factory-events-004",
+  "name": "Verified DEX/AMM - Pool Factory Events Monitor",
+  "version": 1,
+  "networks": {
+    "testnet": {
+      "if_this": {
+        "scope": "print_event",
+        "contract_identifier": "ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-factory",
+        "contains": "pool-created"
+      },
+      "then_that": {
+        "http_post": {
+          "url": "http://localhost:3001/chainhooks/factory-events",
+          "authorization_header": "Bearer YOUR_SECRET_TOKEN"
+        }
+      },
+      "start_block": 0
+    },
+    "mainnet": {
+      "if_this": {
+        "scope": "print_event",
+        "contract_identifier": "YOUR_MAINNET_ADDRESS.pool-factory",
+        "contains": "pool-created"
+      },
+      "then_that": {
+        "http_post": {
+          "url": "https://your-production-url.com/chainhooks/factory-events",
+          "authorization_header": "Bearer YOUR_SECRET_TOKEN"
+        }
+      },
+      "start_block": 0
+    }
+  }
+}
