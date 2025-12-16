@@ -3,97 +3,88 @@ id: 0
 name: Verified DEX/AMM Testnet Deployment
 network: testnet
 stacks-node: "https://api.testnet.hiro.so"
-bitcoin-node: "http://blockstream.info:18332"
+bitcoin-node: "http://localhost:18332"
 
 plan:
   batches:
-    # Batch 1: Deploy Traits (Foundation)
+    # Batch 0: Deploy Traits
     - id: 0
       transactions:
-        - requirement:
-            emulated-contract-publish:
-              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.sip-010-trait
-              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
-              path: contracts/traits/sip-010-trait.clar
-              clarity-version: 4
-              epoch: "latest"
-        - requirement:
-            emulated-contract-publish:
-              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-trait
-              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
-              path: contracts/traits/pool-trait.clar
-              clarity-version: 4
-              epoch: "latest"
+        - contract-publish:
+            contract-name: sip-010-trait
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 5000
+            path: contracts/traits/sip-010-trait.clar
+            anchor-block-only: true
+        - contract-publish:
+            contract-name: pool-trait
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 5000
+            path: contracts/traits/pool-trait.clar
+            anchor-block-only: true
 
-    # Batch 2: Deploy Utilities
+    # Batch 1: Deploy Utilities
     - id: 1
       transactions:
-        - requirement:
-            emulated-contract-publish:
-              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.math-lib
-              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
-              path: contracts/utils/math-lib.clar
-              clarity-version: 4
-              epoch: "latest"
+        - contract-publish:
+            contract-name: math-lib
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 10000
+            path: contracts/utils/math-lib.clar
+            anchor-block-only: true
 
-    # Batch 3: Deploy Core Contracts - Part 1 (Registry)
+    # Batch 2: Deploy Registry
     - id: 2
       transactions:
-        - requirement:
-            emulated-contract-publish:
-              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-registry
-              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
-              path: contracts/core/pool-registry.clar
-              clarity-version: 4
-              epoch: "latest"
+        - contract-publish:
+            contract-name: pool-registry
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 10000
+            path: contracts/core/pool-registry.clar
+            anchor-block-only: true
 
-    # Batch 4: Deploy Core Contracts - Part 2 (Pool Template)
+    # Batch 3: Deploy Pool Template
     - id: 3
       transactions:
-        - requirement:
-            emulated-contract-publish:
-              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-template
-              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
-              path: contracts/core/pool-template.clar
-              clarity-version: 4
-              epoch: "latest"
+        - contract-publish:
+            contract-name: pool-template
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 15000
+            path: contracts/core/pool-template.clar
+            anchor-block-only: true
 
-    # Batch 5: Deploy Core Contracts - Part 3 (Factory & Router)
+    # Batch 4: Deploy Factory & Router
     - id: 4
       transactions:
-        - requirement:
-            emulated-contract-publish:
-              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-factory
-              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
-              path: contracts/core/pool-factory.clar
-              clarity-version: 4
-              epoch: "latest"
-        - requirement:
-            emulated-contract-publish:
-              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.router
-              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
-              path: contracts/core/router.clar
-              clarity-version: 4
-              epoch: "latest"
+        - contract-publish:
+            contract-name: pool-factory
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 10000
+            path: contracts/core/pool-factory.clar
+            anchor-block-only: true
+        - contract-publish:
+            contract-name: router
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 20000
+            path: contracts/core/router.clar
+            anchor-block-only: true
 
-    # Batch 6: Deploy Core Contracts - Part 4 (TWAP Oracle)
+    # Batch 5: Deploy TWAP Oracle
     - id: 5
       transactions:
-        - requirement:
-            emulated-contract-publish:
-              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.twap-oracle
-              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
-              path: contracts/core/twap-oracle.clar
-              clarity-version: 4
-              epoch: "latest"
+        - contract-publish:
+            contract-name: twap-oracle
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 15000
+            path: contracts/core/twap-oracle.clar
+            anchor-block-only: true
 
-    # Batch 7: Deploy Test Token
+    # Batch 6: Deploy Test Token
     - id: 6
       transactions:
-        - requirement:
-            emulated-contract-publish:
-              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.test-token
-              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
-              path: contracts/tokens/test-token.clar
-              clarity-version: 4
-              epoch: "latest"
+        - contract-publish:
+            contract-name: test-token
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 8000
+            path: contracts/tokens/test-token.clar
+            anchor-block-only: true

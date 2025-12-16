@@ -1,0 +1,44 @@
+---
+id: 1
+name: Verified DEX/AMM Testnet Deployment - Remaining Contracts
+network: testnet
+stacks-node: "https://api.testnet.hiro.so"
+bitcoin-node: "http://localhost:18332"
+
+plan:
+  batches:
+    # Batch 0: Deploy Factory & Router
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: pool-factory
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 10000
+            path: contracts/core/pool-factory.clar
+            anchor-block-only: true
+        - contract-publish:
+            contract-name: router
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 20000
+            path: contracts/core/router.clar
+            anchor-block-only: true
+
+    # Batch 1: Deploy TWAP Oracle
+    - id: 1
+      transactions:
+        - contract-publish:
+            contract-name: twap-oracle
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 15000
+            path: contracts/core/twap-oracle.clar
+            anchor-block-only: true
+
+    # Batch 2: Deploy Test Token
+    - id: 2
+      transactions:
+        - contract-publish:
+            contract-name: test-token
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 8000
+            path: contracts/tokens/test-token.clar
+            anchor-block-only: true
