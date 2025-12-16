@@ -1,0 +1,99 @@
+---
+id: 0
+name: Verified DEX/AMM Testnet Deployment
+network: testnet
+stacks-node: "https://api.testnet.hiro.so"
+bitcoin-node: "http://blockstream.info:18332"
+
+plan:
+  batches:
+    # Batch 1: Deploy Traits (Foundation)
+    - id: 0
+      transactions:
+        - requirement:
+            emulated-contract-publish:
+              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.sip-010-trait
+              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+              path: contracts/traits/sip-010-trait.clar
+              clarity-version: 4
+              epoch: "latest"
+        - requirement:
+            emulated-contract-publish:
+              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-trait
+              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+              path: contracts/traits/pool-trait.clar
+              clarity-version: 4
+              epoch: "latest"
+
+    # Batch 2: Deploy Utilities
+    - id: 1
+      transactions:
+        - requirement:
+            emulated-contract-publish:
+              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.math-lib
+              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+              path: contracts/utils/math-lib.clar
+              clarity-version: 4
+              epoch: "latest"
+
+    # Batch 3: Deploy Core Contracts - Part 1 (Registry)
+    - id: 2
+      transactions:
+        - requirement:
+            emulated-contract-publish:
+              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-registry
+              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+              path: contracts/core/pool-registry.clar
+              clarity-version: 4
+              epoch: "latest"
+
+    # Batch 4: Deploy Core Contracts - Part 2 (Pool Template)
+    - id: 3
+      transactions:
+        - requirement:
+            emulated-contract-publish:
+              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-template
+              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+              path: contracts/core/pool-template.clar
+              clarity-version: 4
+              epoch: "latest"
+
+    # Batch 5: Deploy Core Contracts - Part 3 (Factory & Router)
+    - id: 4
+      transactions:
+        - requirement:
+            emulated-contract-publish:
+              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-factory
+              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+              path: contracts/core/pool-factory.clar
+              clarity-version: 4
+              epoch: "latest"
+        - requirement:
+            emulated-contract-publish:
+              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.router
+              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+              path: contracts/core/router.clar
+              clarity-version: 4
+              epoch: "latest"
+
+    # Batch 6: Deploy Core Contracts - Part 4 (TWAP Oracle)
+    - id: 5
+      transactions:
+        - requirement:
+            emulated-contract-publish:
+              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.twap-oracle
+              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+              path: contracts/core/twap-oracle.clar
+              clarity-version: 4
+              epoch: "latest"
+
+    # Batch 7: Deploy Test Token
+    - id: 6
+      transactions:
+        - requirement:
+            emulated-contract-publish:
+              contract-id: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.test-token
+              emulated-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+              path: contracts/tokens/test-token.clar
+              clarity-version: 4
+              epoch: "latest"
