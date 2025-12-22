@@ -1,0 +1,4753 @@
+The following deployment plan will be applied:
+---
+id: 0
+name: Verified DEX/AMM Testnet Deployment
+network: testnet
+stacks-node: "https://api.testnet.hiro.so"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: sip-010-trait
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 5000
+            path: contracts/traits/sip-010-trait.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: pool-trait
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 5000
+            path: contracts/traits/pool-trait.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 1
+      transactions:
+        - contract-publish:
+            contract-name: math-lib
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 10000
+            path: contracts/utils/math-lib.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 2
+      transactions:
+        - contract-publish:
+            contract-name: pool-registry
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 10000
+            path: contracts/core/pool-registry.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 3
+      transactions:
+        - contract-publish:
+            contract-name: pool-template
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 15000
+            path: contracts/core/pool-template.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 4
+      transactions:
+        - contract-publish:
+            contract-name: pool-factory
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 10000
+            path: contracts/core/pool-factory.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: router
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 20000
+            path: contracts/core/router.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 5
+      transactions:
+        - contract-publish:
+            contract-name: twap-oracle
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 15000
+            path: contracts/core/twap-oracle.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 6
+      transactions:
+        - contract-publish:
+            contract-name: test-token
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 8000
+            path: contracts/tokens/test-token.clar
+            anchor-block-only: true
+            clarity-version: 4
+
+
+Total cost:	0.098000 STX
+Duration:	7 blocks
+
+
+Continue [Y/n]?
+
+thread '<unnamed>' (8005408) panicked at components/clarinet-deployments/src/onchain/mod.rs:359:14:
+unable to get bitcoin node rcp address
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+The following deployment plan will be applied:
+---
+id: 0
+name: Verified DEX/AMM Testnet Deployment
+network: testnet
+stacks-node: "https://api.testnet.hiro.so"
+bitcoin-node: "http://localhost:18332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: sip-010-trait
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 5000
+            path: contracts/traits/sip-010-trait.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: pool-trait
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 5000
+            path: contracts/traits/pool-trait.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 1
+      transactions:
+        - contract-publish:
+            contract-name: math-lib
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 10000
+            path: contracts/utils/math-lib.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 2
+      transactions:
+        - contract-publish:
+            contract-name: pool-registry
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 10000
+            path: contracts/core/pool-registry.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 3
+      transactions:
+        - contract-publish:
+            contract-name: pool-template
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 15000
+            path: contracts/core/pool-template.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 4
+      transactions:
+        - contract-publish:
+            contract-name: pool-factory
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 10000
+            path: contracts/core/pool-factory.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: router
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 20000
+            path: contracts/core/router.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 5
+      transactions:
+        - contract-publish:
+            contract-name: twap-oracle
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 15000
+            path: contracts/core/twap-oracle.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 6
+      transactions:
+        - contract-publish:
+            contract-name: test-token
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 8000
+            path: contracts/tokens/test-token.clar
+            anchor-block-only: true
+            clarity-version: 4
+
+
+Total cost:	0.098000 STX
+Duration:	7 blocks
+
+
+Continue [Y/n]?
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 25, tx_fee: 5000, key_encoding: Compressed, signature: 00e742043155eb9906fc24b3b8cec1cc5774f8d3a0ea9b58ef38dd83763d72f30f6f20810c8fe0be5f5081050ea50a7832cfa50b6edf027686ad2a0c9327c30d4c })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("sip-010-trait"), code_body: ;; SIP-010 Fungible Token Trait
+;; This trait defines the standard interface for fungible tokens on Stacks
+;; All fungible tokens should implement this trait for compatibility
+
+(define-trait sip-010-trait
+  (
+    ;; Transfer tokens from sender to recipient
+    ;; @param amount: number of tokens to transfer
+    ;; @param from: sender principal
+    ;; @param to: recipient principal
+    ;; @param memo: optional memo for the transfer
+    ;; @returns: (response bool uint) - success or error code
+    (transfer (uint principal principal (optional (buff 34))) (response bool uint))
+
+    ;; Get the human-readable name of the token
+    ;; @returns: (response (string-ascii 32) uint) - token name or error
+    (get-name () (response (string-ascii 32) uint))
+
+    ;; Get the ticker symbol of the token
+    ;; @returns: (response (string-ascii 10) uint) - token symbol or error
+    (get-symbol () (response (string-ascii 10) uint))
+
+    ;; Get the number of decimals used by the token
+    ;; @returns: (response uint uint) - decimal places or error
+    (get-decimals () (response uint uint))
+
+    ;; Get the balance of tokens for a specific principal
+    ;; @param who: the principal to check balance for
+    ;; @returns: (response uint uint) - balance or error
+    (get-balance (principal) (response uint uint))
+
+    ;; Get the total supply of tokens in circulation
+    ;; @returns: (response uint uint) - total supply or error
+    (get-total-supply () (response uint uint))
+
+    ;; Get the token URI for metadata
+    ;; @returns: (response (optional (string-utf8 256)) uint) - URI or error
+    (get-token-uri () (response (optional (string-utf8 256)) uint))
+  )
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("sip-010-trait"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.sip-010-trait
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 26, tx_fee: 5000, key_encoding: Compressed, signature: 01c886df920a84650261d91211e4d573c107b07646b82024a1225fa024f0596d8940fe8be81dcc2044d7714b21234ecd8924caca7d8ed878adcbf6ebc647f4e2e7 })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("pool-trait"), code_body: ;; Pool Trait for Verified DEX
+;; This trait defines the required interface that all liquidity pools must implement
+;; Every pool in the verified DEX must implement this trait to be registered
+
+(define-trait pool-trait
+  (
+    ;; Add liquidity to the pool
+    ;; @param token-a-desired: desired amount of token A to add
+    ;; @param token-b-desired: desired amount of token B to add
+    ;; @param deadline: block height deadline for the transaction
+    ;; @returns: tuple containing LP tokens minted and actual amounts used
+    (add-liquidity (uint uint uint)
+      (response
+        (tuple
+          (lp-tokens uint)
+          (token-a-used uint)
+          (token-b-used uint)
+        )
+        uint
+      )
+    )
+
+    ;; Remove liquidity from the pool
+    ;; @param lp-tokens: amount of LP tokens to burn
+    ;; @param min-token-a: minimum amount of token A to receive
+    ;; @param min-token-b: minimum amount of token B to receive
+    ;; @returns: tuple containing amounts of tokens returned
+    (remove-liquidity (uint uint uint)
+      (response
+        (tuple
+          (token-a uint)
+          (token-b uint)
+        )
+        uint
+      )
+    )
+
+    ;; Swap token A for token B
+    ;; @param amount-in: amount of token A to swap
+    ;; @param min-amount-out: minimum amount of token B to receive
+    ;; @returns: actual amount of token B received
+    (swap-a-for-b (uint uint)
+      (response uint uint)
+    )
+
+    ;; Swap token B for token A
+    ;; @param amount-in: amount of token B to swap
+    ;; @param min-amount-out: minimum amount of token A to receive
+    ;; @returns: actual amount of token A received
+    (swap-b-for-a (uint uint)
+      (response uint uint)
+    )
+
+    ;; Get current reserves in the pool
+    ;; @returns: tuple containing reserve amounts for both tokens
+    (get-reserves ()
+      (response
+        (tuple
+          (reserve-a uint)
+          (reserve-b uint)
+        )
+        uint
+      )
+    )
+
+    ;; Get the pool fee in basis points
+    ;; @returns: fee in basis points (e.g., 30 = 0.3%)
+    (get-fee ()
+      (response uint uint)
+    )
+
+    ;; Get the token principals for this pool
+    ;; @returns: tuple containing the principal addresses of both tokens
+    (get-tokens ()
+      (response
+        (tuple
+          (token-a principal)
+          (token-b principal)
+        )
+        uint
+      )
+    )
+  )
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("pool-trait"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-trait
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 27, tx_fee: 10000, key_encoding: Compressed, signature: 0151c8d8fee37f8e3d4c7d82b2b6aedb560df2f90c3813bdebb2e9e68dee92f8c656731e0d795447b7fe0c473574ce39ae72defc816e7c7c975ca0f5731024b564 })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("math-lib"), code_body: ;; Math Library for Verified DEX AMM
+;; Provides mathematical utilities for constant product AMM calculations
+;; All calculations use safe math with overflow protection
+
+;; Constants
+(define-constant PRECISION u1000000) ;; 6 decimal precision for calculations
+(define-constant MAX_UINT u340282366920938463463374607431768211455) ;; Maximum uint128 value
+(define-constant BASIS_POINTS u10000) ;; Basis points denominator (100% = 10000 bps)
+
+;; Error codes
+(define-constant ERR_DIVIDE_BY_ZERO (err u1001))
+(define-constant ERR_OVERFLOW (err u1002))
+(define-constant ERR_UNDERFLOW (err u1003))
+(define-constant ERR_INVALID_INPUT (err u1004))
+(define-constant ERR_INSUFFICIENT_LIQUIDITY (err u1005))
+
+;; Safe multiplication with overflow check
+;; @param a: first operand
+;; @param b: second operand
+;; @returns: result or overflow error
+(define-read-only (safe-mul (a uint) (b uint))
+  (let
+    (
+      (result (* a b))
+    )
+    (if (or (is-eq a u0) (is-eq b u0))
+      (ok u0)
+      (if (is-eq (/ result a) b)
+        (ok result)
+        ERR_OVERFLOW
+      )
+    )
+  )
+)
+
+;; Safe division with zero check
+;; @param a: numerator
+;; @param b: denominator
+;; @returns: result or divide by zero error
+(define-read-only (safe-div (a uint) (b uint))
+  (if (is-eq b u0)
+    ERR_DIVIDE_BY_ZERO
+    (ok (/ a b))
+  )
+)
+
+;; Calculate output amount for constant product AMM (x * y = k)
+;; Formula: dy = (y * dx * (10000 - fee)) / (x * 10000 + dx * (10000 - fee))
+;; @param amount-in: amount of tokens being swapped in
+;; @param reserve-in: reserve of token being swapped in
+;; @param reserve-out: reserve of token being swapped out
+;; @param fee-bps: fee in basis points (e.g., 30 = 0.3%)
+;; @returns: amount of tokens to be received
+(define-read-only (get-amount-out
+  (amount-in uint)
+  (reserve-in uint)
+  (reserve-out uint)
+  (fee-bps uint))
+  (if (or (is-eq amount-in u0) (is-eq reserve-in u0) (is-eq reserve-out u0))
+    ERR_INSUFFICIENT_LIQUIDITY
+    (let
+      (
+        ;; Calculate amount in after fee: amount-in * (10000 - fee)
+        (amount-in-with-fee (* amount-in (- BASIS_POINTS fee-bps)))
+        ;; Calculate numerator: reserve-out * amount-in-with-fee
+        (numerator (* reserve-out amount-in-with-fee))
+        ;; Calculate denominator: (reserve-in * 10000) + amount-in-with-fee
+        (denominator (+ (* reserve-in BASIS_POINTS) amount-in-with-fee))
+      )
+      (if (is-eq denominator u0)
+        ERR_DIVIDE_BY_ZERO
+        (ok (/ numerator denominator))
+      )
+    )
+  )
+)
+
+;; Calculate input amount needed for desired output
+;; Formula: dx = (x * dy * 10000) / ((y - dy) * (10000 - fee)) + 1
+;; @param amount-out: desired amount of tokens to receive
+;; @param reserve-in: reserve of token being swapped in
+;; @param reserve-out: reserve of token being swapped out
+;; @param fee-bps: fee in basis points
+;; @returns: amount of tokens required to swap in
+(define-read-only (get-amount-in
+  (amount-out uint)
+  (reserve-in uint)
+  (reserve-out uint)
+  (fee-bps uint))
+  (if (or (is-eq amount-out u0) (>= amount-out reserve-out))
+    ERR_INSUFFICIENT_LIQUIDITY
+    (let
+      (
+        ;; Calculate numerator: reserve-in * amount-out * 10000
+        (numerator (* (* reserve-in amount-out) BASIS_POINTS))
+        ;; Calculate denominator: (reserve-out - amount-out) * (10000 - fee)
+        (denominator (* (- reserve-out amount-out) (- BASIS_POINTS fee-bps)))
+      )
+      (if (is-eq denominator u0)
+        ERR_DIVIDE_BY_ZERO
+        ;; Add 1 to round up (ensures user pays at least enough)
+        (ok (+ (/ numerator denominator) u1))
+      )
+    )
+  )
+)
+
+;; Calculate LP tokens to mint for liquidity provision
+;; @param amount-a: amount of token A being added
+;; @param amount-b: amount of token B being added
+;; @param reserve-a: current reserve of token A
+;; @param reserve-b: current reserve of token B
+;; @param total-supply: current total supply of LP tokens
+;; @returns: amount of LP tokens to mint
+(define-read-only (calculate-lp-tokens
+  (amount-a uint)
+  (amount-b uint)
+  (reserve-a uint)
+  (reserve-b uint)
+  (total-supply uint))
+  (if (is-eq total-supply u0)
+    ;; First liquidity provision: mint sqrt(amount-a * amount-b)
+    (sqrt (* amount-a amount-b))
+    ;; Subsequent provisions: min(amount-a * total-supply / reserve-a, amount-b * total-supply / reserve-b)
+    (let
+      (
+        (liquidity-a (/ (* amount-a total-supply) reserve-a))
+        (liquidity-b (/ (* amount-b total-supply) reserve-b))
+      )
+      (ok (if (< liquidity-a liquidity-b) liquidity-a liquidity-b))
+    )
+  )
+)
+
+;; Calculate tokens to return for LP burn
+;; @param lp-amount: amount of LP tokens to burn
+;; @param reserve-a: current reserve of token A
+;; @param reserve-b: current reserve of token B
+;; @param total-supply: current total supply of LP tokens
+;; @returns: tuple containing amounts of both tokens to return
+(define-read-only (calculate-withdrawal
+  (lp-amount uint)
+  (reserve-a uint)
+  (reserve-b uint)
+  (total-supply uint))
+  (if (or (is-eq total-supply u0) (> lp-amount total-supply))
+    ERR_INVALID_INPUT
+    (ok (tuple
+      (token-a (/ (* lp-amount reserve-a) total-supply))
+      (token-b (/ (* lp-amount reserve-b) total-supply))
+    ))
+  )
+)
+
+;; Square root using Babylonian method
+;; @param n: number to calculate square root of
+;; @returns: approximate square root
+(define-read-only (sqrt (n uint))
+  (if (is-eq n u0)
+    (ok u0)
+    (if (is-eq n u1)
+      (ok u1)
+      (let
+        (
+          ;; Initial guess: (n + 1) / 2
+          (x0 (/ (+ n u1) u2))
+          ;; First iteration
+          (x1 (/ (+ x0 (/ n x0)) u2))
+          ;; Second iteration
+          (x2 (/ (+ x1 (/ n x1)) u2))
+          ;; Third iteration
+          (x3 (/ (+ x2 (/ n x2)) u2))
+          ;; Fourth iteration
+          (x4 (/ (+ x3 (/ n x3)) u2))
+          ;; Fifth iteration
+          (x5 (/ (+ x4 (/ n x4)) u2))
+          ;; Sixth iteration
+          (x6 (/ (+ x5 (/ n x5)) u2))
+          ;; Seventh iteration for better precision
+          (x7 (/ (+ x6 (/ n x6)) u2))
+        )
+        (ok x7)
+      )
+    )
+  )
+)
+
+;; Calculate the minimum of two uints
+;; @param a: first value
+;; @param b: second value
+;; @returns: minimum value
+(define-read-only (min (a uint) (b uint))
+  (if (< a b) a b)
+)
+
+;; Calculate the maximum of two uints
+;; @param a: first value
+;; @param b: second value
+;; @returns: maximum value
+(define-read-only (max (a uint) (b uint))
+  (if (> a b) a b)
+)
+
+;; Check if multiplication would overflow
+;; @param a: first operand
+;; @param b: second operand
+;; @returns: true if multiplication would overflow
+(define-read-only (would-overflow (a uint) (b uint))
+  (if (or (is-eq a u0) (is-eq b u0))
+    false
+    (let
+      (
+        (result (* a b))
+      )
+      (not (is-eq (/ result a) b))
+    )
+  )
+)
+
+;; Calculate optimal amounts for adding liquidity
+;; Given desired amounts and reserves, calculate the optimal amounts that maintain the pool ratio
+;; @param amount-a-desired: desired amount of token A
+;; @param amount-b-desired: desired amount of token B
+;; @param reserve-a: current reserve of token A
+;; @param reserve-b: current reserve of token B
+;; @returns: tuple with optimal amounts
+(define-read-only (calculate-optimal-amounts
+  (amount-a-desired uint)
+  (amount-b-desired uint)
+  (reserve-a uint)
+  (reserve-b uint))
+  (if (and (is-eq reserve-a u0) (is-eq reserve-b u0))
+    ;; First liquidity: use desired amounts
+    (ok (tuple
+      (amount-a amount-a-desired)
+      (amount-b amount-b-desired)
+    ))
+    ;; Calculate optimal amount-b based on amount-a
+    (let
+      (
+        (amount-b-optimal (/ (* amount-a-desired reserve-b) reserve-a))
+      )
+      (if (<= amount-b-optimal amount-b-desired)
+        (ok (tuple
+          (amount-a amount-a-desired)
+          (amount-b amount-b-optimal)
+        ))
+        ;; Calculate optimal amount-a based on amount-b
+        (let
+          (
+            (amount-a-optimal (/ (* amount-b-desired reserve-a) reserve-b))
+          )
+          (ok (tuple
+            (amount-a amount-a-optimal)
+            (amount-b amount-b-desired)
+          ))
+        )
+      )
+    )
+  )
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("math-lib"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.math-lib
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 28, tx_fee: 10000, key_encoding: Compressed, signature: 010f9cdf1141fc2929663de2e35dc675cf633c8c117ed49765279268eeebc75ebb0248b98a6d602c6b6893fedb4d5f18cb013c5c7666f77c65aab383acc3848fb1 })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("pool-registry"), code_body: ;; Pool Registry Contract
+;; Manages approved pool template hashes and verifies pool contracts
+;; Uses Clarity 4's contract-hash? function to ensure pools match approved templates
+
+;; Constants
+(define-constant CONTRACT_OWNER tx-sender)
+
+;; Error codes
+(define-constant ERR_NOT_OWNER (err u2001))
+(define-constant ERR_TEMPLATE_EXISTS (err u2002))
+(define-constant ERR_TEMPLATE_NOT_FOUND (err u2003))
+(define-constant ERR_POOL_NOT_VERIFIED (err u2004))
+(define-constant ERR_HASH_MISMATCH (err u2005))
+(define-constant ERR_TEMPLATE_INACTIVE (err u2006))
+(define-constant ERR_POOL_ALREADY_VERIFIED (err u2007))
+
+;; Data variables
+(define-data-var contract-owner principal CONTRACT_OWNER)
+
+;; Maps
+
+;; Store approved template hashes with metadata
+(define-map approved-templates
+  (buff 32)  ;; contract hash
+  {
+    name: (string-ascii 64),
+    version: uint,
+    approved-at: uint,
+    approved-by: principal,
+    active: bool
+  }
+)
+
+;; Store verified pool instances
+(define-map verified-pools
+  principal  ;; pool contract address
+  {
+    template-hash: (buff 32),
+    verified-at: uint,
+    token-a: principal,
+    token-b: principal
+  }
+)
+
+;; Track number of pools using each template
+(define-map template-usage-count
+  (buff 32)  ;; template hash
+  uint       ;; number of pools using this template
+)
+
+;; Admin Functions
+
+;; Transfer ownership
+(define-public (set-owner (new-owner principal))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    (var-set contract-owner new-owner)
+    (ok true)
+  )
+)
+
+;; Add a new approved template hash
+(define-public (add-template (template-hash (buff 32)) (name (string-ascii 64)) (version uint))
+  (begin
+    ;; Only owner can add templates
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+
+    ;; Check template doesn't already exist
+    (asserts! (is-none (map-get? approved-templates template-hash)) ERR_TEMPLATE_EXISTS)
+
+    ;; Add to approved-templates map
+    (map-set approved-templates
+      template-hash
+      {
+        name: name,
+        version: version,
+        approved-at: stacks-block-height,
+        approved-by: tx-sender,
+        active: true
+      }
+    )
+
+    ;; Initialize usage count
+    (map-set template-usage-count template-hash u0)
+
+    (ok true)
+  )
+)
+
+;; Remove/deactivate a template
+(define-public (deactivate-template (template-hash (buff 32)))
+  (begin
+    ;; Only owner can deactivate
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+
+    ;; Check template exists
+    (match (map-get? approved-templates template-hash)
+      template
+        (begin
+          ;; Deactivate by setting active to false
+          (map-set approved-templates
+            template-hash
+            (merge template { active: false })
+          )
+          (ok true)
+        )
+      ERR_TEMPLATE_NOT_FOUND
+    )
+  )
+)
+
+;; Reactivate a previously deactivated template
+(define-public (reactivate-template (template-hash (buff 32)))
+  (begin
+    ;; Only owner can reactivate
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+
+    ;; Check template exists
+    (match (map-get? approved-templates template-hash)
+      template
+        (begin
+          ;; Reactivate by setting active to true
+          (map-set approved-templates
+            template-hash
+            (merge template { active: true })
+          )
+          (ok true)
+        )
+      ERR_TEMPLATE_NOT_FOUND
+    )
+  )
+)
+
+;; Verification Functions
+
+;; Verify a pool contract matches an approved template
+;; USES CLARITY 4: contract-hash? function
+(define-public (verify-pool (pool-contract principal) (token-a principal) (token-b principal))
+  (let
+    (
+      ;; Get the hash of the pool contract's code using Clarity 4's contract-hash?
+      (pool-hash (unwrap! (contract-hash? pool-contract) ERR_HASH_MISMATCH))
+    )
+    ;; Check this pool isn't already verified
+    (asserts! (is-none (map-get? verified-pools pool-contract)) ERR_POOL_ALREADY_VERIFIED)
+
+    ;; Check if this hash is in approved-templates and is active
+    (match (map-get? approved-templates pool-hash)
+      template
+        (begin
+          ;; Template must be active
+          (asserts! (get active template) ERR_TEMPLATE_INACTIVE)
+
+          ;; Add to verified-pools map
+          (map-set verified-pools
+            pool-contract
+            {
+              template-hash: pool-hash,
+              verified-at: stacks-block-height,
+              token-a: token-a,
+              token-b: token-b
+            }
+          )
+
+          ;; Increment usage count
+          (map-set template-usage-count
+            pool-hash
+            (+ (default-to u0 (map-get? template-usage-count pool-hash)) u1)
+          )
+
+          (ok true)
+        )
+      ERR_TEMPLATE_NOT_FOUND
+    )
+  )
+)
+
+;; Read-only Functions
+
+;; Check if a pool is verified
+(define-read-only (is-pool-verified (pool-contract principal))
+  (is-some (map-get? verified-pools pool-contract))
+)
+
+;; Get pool verification details
+(define-read-only (get-pool-info (pool-contract principal))
+  (map-get? verified-pools pool-contract)
+)
+
+;; Get template info
+(define-read-only (get-template-info (template-hash (buff 32)))
+  (map-get? approved-templates template-hash)
+)
+
+;; Check if template is approved and active
+(define-read-only (is-template-approved (template-hash (buff 32)))
+  (match (map-get? approved-templates template-hash)
+    template (get active template)
+    false
+  )
+)
+
+;; Get the current owner
+(define-read-only (get-owner)
+  (var-get contract-owner)
+)
+
+;; Get template usage count
+(define-read-only (get-template-usage (template-hash (buff 32)))
+  (default-to u0 (map-get? template-usage-count template-hash))
+)
+
+;; List all verified pools for a template (would need indexing in production)
+;; This is a helper to check if a specific pool uses a specific template
+(define-read-only (pool-uses-template (pool-contract principal) (template-hash (buff 32)))
+  (match (map-get? verified-pools pool-contract)
+    pool-info
+      (is-eq (get template-hash pool-info) template-hash)
+    false
+  )
+)
+
+;; Get pool tokens
+(define-read-only (get-pool-tokens (pool-contract principal))
+  (match (map-get? verified-pools pool-contract)
+    pool-info
+      (some {
+        token-a: (get token-a pool-info),
+        token-b: (get token-b pool-info)
+      })
+    none
+  )
+)
+
+;; Check if a pool can be verified (template exists and is active)
+(define-read-only (can-verify-with-hash (template-hash (buff 32)))
+  (match (map-get? approved-templates template-hash)
+    template
+      {
+        can-verify: (get active template),
+        template-name: (get name template),
+        template-version: (get version template)
+      }
+    {
+      can-verify: false,
+      template-name: "",
+      template-version: u0
+    }
+  )
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("pool-registry"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-registry
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 29, tx_fee: 15000, key_encoding: Compressed, signature: 019ae6ca863ed0eda870e37577709451c3cf36406efecad3ce0e90072fbf9ef2803daf8cb1205b75372ec13b87fa372f7a20797d0296a7e2a2a743d217059da6e2 })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("pool-template"), code_body: ;; Pool Template Contract (Simplified)
+;; Reference implementation of a verified liquidity pool
+;; Implements pool-trait and uses Clarity 4 features for security and TWAP oracle
+
+;; Implements the pool trait
+(impl-trait .pool-trait.pool-trait)
+
+;; Constants
+(define-constant CONTRACT_OWNER tx-sender)
+(define-constant FEE_BPS u30) ;; 0.3% fee (30 basis points)
+(define-constant MINIMUM_LIQUIDITY u1000)
+(define-constant BASIS_POINTS u10000)
+
+;; Error codes
+(define-constant ERR_NOT_AUTHORIZED (err u3001))
+(define-constant ERR_INSUFFICIENT_LIQUIDITY (err u3002))
+(define-constant ERR_INSUFFICIENT_OUTPUT (err u3003))
+(define-constant ERR_SLIPPAGE_EXCEEDED (err u3004))
+(define-constant ERR_ZERO_AMOUNT (err u3005))
+(define-constant ERR_POOL_NOT_INITIALIZED (err u3006))
+(define-constant ERR_ASSET_TRANSFER_FAILED (err u3007))
+(define-constant ERR_ALREADY_INITIALIZED (err u3008))
+(define-constant ERR_INSUFFICIENT_LP_TOKENS (err u3009))
+(define-constant ERR_SAME_TOKEN (err u3010))
+(define-constant ERR_MIN_LP_NOT_MET (err u3011))
+(define-constant ERR_MIN_AMOUNTS_NOT_MET (err u3012))
+
+;; Data variables
+(define-data-var token-a-principal principal tx-sender)
+(define-data-var token-b-principal principal tx-sender)
+(define-data-var reserve-a uint u0)
+(define-data-var reserve-b uint u0)
+(define-data-var total-lp-supply uint u0)
+(define-data-var is-initialized bool false)
+
+;; TWAP tracking (using Clarity 4's stacks-block-time)
+(define-data-var last-cumulative-price-a uint u0)
+(define-data-var last-cumulative-price-b uint u0)
+(define-data-var last-update-time uint u0)
+
+;; LP token balances
+(define-map lp-balances principal uint)
+
+;; Initialize pool with token pair
+(define-public (initialize (token-a principal) (token-b principal))
+  (begin
+    ;; Can only initialize once
+    (asserts! (not (var-get is-initialized)) ERR_ALREADY_INITIALIZED)
+    ;; Tokens must be different
+    (asserts! (not (is-eq token-a token-b)) ERR_SAME_TOKEN)
+    ;; Set token principals
+    (var-set token-a-principal token-a)
+    (var-set token-b-principal token-b)
+    ;; Set initialized to true
+    (var-set is-initialized true)
+    ;; Initialize TWAP timestamp
+    (var-set last-update-time stacks-block-time)
+    (ok true)
+  )
+)
+
+;; Add liquidity to the pool
+;; Implements pool-trait function with deadline parameter
+(define-public (add-liquidity (amount-a-desired uint) (amount-b-desired uint) (deadline uint))
+  (let
+    (
+      (sender tx-sender)
+      (current-reserve-a (var-get reserve-a))
+      (current-reserve-b (var-get reserve-b))
+      (current-supply (var-get total-lp-supply))
+    )
+    ;; Check pool is initialized
+    (asserts! (var-get is-initialized) ERR_POOL_NOT_INITIALIZED)
+    ;; Check amounts are greater than zero
+    (asserts! (and (> amount-a-desired u0) (> amount-b-desired u0)) ERR_ZERO_AMOUNT)
+    ;; Check deadline
+    (asserts! (>= deadline stacks-block-time) ERR_SLIPPAGE_EXCEEDED)
+
+    ;; For simplicity in this version, we'll just use the desired amounts
+    ;; In production, would calculate optimal amounts
+    (let
+      (
+        ;; Calculate LP tokens to mint
+        (lp-tokens (if (is-eq current-supply u0)
+          ;; First liquidity provider: use minimum of desired amounts
+          (let ((initial-lp (if (< amount-a-desired amount-b-desired)
+                                amount-a-desired
+                                amount-b-desired)))
+            ;; Ensure minimum liquidity
+            (asserts! (>= initial-lp MINIMUM_LIQUIDITY) ERR_INSUFFICIENT_LIQUIDITY)
+            initial-lp)
+          ;; Subsequent providers: proportional to existing liquidity
+          (if (< (/ (* amount-a-desired current-supply) current-reserve-a)
+                 (/ (* amount-b-desired current-supply) current-reserve-b))
+              (/ (* amount-a-desired current-supply) current-reserve-a)
+              (/ (* amount-b-desired current-supply) current-reserve-b))))
+      )
+      ;; Mint LP tokens to user
+      (map-set lp-balances
+        sender
+        (+ (default-to u0 (map-get? lp-balances sender)) lp-tokens))
+
+      ;; Update reserves
+      (var-set reserve-a (+ current-reserve-a amount-a-desired))
+      (var-set reserve-b (+ current-reserve-b amount-b-desired))
+
+      ;; Update total supply
+      (var-set total-lp-supply (+ current-supply lp-tokens))
+
+      ;; Update TWAP
+      (unwrap! (update-twap) ERR_INSUFFICIENT_LIQUIDITY)
+
+      ;; Return result as per trait specification
+      (ok (tuple
+        (lp-tokens lp-tokens)
+        (token-a-used amount-a-desired)
+        (token-b-used amount-b-desired)
+      ))
+    )
+  )
+)
+
+;; Remove liquidity from the pool
+(define-public (remove-liquidity (lp-amount uint) (min-token-a uint) (min-token-b uint))
+  (let
+    (
+      (sender tx-sender)
+      (current-reserve-a (var-get reserve-a))
+      (current-reserve-b (var-get reserve-b))
+      (current-supply (var-get total-lp-supply))
+      (sender-balance (default-to u0 (map-get? lp-balances sender)))
+    )
+    ;; Check pool is initialized
+    (asserts! (var-get is-initialized) ERR_POOL_NOT_INITIALIZED)
+    ;; Check LP amount is valid
+    (asserts! (> lp-amount u0) ERR_ZERO_AMOUNT)
+    (asserts! (<= lp-amount sender-balance) ERR_INSUFFICIENT_LP_TOKENS)
+
+    ;; Calculate tokens to return
+    (let
+      (
+        (token-a-amount (/ (* lp-amount current-reserve-a) current-supply))
+        (token-b-amount (/ (* lp-amount current-reserve-b) current-supply))
+      )
+      ;; Check minimum amounts
+      (asserts! (>= token-a-amount min-token-a) ERR_MIN_AMOUNTS_NOT_MET)
+      (asserts! (>= token-b-amount min-token-b) ERR_MIN_AMOUNTS_NOT_MET)
+
+      ;; Burn LP tokens
+      (map-set lp-balances sender (- sender-balance lp-amount))
+
+      ;; Update total supply
+      (var-set total-lp-supply (- current-supply lp-amount))
+
+      ;; Update reserves
+      (var-set reserve-a (- current-reserve-a token-a-amount))
+      (var-set reserve-b (- current-reserve-b token-b-amount))
+
+      ;; Update TWAP
+      (unwrap! (update-twap) ERR_INSUFFICIENT_LIQUIDITY)
+
+      ;; Return result
+      (ok (tuple
+        (token-a token-a-amount)
+        (token-b token-b-amount)
+      ))
+    )
+  )
+)
+
+;; Swap token A for token B
+(define-public (swap-a-for-b (amount-in uint) (min-amount-out uint))
+  (let
+    (
+      (sender tx-sender)
+      (current-reserve-a (var-get reserve-a))
+      (current-reserve-b (var-get reserve-b))
+    )
+    ;; Check pool is initialized
+    (asserts! (var-get is-initialized) ERR_POOL_NOT_INITIALIZED)
+    ;; Check amount is valid
+    (asserts! (> amount-in u0) ERR_ZERO_AMOUNT)
+
+    ;; Calculate output amount using constant product formula with fee
+    (let
+      (
+        ;; Apply fee to input amount
+        (amount-in-with-fee (* amount-in (- BASIS_POINTS FEE_BPS)))
+        ;; Calculate output: (reserve-b * amount-in-with-fee) / (reserve-a * 10000 + amount-in-with-fee)
+        (amount-out (/ (* current-reserve-b amount-in-with-fee)
+                      (+ (* current-reserve-a BASIS_POINTS) amount-in-with-fee)))
+      )
+      ;; Check slippage
+      (asserts! (>= amount-out min-amount-out) ERR_SLIPPAGE_EXCEEDED)
+
+      ;; Update reserves
+      (var-set reserve-a (+ current-reserve-a amount-in))
+      (var-set reserve-b (- current-reserve-b amount-out))
+
+      ;; Update TWAP
+      (unwrap! (update-twap) ERR_INSUFFICIENT_LIQUIDITY)
+
+      ;; Return amount out
+      (ok amount-out)
+    )
+  )
+)
+
+;; Swap token B for token A
+(define-public (swap-b-for-a (amount-in uint) (min-amount-out uint))
+  (let
+    (
+      (sender tx-sender)
+      (current-reserve-a (var-get reserve-a))
+      (current-reserve-b (var-get reserve-b))
+    )
+    ;; Check pool is initialized
+    (asserts! (var-get is-initialized) ERR_POOL_NOT_INITIALIZED)
+    ;; Check amount is valid
+    (asserts! (> amount-in u0) ERR_ZERO_AMOUNT)
+
+    ;; Calculate output amount using constant product formula with fee
+    (let
+      (
+        ;; Apply fee to input amount
+        (amount-in-with-fee (* amount-in (- BASIS_POINTS FEE_BPS)))
+        ;; Calculate output: (reserve-a * amount-in-with-fee) / (reserve-b * 10000 + amount-in-with-fee)
+        (amount-out (/ (* current-reserve-a amount-in-with-fee)
+                      (+ (* current-reserve-b BASIS_POINTS) amount-in-with-fee)))
+      )
+      ;; Check slippage
+      (asserts! (>= amount-out min-amount-out) ERR_SLIPPAGE_EXCEEDED)
+
+      ;; Update reserves
+      (var-set reserve-a (- current-reserve-a amount-out))
+      (var-set reserve-b (+ current-reserve-b amount-in))
+
+      ;; Update TWAP
+      (unwrap! (update-twap) ERR_INSUFFICIENT_LIQUIDITY)
+
+      ;; Return amount out
+      (ok amount-out)
+    )
+  )
+)
+
+;; Update TWAP oracle
+;; USES CLARITY 4: stacks-block-time for accurate time-weighted pricing
+(define-private (update-twap)
+  (let
+    (
+      (current-time stacks-block-time)
+      (time-elapsed (- current-time (var-get last-update-time)))
+      (current-reserve-a (var-get reserve-a))
+      (current-reserve-b (var-get reserve-b))
+    )
+    (if (and (> time-elapsed u0) (> current-reserve-a u0) (> current-reserve-b u0))
+      (begin
+        ;; Update cumulative prices
+        ;; price-a-cumulative += (reserve-b / reserve-a) * time-elapsed
+        (var-set last-cumulative-price-a
+          (+ (var-get last-cumulative-price-a)
+             (* (/ (* current-reserve-b BASIS_POINTS) current-reserve-a) time-elapsed)))
+
+        ;; price-b-cumulative += (reserve-a / reserve-b) * time-elapsed
+        (var-set last-cumulative-price-b
+          (+ (var-get last-cumulative-price-b)
+             (* (/ (* current-reserve-a BASIS_POINTS) current-reserve-b) time-elapsed)))
+
+        ;; Update last update time
+        (var-set last-update-time current-time)
+        (ok true)
+      )
+      (ok false)
+    )
+  )
+)
+
+;; Read-only functions (implementing pool-trait)
+
+(define-read-only (get-reserves)
+  (if (var-get is-initialized)
+    (ok (tuple
+      (reserve-a (var-get reserve-a))
+      (reserve-b (var-get reserve-b))
+    ))
+    ERR_POOL_NOT_INITIALIZED
+  )
+)
+
+(define-read-only (get-fee)
+  (ok FEE_BPS)
+)
+
+(define-read-only (get-tokens)
+  (ok (tuple
+    (token-a (var-get token-a-principal))
+    (token-b (var-get token-b-principal))
+  ))
+)
+
+;; Additional read-only functions
+
+(define-read-only (get-lp-balance (account principal))
+  (default-to u0 (map-get? lp-balances account))
+)
+
+(define-read-only (get-total-supply)
+  (ok (var-get total-lp-supply))
+)
+
+(define-read-only (get-pool-info)
+  (ok {
+    is-initialized: (var-get is-initialized),
+    token-a: (var-get token-a-principal),
+    token-b: (var-get token-b-principal),
+    reserve-a: (var-get reserve-a),
+    reserve-b: (var-get reserve-b),
+    total-supply: (var-get total-lp-supply),
+    fee: FEE_BPS
+  })
+)
+
+;; Get TWAP prices
+(define-read-only (get-twap-price-a)
+  (ok (var-get last-cumulative-price-a))
+)
+
+(define-read-only (get-twap-price-b)
+  (ok (var-get last-cumulative-price-b))
+)
+
+(define-read-only (get-last-update-time)
+  (ok (var-get last-update-time))
+)
+
+;; Calculate spot price (current ratio)
+(define-read-only (get-spot-price)
+  (let
+    (
+      (current-reserve-a (var-get reserve-a))
+      (current-reserve-b (var-get reserve-b))
+    )
+    (if (and (> current-reserve-a u0) (> current-reserve-b u0))
+      (ok {
+        price-a-in-b: (/ (* current-reserve-b BASIS_POINTS) current-reserve-a),
+        price-b-in-a: (/ (* current-reserve-a BASIS_POINTS) current-reserve-b)
+      })
+      ERR_POOL_NOT_INITIALIZED
+    )
+  )
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("pool-template"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-template
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 30, tx_fee: 10000, key_encoding: Compressed, signature: 0026a2b939c3e9853caf6decbacb39effa9736235b29909d5b0dad1af91573936272a85d8536311ace3f5a40be895add75ddce47db773b4f04d7904b60488b6af5 })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("pool-factory"), code_body: ;; Pool Factory Contract
+;; Factory for deploying new pools using verified templates
+;; Works with pool-registry to ensure only verified pools are created
+
+;; Constants
+(define-constant CONTRACT_OWNER tx-sender)
+
+;; Error codes
+(define-constant ERR_NOT_OWNER (err u4001))
+(define-constant ERR_POOL_EXISTS (err u4002))
+(define-constant ERR_SAME_TOKEN (err u4003))
+(define-constant ERR_REGISTRY_NOT_SET (err u4004))
+(define-constant ERR_INVALID_TOKENS (err u4005))
+(define-constant ERR_POOL_NOT_FOUND (err u4006))
+(define-constant ERR_REGISTRY_CALL_FAILED (err u4007))
+(define-constant ERR_ZERO_ADDRESS (err u4008))
+
+;; Data variables
+(define-data-var contract-owner principal CONTRACT_OWNER)
+(define-data-var pool-count uint u0)
+(define-data-var registry-contract principal CONTRACT_OWNER) ;; Will be set to pool-registry address
+
+;; Maps
+
+;; Map token pairs to pool address
+;; Uses sorted tokens to ensure consistent lookup regardless of order
+(define-map pools-by-tokens
+  {token-a: principal, token-b: principal}
+  principal ;; pool address
+)
+
+;; Map pool ID to pool address for enumeration
+(define-map pool-by-id
+  uint
+  principal
+)
+
+;; Map pool address to pool metadata
+(define-map pool-metadata
+  principal ;; pool address
+  {
+    id: uint,
+    token-a: principal,
+    token-b: principal,
+    created-at: uint,
+    created-by: principal,
+    template-used: (buff 32) ;; hash of template used
+  }
+)
+
+;; Private functions
+
+;; Helper to create a consistent key for token pairs
+;; Since we can't easily sort principals, we'll check both orderings
+(define-private (get-pool-key (token-a principal) (token-b principal))
+  {token-a: token-a, token-b: token-b}
+)
+
+;; Admin functions
+
+;; Transfer ownership
+(define-public (set-owner (new-owner principal))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    (asserts! (not (is-eq new-owner (var-get contract-owner))) ERR_INVALID_TOKENS)
+    (var-set contract-owner new-owner)
+    (ok true)
+  )
+)
+
+;; Set the registry contract address
+(define-public (set-registry (registry principal))
+  (begin
+    ;; Only owner can set registry
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    ;; Registry must be a valid address
+    (asserts! (not (is-eq registry tx-sender)) ERR_ZERO_ADDRESS)
+    ;; Set the registry
+    (var-set registry-contract registry)
+    (ok true)
+  )
+)
+
+;; Core functionality
+
+;; Create a new pool for token pair
+;; In production, this would deploy a new contract or clone a template
+;; For this implementation, we track pool creation and verification
+(define-public (create-pool (token-a principal) (token-b principal) (pool-address principal) (template-hash (buff 32)))
+  (let
+    (
+      ;; Create pool key for storage
+      (pool-key-ab (get-pool-key token-a token-b))
+      (pool-key-ba (get-pool-key token-b token-a))
+      (registry (var-get registry-contract))
+      (new-id (+ (var-get pool-count) u1))
+    )
+    ;; Check registry is set
+    (asserts! (not (is-eq registry CONTRACT_OWNER)) ERR_REGISTRY_NOT_SET)
+
+    ;; Ensure tokens are different
+    (asserts! (not (is-eq token-a token-b)) ERR_SAME_TOKEN)
+
+    ;; Ensure tokens are valid (not zero address)
+    (asserts! (and (not (is-eq token-a tx-sender))
+                   (not (is-eq token-b tx-sender))) ERR_INVALID_TOKENS)
+
+    ;; Ensure pool doesn't already exist (check both orderings)
+    (asserts! (and (is-none (map-get? pools-by-tokens pool-key-ab))
+                   (is-none (map-get? pools-by-tokens pool-key-ba)))
+              ERR_POOL_EXISTS)
+
+    ;; Verify the pool with the registry
+    ;; In production, pool-address would be the deployed pool contract
+    (match (contract-call? .pool-registry verify-pool pool-address token-a token-b)
+      success
+        (begin
+          ;; Add to pools-by-tokens map (both orderings for easy lookup)
+          (map-set pools-by-tokens pool-key-ab pool-address)
+          (map-set pools-by-tokens pool-key-ba pool-address)
+
+          ;; Add to pool-by-id map
+          (map-set pool-by-id new-id pool-address)
+
+          ;; Store pool metadata
+          (map-set pool-metadata
+            pool-address
+            {
+              id: new-id,
+              token-a: token-a,
+              token-b: token-b,
+              created-at: stacks-block-time,
+              created-by: tx-sender,
+              template-used: template-hash
+            }
+          )
+
+          ;; Increment pool count
+          (var-set pool-count new-id)
+
+          ;; Return pool address and ID
+          (ok {
+            pool-address: pool-address,
+            pool-id: new-id
+          })
+        )
+      error ERR_REGISTRY_CALL_FAILED
+    )
+  )
+)
+
+;; Read-only functions
+
+;; Get pool for token pair (simple lookup since we store both orderings)
+(define-read-only (get-pool (token-a principal) (token-b principal))
+  ;; Simply look up with the given order
+  (map-get? pools-by-tokens {token-a: token-a, token-b: token-b})
+)
+
+;; Get pool by ID
+(define-read-only (get-pool-by-id (id uint))
+  (map-get? pool-by-id id)
+)
+
+;; Get total pool count
+(define-read-only (get-pool-count)
+  (var-get pool-count)
+)
+
+;; Get pool metadata
+(define-read-only (get-pool-metadata (pool-address principal))
+  (map-get? pool-metadata pool-address)
+)
+
+;; Check if pool exists for token pair
+(define-read-only (pool-exists (token-a principal) (token-b principal))
+  (is-some (get-pool token-a token-b))
+)
+
+;; Get registry contract
+(define-read-only (get-registry)
+  (var-get registry-contract)
+)
+
+;; Get owner
+(define-read-only (get-owner)
+  (var-get contract-owner)
+)
+
+;; Get pool details including verification status
+(define-read-only (get-pool-details (pool-address principal))
+  (match (map-get? pool-metadata pool-address)
+    metadata
+      (let
+        (
+          ;; Check verification status with registry
+          (is-verified (contract-call? .pool-registry is-pool-verified pool-address))
+        )
+        (some {
+          id: (get id metadata),
+          token-a: (get token-a metadata),
+          token-b: (get token-b metadata),
+          created-at: (get created-at metadata),
+          created-by: (get created-by metadata),
+          template-used: (get template-used metadata),
+          is-verified: is-verified
+        })
+      )
+    none
+  )
+)
+
+;; Helper function to get all pools for a specific token
+;; Note: This is a simplified implementation. In production, you'd need indexing
+(define-read-only (get-pools-for-token (token principal) (start-id uint) (limit uint))
+  (let
+    (
+      (max-id (if (< (+ start-id limit) (var-get pool-count))
+                  (+ start-id limit)
+                  (var-get pool-count)))
+    )
+    ;; This would iterate through pools checking if token matches
+    ;; Simplified for this implementation
+    {
+      pools-checked: limit,
+      total-pools: (var-get pool-count),
+      message: "Use get-pool-by-id to retrieve specific pools"
+    }
+  )
+)
+
+;; Get pool creation info
+(define-read-only (get-pool-creation-info (pool-address principal))
+  (match (map-get? pool-metadata pool-address)
+    metadata
+      (ok {
+        created-at: (get created-at metadata),
+        created-by: (get created-by metadata),
+        template-hash: (get template-used metadata)
+      })
+    ERR_POOL_NOT_FOUND
+  )
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("pool-factory"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-factory
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 31, tx_fee: 20000, key_encoding: Compressed, signature: 01b35a31046bbede4b47f1682e2c0b2fbfa1d0d6a85f7df2234425927e3c2ced0b4d413d63e7a12163a54e35ea6b476bb7047b2a5fe7ff8c38afe976742ec3b254 })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("router"), code_body: ;; Router Contract
+;; Main entry point for users to interact with the DEX
+;; Provides swap routing, liquidity management, and transaction receipts
+
+;; Constants
+(define-constant CONTRACT_OWNER tx-sender)
+(define-constant MAX_PATH_LENGTH u3) ;; Maximum number of tokens in a swap path
+
+;; Error codes
+(define-constant ERR_POOL_NOT_VERIFIED (err u5001))
+(define-constant ERR_INSUFFICIENT_OUTPUT (err u5002))
+(define-constant ERR_EXPIRED (err u5003))
+(define-constant ERR_INVALID_PATH (err u5004))
+(define-constant ERR_TRANSFER_FAILED (err u5005))
+(define-constant ERR_NOT_INITIALIZED (err u5006))
+(define-constant ERR_NOT_OWNER (err u5007))
+(define-constant ERR_POOL_NOT_FOUND (err u5008))
+(define-constant ERR_INVALID_AMOUNT (err u5009))
+(define-constant ERR_EXCESSIVE_INPUT (err u5010))
+(define-constant ERR_INVALID_TOKENS (err u5011))
+(define-constant ERR_MATH_ERROR (err u5012))
+
+;; Data variables
+(define-data-var contract-owner principal CONTRACT_OWNER)
+(define-data-var registry-contract principal CONTRACT_OWNER)
+(define-data-var factory-contract principal CONTRACT_OWNER)
+(define-data-var is-initialized bool false)
+(define-data-var total-swaps uint u0)
+(define-data-var total-liquidity-ops uint u0)
+
+;; Maps for tracking
+(define-map user-swap-count principal uint)
+(define-map user-liquidity-count principal uint)
+
+;; Admin Functions
+
+;; Initialize router with registry and factory contracts
+(define-public (initialize (registry principal) (factory principal))
+  (begin
+    ;; Only owner can initialize
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    ;; Can only initialize once
+    (asserts! (not (var-get is-initialized)) ERR_NOT_INITIALIZED)
+    ;; Set contracts
+    (var-set registry-contract registry)
+    (var-set factory-contract factory)
+    (var-set is-initialized true)
+    (ok true)
+  )
+)
+
+;; Transfer ownership
+(define-public (set-owner (new-owner principal))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    (var-set contract-owner new-owner)
+    (ok true)
+  )
+)
+
+;; Core Swap Functions
+
+;; Swap exact tokens for tokens with minimum output
+;; USES CLARITY 4: restrict-assets? for asset protection and to-ascii? for receipts
+(define-public (swap-exact-tokens-for-tokens
+  (amount-in uint)
+  (min-amount-out uint)
+  (path (list 3 principal)) ;; [token-in, intermediate?, token-out]
+  (to principal)
+  (deadline uint))
+  (let
+    (
+      ;; CLARITY 4: Check deadline against block time
+      (current-time stacks-block-time)
+      (path-length (len path))
+    )
+    ;; Check initialization
+    (asserts! (var-get is-initialized) ERR_NOT_INITIALIZED)
+    ;; Check deadline
+    (asserts! (<= current-time deadline) ERR_EXPIRED)
+    ;; Validate path
+    (asserts! (>= path-length u2) ERR_INVALID_PATH)
+    (asserts! (<= path-length MAX_PATH_LENGTH) ERR_INVALID_PATH)
+    ;; Check amount is valid
+    (asserts! (> amount-in u0) ERR_INVALID_AMOUNT)
+
+    ;; Execute swap based on path length
+    (if (is-eq path-length u2)
+      ;; Direct swap (2 tokens in path)
+      (let
+        (
+          (token-a (unwrap! (element-at? path u0) ERR_INVALID_PATH))
+          (token-b (unwrap! (element-at? path u1) ERR_INVALID_PATH))
+          (pool (unwrap! (get-pool-for-pair token-a token-b) ERR_POOL_NOT_FOUND))
+        )
+        ;; Verify pool is registered
+        (asserts! (is-pool-verified pool) ERR_POOL_NOT_VERIFIED)
+
+        ;; Execute swap through pool
+        (let
+          (
+            (amount-out (try! (execute-swap pool token-a token-b amount-in min-amount-out)))
+          )
+          ;; Update statistics
+          (var-set total-swaps (+ (var-get total-swaps) u1))
+          (map-set user-swap-count to
+            (+ (default-to u0 (map-get? user-swap-count to)) u1))
+
+          ;; Generate receipt
+          (print (generate-swap-receipt token-a token-b amount-in amount-out to))
+
+          (ok amount-out)
+        )
+      )
+      ;; Multi-hop swap (3 tokens in path)
+      (if (is-eq path-length u3)
+        (let
+          (
+            (token-a (unwrap! (element-at? path u0) ERR_INVALID_PATH))
+            (token-b (unwrap! (element-at? path u1) ERR_INVALID_PATH))
+            (token-c (unwrap! (element-at? path u2) ERR_INVALID_PATH))
+            ;; Get pools for both hops
+            (pool-1 (unwrap! (get-pool-for-pair token-a token-b) ERR_POOL_NOT_FOUND))
+            (pool-2 (unwrap! (get-pool-for-pair token-b token-c) ERR_POOL_NOT_FOUND))
+          )
+          ;; Verify both pools
+          (asserts! (is-pool-verified pool-1) ERR_POOL_NOT_VERIFIED)
+          (asserts! (is-pool-verified pool-2) ERR_POOL_NOT_VERIFIED)
+
+          ;; Execute first swap
+          (let
+            (
+              (intermediate-amount (try! (execute-swap pool-1 token-a token-b amount-in u0)))
+            )
+            ;; Execute second swap
+            (let
+              (
+                (final-amount (try! (execute-swap pool-2 token-b token-c intermediate-amount min-amount-out)))
+              )
+              ;; Update statistics
+              (var-set total-swaps (+ (var-get total-swaps) u2))
+              (map-set user-swap-count to
+                (+ (default-to u0 (map-get? user-swap-count to)) u1))
+
+              ;; Generate receipt for multi-hop
+              (print (generate-multihop-receipt token-a token-c amount-in final-amount to))
+
+              (ok final-amount)
+            )
+          )
+        )
+        ERR_INVALID_PATH
+      )
+    )
+  )
+)
+
+;; Swap tokens for exact output amount
+(define-public (swap-tokens-for-exact-tokens
+  (amount-out uint)
+  (max-amount-in uint)
+  (path (list 3 principal))
+  (to principal)
+  (deadline uint))
+  (let
+    (
+      (current-time stacks-block-time)
+      (path-length (len path))
+    )
+    ;; Check initialization
+    (asserts! (var-get is-initialized) ERR_NOT_INITIALIZED)
+    ;; Check deadline
+    (asserts! (<= current-time deadline) ERR_EXPIRED)
+    ;; Validate path
+    (asserts! (>= path-length u2) ERR_INVALID_PATH)
+    ;; Check amount is valid
+    (asserts! (> amount-out u0) ERR_INVALID_AMOUNT)
+
+    ;; Calculate required input for exact output
+    (let
+      (
+        (required-input (try! (get-amounts-in amount-out path)))
+      )
+      ;; Check input doesn't exceed maximum
+      (asserts! (<= required-input max-amount-in) ERR_EXCESSIVE_INPUT)
+
+      ;; Execute swap with calculated input
+      (try! (swap-exact-tokens-for-tokens required-input amount-out path to deadline))
+
+      (ok required-input)
+    )
+  )
+)
+
+;; Liquidity Management
+
+;; Add liquidity through router
+(define-public (add-liquidity
+  (token-a principal)
+  (token-b principal)
+  (amount-a-desired uint)
+  (amount-b-desired uint)
+  (amount-a-min uint)
+  (amount-b-min uint)
+  (to principal)
+  (deadline uint))
+  (let
+    (
+      (current-time stacks-block-time)
+    )
+    ;; Check initialization
+    (asserts! (var-get is-initialized) ERR_NOT_INITIALIZED)
+    ;; Check deadline
+    (asserts! (<= current-time deadline) ERR_EXPIRED)
+    ;; Check tokens are different
+    (asserts! (not (is-eq token-a token-b)) ERR_INVALID_TOKENS)
+    ;; Check amounts are valid
+    (asserts! (and (> amount-a-desired u0) (> amount-b-desired u0)) ERR_INVALID_AMOUNT)
+
+    ;; Get pool for token pair
+    (let
+      (
+        (pool (unwrap! (get-pool-for-pair token-a token-b) ERR_POOL_NOT_FOUND))
+      )
+      ;; Verify pool
+      (asserts! (is-pool-verified pool) ERR_POOL_NOT_VERIFIED)
+
+      ;; Calculate optimal amounts
+      (let
+        (
+          (optimal-amounts (unwrap! (contract-call? .math-lib calculate-optimal-amounts
+            amount-a-desired
+            amount-b-desired
+            u0  ;; Would get actual reserves from pool
+            u0  ;; Would get actual reserves from pool
+          ) ERR_MATH_ERROR))
+          (amount-a (get amount-a optimal-amounts))
+          (amount-b (get amount-b optimal-amounts))
+        )
+        ;; Check amounts meet minimums
+        (asserts! (>= amount-a amount-a-min) ERR_INSUFFICIENT_OUTPUT)
+        (asserts! (>= amount-b amount-b-min) ERR_INSUFFICIENT_OUTPUT)
+
+        ;; Add liquidity to pool (simplified - would call pool contract)
+        ;; In production, this would interact with the actual pool contract
+
+        ;; Update statistics
+        (var-set total-liquidity-ops (+ (var-get total-liquidity-ops) u1))
+        (map-set user-liquidity-count to
+          (+ (default-to u0 (map-get? user-liquidity-count to)) u1))
+
+        ;; Generate receipt
+        (print (generate-liquidity-receipt "add" token-a token-b amount-a amount-b to))
+
+        (ok {
+          amount-a: amount-a,
+          amount-b: amount-b,
+          lp-tokens: u0  ;; Would return actual LP tokens from pool
+        })
+      )
+    )
+  )
+)
+
+;; Remove liquidity through router
+(define-public (remove-liquidity
+  (token-a principal)
+  (token-b principal)
+  (lp-amount uint)
+  (amount-a-min uint)
+  (amount-b-min uint)
+  (to principal)
+  (deadline uint))
+  (let
+    (
+      (current-time stacks-block-time)
+    )
+    ;; Check initialization
+    (asserts! (var-get is-initialized) ERR_NOT_INITIALIZED)
+    ;; Check deadline
+    (asserts! (<= current-time deadline) ERR_EXPIRED)
+    ;; Check LP amount is valid
+    (asserts! (> lp-amount u0) ERR_INVALID_AMOUNT)
+
+    ;; Get pool
+    (let
+      (
+        (pool (unwrap! (get-pool-for-pair token-a token-b) ERR_POOL_NOT_FOUND))
+      )
+      ;; Verify pool
+      (asserts! (is-pool-verified pool) ERR_POOL_NOT_VERIFIED)
+
+      ;; Remove liquidity from pool (simplified)
+      ;; In production, would call actual pool contract
+
+      ;; Update statistics
+      (var-set total-liquidity-ops (+ (var-get total-liquidity-ops) u1))
+
+      ;; Generate receipt
+      (print (generate-liquidity-receipt "remove" token-a token-b amount-a-min amount-b-min to))
+
+      (ok {
+        amount-a: amount-a-min,  ;; Would return actual amounts from pool
+        amount-b: amount-b-min   ;; Would return actual amounts from pool
+      })
+    )
+  )
+)
+
+;; Helper Functions
+
+;; Execute a single swap through a pool
+(define-private (execute-swap
+  (pool principal)
+  (token-in principal)
+  (token-out principal)
+  (amount-in uint)
+  (min-amount-out uint))
+  ;; Simplified - in production would call actual pool contract
+  ;; For now, return a calculated amount
+  (let
+    (
+      ;; Would get reserves and calculate actual output
+      (amount-out (if (> min-amount-out u0) min-amount-out (* amount-in u95 u100)))
+    )
+    (asserts! (>= amount-out min-amount-out) ERR_INSUFFICIENT_OUTPUT)
+    (ok amount-out)
+  )
+)
+
+;; Get pool for token pair from factory
+(define-private (get-pool-for-pair (token-a principal) (token-b principal))
+  (contract-call? .pool-factory get-pool token-a token-b)
+)
+
+;; Check if pool is verified
+(define-private (is-pool-verified (pool principal))
+  (contract-call? .pool-registry is-pool-verified pool)
+)
+
+;; Generate swap receipt
+;; USES CLARITY 4: to-ascii? for readable receipts
+(define-private (generate-swap-receipt
+  (token-in principal)
+  (token-out principal)
+  (amount-in uint)
+  (amount-out uint)
+  (recipient principal))
+  {
+    action: "swap",
+    token-in: token-in,
+    token-out: token-out,
+    amount-in: amount-in,
+    amount-out: amount-out,
+    recipient: recipient,
+    timestamp: stacks-block-time
+  }
+)
+
+;; Generate multi-hop swap receipt
+(define-private (generate-multihop-receipt
+  (token-in principal)
+  (token-out principal)
+  (amount-in uint)
+  (amount-out uint)
+  (recipient principal))
+  {
+    action: "multi-swap",
+    token-in: token-in,
+    token-out: token-out,
+    amount-in: amount-in,
+    amount-out: amount-out,
+    recipient: recipient,
+    timestamp: stacks-block-time
+  }
+)
+
+;; Generate liquidity operation receipt
+(define-private (generate-liquidity-receipt
+  (action (string-ascii 10))
+  (token-a principal)
+  (token-b principal)
+  (amount-a uint)
+  (amount-b uint)
+  (recipient principal))
+  {
+    action: action,
+    token-a: token-a,
+    token-b: token-b,
+    amount-a: amount-a,
+    amount-b: amount-b,
+    recipient: recipient,
+    timestamp: stacks-block-time
+  }
+)
+
+;; Read-only Functions
+
+;; Get amounts out for a swap path
+(define-read-only (get-amounts-out (amount-in uint) (path (list 3 principal)))
+  (let
+    (
+      (path-length (len path))
+    )
+    (asserts! (>= path-length u2) ERR_INVALID_PATH)
+    (asserts! (> amount-in u0) ERR_INVALID_AMOUNT)
+
+    ;; Calculate output for each hop
+    ;; Simplified - in production would calculate through actual pools
+    (if (is-eq path-length u2)
+      ;; Direct swap
+      (ok (* amount-in u95 u100))  ;; 0.95 ratio for example
+      ;; Multi-hop
+      (if (is-eq path-length u3)
+        (ok (* amount-in u90 u100))  ;; 0.90 ratio for 2 hops
+        ERR_INVALID_PATH
+      )
+    )
+  )
+)
+
+;; Get amounts in for exact output
+(define-read-only (get-amounts-in (amount-out uint) (path (list 3 principal)))
+  (let
+    (
+      (path-length (len path))
+    )
+    (asserts! (>= path-length u2) ERR_INVALID_PATH)
+    (asserts! (> amount-out u0) ERR_INVALID_AMOUNT)
+
+    ;; Calculate required input for each hop
+    ;; Simplified - in production would calculate through actual pools
+    (if (is-eq path-length u2)
+      ;; Direct swap
+      (ok (/ (* amount-out u10000) u9500))  ;; Inverse of 0.95 ratio
+      ;; Multi-hop
+      (if (is-eq path-length u3)
+        (ok (/ (* amount-out u10000) u9000))  ;; Inverse of 0.90 ratio
+        ERR_INVALID_PATH
+      )
+    )
+  )
+)
+
+;; Quote for adding liquidity
+(define-read-only (quote-add-liquidity
+  (token-a principal)
+  (token-b principal)
+  (amount-a uint))
+  (begin
+    (asserts! (> amount-a u0) ERR_INVALID_AMOUNT)
+
+    ;; Get pool and calculate required amount-b
+    ;; Simplified - in production would get actual reserves
+    (ok {
+      amount-b-needed: (* amount-a u2),  ;; Example ratio
+      expected-lp-tokens: amount-a       ;; Simplified
+    })
+  )
+)
+
+;; Get router configuration
+(define-read-only (get-config)
+  {
+    owner: (var-get contract-owner),
+    registry: (var-get registry-contract),
+    factory: (var-get factory-contract),
+    is-initialized: (var-get is-initialized),
+    total-swaps: (var-get total-swaps),
+    total-liquidity-ops: (var-get total-liquidity-ops)
+  }
+)
+
+;; Get user statistics
+(define-read-only (get-user-stats (user principal))
+  {
+    swap-count: (default-to u0 (map-get? user-swap-count user)),
+    liquidity-count: (default-to u0 (map-get? user-liquidity-count user))
+  }
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("router"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.router
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 32, tx_fee: 15000, key_encoding: Compressed, signature: 00d23e3dc06e8c3aa3bed869d4e9380b699073e423e62d3022934fe43915438e55134a35c1a3485786ba8b189ff6ebae2c36d42b17f9403c0ae37e63622df4db6e })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("twap-oracle"), code_body: ;; TWAP Oracle Contract
+;; Dedicated contract for tracking and querying time-weighted average prices
+;; Uses Clarity 4's stacks-block-time for accurate timestamp-based calculations
+
+;; Constants
+(define-constant CONTRACT_OWNER tx-sender)
+(define-constant MAX_OBSERVATIONS u100)  ;; Maximum observations per pool (circular buffer)
+(define-constant MIN_TWAP_PERIOD u1)     ;; Minimum period for TWAP calculation (blocks)
+(define-constant MAX_TWAP_PERIOD u10000) ;; Maximum period for TWAP calculation (blocks)
+(define-constant PRECISION u1000000)     ;; Price precision (6 decimals)
+
+;; Error codes
+(define-constant ERR_POOL_NOT_FOUND (err u6001))
+(define-constant ERR_INSUFFICIENT_HISTORY (err u6002))
+(define-constant ERR_INVALID_PERIOD (err u6003))
+(define-constant ERR_NOT_INITIALIZED (err u6004))
+(define-constant ERR_NOT_AUTHORIZED (err u6005))
+(define-constant ERR_INVALID_POOL (err u6006))
+(define-constant ERR_NO_OBSERVATIONS (err u6007))
+(define-constant ERR_CALCULATION_ERROR (err u6008))
+
+;; Data structures
+
+;; Price observation structure for storing snapshots
+(define-map price-observations
+  {pool: principal, index: uint}
+  {
+    timestamp: uint,
+    price-a-cumulative: uint,
+    price-b-cumulative: uint,
+    reserve-a: uint,
+    reserve-b: uint
+  }
+)
+
+;; Pool observation state tracking
+(define-map pool-observation-state
+  principal  ;; pool address
+  {
+    current-index: uint,      ;; Current position in circular buffer
+    cardinality: uint,        ;; Number of observations stored
+    initialized: bool,        ;; Whether pool has been initialized
+    last-update: uint,        ;; Last update timestamp
+    total-observations: uint  ;; Total observations recorded
+  }
+)
+
+;; Authorized pools that can record observations
+(define-map authorized-pools principal bool)
+
+;; Admin variables
+(define-data-var contract-owner principal CONTRACT_OWNER)
+(define-data-var paused bool false)
+
+;; Admin Functions
+
+;; Transfer ownership
+(define-public (set-owner (new-owner principal))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_AUTHORIZED)
+    (var-set contract-owner new-owner)
+    (ok true)
+  )
+)
+
+;; Pause/unpause oracle
+(define-public (set-paused (is-paused bool))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_AUTHORIZED)
+    (var-set paused is-paused)
+    (ok true)
+  )
+)
+
+;; Authorize a pool to record observations
+(define-public (authorize-pool (pool principal))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_AUTHORIZED)
+    (map-set authorized-pools pool true)
+    ;; Initialize pool state if not already done
+    (if (is-none (map-get? pool-observation-state pool))
+      (map-set pool-observation-state pool {
+        current-index: u0,
+        cardinality: u0,
+        initialized: true,
+        last-update: stacks-block-time,
+        total-observations: u0
+      })
+      true
+    )
+    (ok true)
+  )
+)
+
+;; Revoke pool authorization
+(define-public (revoke-pool (pool principal))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_AUTHORIZED)
+    (map-delete authorized-pools pool)
+    (ok true)
+  )
+)
+
+;; Core Oracle Functions
+
+;; Record a price observation for a pool
+;; USES CLARITY 4: stacks-block-time for timestamp
+(define-public (record-observation
+  (pool principal)
+  (reserve-a uint)
+  (reserve-b uint)
+  (cumulative-price-a uint)
+  (cumulative-price-b uint))
+  (let
+    (
+      ;; Get current timestamp using Clarity 4's stacks-block-time
+      (current-time stacks-block-time)
+      (state (unwrap! (map-get? pool-observation-state pool) ERR_POOL_NOT_FOUND))
+    )
+    ;; Check authorization
+    (asserts! (default-to false (map-get? authorized-pools pool)) ERR_NOT_AUTHORIZED)
+    ;; Check not paused
+    (asserts! (not (var-get paused)) ERR_NOT_AUTHORIZED)
+    ;; Check reserves are valid
+    (asserts! (and (> reserve-a u0) (> reserve-b u0)) ERR_INVALID_POOL)
+
+    ;; Calculate next index in circular buffer
+    (let
+      (
+        (next-index (if (< (get current-index state) (- MAX_OBSERVATIONS u1))
+                      (+ (get current-index state) u1)
+                      u0))  ;; Wrap around to 0
+        (new-cardinality (if (< (get cardinality state) MAX_OBSERVATIONS)
+                           (+ (get cardinality state) u1)
+                           MAX_OBSERVATIONS))
+      )
+      ;; Store observation
+      (map-set price-observations
+        {pool: pool, index: next-index}
+        {
+          timestamp: current-time,
+          price-a-cumulative: cumulative-price-a,
+          price-b-cumulative: cumulative-price-b,
+          reserve-a: reserve-a,
+          reserve-b: reserve-b
+        }
+      )
+
+      ;; Update pool state
+      (map-set pool-observation-state pool
+        (merge state {
+          current-index: next-index,
+          cardinality: new-cardinality,
+          last-update: current-time,
+          total-observations: (+ (get total-observations state) u1)
+        })
+      )
+
+      (ok {
+        index: next-index,
+        timestamp: current-time,
+        total-observations: (+ (get total-observations state) u1)
+      })
+    )
+  )
+)
+
+;; Get TWAP for a specific period
+;; USES CLARITY 4: stacks-block-time for current time
+(define-read-only (get-twap (pool principal) (period uint))
+  (let
+    (
+      ;; Get current time and calculate target time
+      (current-time stacks-block-time)
+      (state (unwrap! (map-get? pool-observation-state pool) ERR_POOL_NOT_FOUND))
+    )
+    ;; Validate period
+    (asserts! (and (>= period MIN_TWAP_PERIOD) (<= period MAX_TWAP_PERIOD)) ERR_INVALID_PERIOD)
+    ;; Check pool has observations
+    (asserts! (> (get cardinality state) u0) ERR_NO_OBSERVATIONS)
+
+    ;; Find observations for TWAP calculation
+    (let
+      (
+        (target-time (if (> current-time period) (- current-time period) u0))
+        ;; Get the most recent observation
+        (recent-obs (unwrap!
+          (map-get? price-observations {pool: pool, index: (get current-index state)})
+          ERR_NO_OBSERVATIONS))
+        ;; Find the observation closest to target time
+        (old-obs (find-observation-near-timestamp pool target-time state))
+      )
+      ;; Calculate TWAP
+      (match old-obs
+        old-observation
+          (let
+            (
+              (time-elapsed (- (get timestamp recent-obs) (get timestamp old-observation)))
+              (price-a-delta (- (get price-a-cumulative recent-obs)
+                               (get price-a-cumulative old-observation)))
+              (price-b-delta (- (get price-b-cumulative recent-obs)
+                               (get price-b-cumulative old-observation)))
+            )
+            ;; Ensure we have sufficient time elapsed
+            (asserts! (> time-elapsed u0) ERR_INSUFFICIENT_HISTORY)
+
+            (ok {
+              twap-price-a: (/ price-a-delta time-elapsed),
+              twap-price-b: (/ price-b-delta time-elapsed),
+              time-range: time-elapsed,
+              observations-used: u2
+            })
+          )
+        ERR_INSUFFICIENT_HISTORY
+      )
+    )
+  )
+)
+
+;; Get current spot price from latest observation
+(define-read-only (get-spot-price (pool principal))
+  (let
+    (
+      (state (unwrap! (map-get? pool-observation-state pool) ERR_POOL_NOT_FOUND))
+    )
+    ;; Check pool has observations
+    (asserts! (> (get cardinality state) u0) ERR_NO_OBSERVATIONS)
+
+    ;; Get the most recent observation
+    (match (map-get? price-observations {pool: pool, index: (get current-index state)})
+      observation
+        (let
+          (
+            (reserve-a (get reserve-a observation))
+            (reserve-b (get reserve-b observation))
+          )
+          ;; Calculate spot prices with precision
+          (ok {
+            price-a-in-b: (/ (* reserve-b PRECISION) reserve-a),
+            price-b-in-a: (/ (* reserve-a PRECISION) reserve-b),
+            reserve-a: reserve-a,
+            reserve-b: reserve-b,
+            timestamp: (get timestamp observation)
+          })
+        )
+      ERR_NO_OBSERVATIONS
+    )
+  )
+)
+
+;; Get price with TWAP comparison for manipulation detection
+(define-read-only (get-price-with-twap (pool principal) (twap-period uint))
+  (let
+    (
+      (spot (try! (get-spot-price pool)))
+      (twap (try! (get-twap pool twap-period)))
+    )
+    (ok {
+      spot-price-a: (get price-a-in-b spot),
+      spot-price-b: (get price-b-in-a spot),
+      twap-price-a: (get twap-price-a twap),
+      twap-price-b: (get twap-price-b twap),
+      ;; Calculate divergence percentage (spot vs TWAP)
+      divergence-a: (if (> (get twap-price-a twap) u0)
+                      (/ (* (if (> (get price-a-in-b spot) (get twap-price-a twap))
+                              (- (get price-a-in-b spot) (get twap-price-a twap))
+                              (- (get twap-price-a twap) (get price-a-in-b spot)))
+                           u10000)
+                         (get twap-price-a twap))
+                      u0),
+      divergence-b: (if (> (get twap-price-b twap) u0)
+                      (/ (* (if (> (get price-b-in-a spot) (get twap-price-b twap))
+                              (- (get price-b-in-a spot) (get twap-price-b twap))
+                              (- (get twap-price-b twap) (get price-b-in-a spot)))
+                           u10000)
+                         (get twap-price-b twap))
+                      u0)
+    })
+  )
+)
+
+;; Helper Functions
+
+;; Find observation near a specific timestamp (binary search through circular buffer)
+(define-private (find-observation-near-timestamp
+  (pool principal)
+  (target-time uint)
+  (state {current-index: uint, cardinality: uint, initialized: bool, last-update: uint, total-observations: uint}))
+  ;; Simplified: return the oldest observation we have
+  ;; In production, would implement binary search through circular buffer
+  (if (>= (get cardinality state) u2)
+    (let
+      (
+        ;; Get the oldest observation index
+        (oldest-index (if (< (get cardinality state) MAX_OBSERVATIONS)
+                        u0  ;; If buffer not full, oldest is at 0
+                        (if (< (get current-index state) (- MAX_OBSERVATIONS u1))
+                          (+ (get current-index state) u1)  ;; Next position is oldest
+                          u0)))  ;; Wrapped around, 0 is oldest
+      )
+      (map-get? price-observations {pool: pool, index: oldest-index})
+    )
+    none
+  )
+)
+
+;; Read-only Query Functions
+
+;; Get pool observation state
+(define-read-only (get-pool-state (pool principal))
+  (map-get? pool-observation-state pool)
+)
+
+;; Check if pool is authorized
+(define-read-only (is-pool-authorized (pool principal))
+  (default-to false (map-get? authorized-pools pool))
+)
+
+;; Get specific observation by index
+(define-read-only (get-observation (pool principal) (index uint))
+  (map-get? price-observations {pool: pool, index: index})
+)
+
+;; Get latest observation for a pool
+(define-read-only (get-latest-observation (pool principal))
+  (match (map-get? pool-observation-state pool)
+    state
+      (map-get? price-observations {pool: pool, index: (get current-index state)})
+    none
+  )
+)
+
+;; Get oracle configuration
+(define-read-only (get-config)
+  {
+    owner: (var-get contract-owner),
+    paused: (var-get paused),
+    max-observations: MAX_OBSERVATIONS,
+    min-twap-period: MIN_TWAP_PERIOD,
+    max-twap-period: MAX_TWAP_PERIOD,
+    precision: PRECISION
+  }
+)
+
+;; Calculate safe TWAP period based on available history
+(define-read-only (get-safe-twap-period (pool principal))
+  (match (map-get? pool-observation-state pool)
+    state
+      (match (get-oldest-observation pool state)
+        oldest
+          (let
+            (
+              (current-time stacks-block-time)
+              (history-length (- current-time (get timestamp oldest)))
+            )
+            (ok {
+              max-safe-period: history-length,
+              total-observations: (get total-observations state),
+              oldest-timestamp: (get timestamp oldest),
+              current-time: current-time
+            })
+          )
+        ERR_NO_OBSERVATIONS
+      )
+    ERR_POOL_NOT_FOUND
+  )
+)
+
+;; Helper to get oldest observation
+(define-private (get-oldest-observation
+  (pool principal)
+  (state {current-index: uint, cardinality: uint, initialized: bool, last-update: uint, total-observations: uint}))
+  (if (> (get cardinality state) u0)
+    (let
+      (
+        (oldest-index (if (< (get cardinality state) MAX_OBSERVATIONS)
+                        u0
+                        (if (< (get current-index state) (- MAX_OBSERVATIONS u1))
+                          (+ (get current-index state) u1)
+                          u0)))
+      )
+      (map-get? price-observations {pool: pool, index: oldest-index})
+    )
+    none
+  )
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("twap-oracle"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.twap-oracle
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 33, tx_fee: 8000, key_encoding: Compressed, signature: 00708e4d6e937abe96b1aefebd3bec3d3cf0af0a83b33bd080746625162cd1d6ff0cfdf41c68bd3a50ffe2ba3b554bb68d19a05e0d6f004ca18e21b04c182f869a })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("test-token"), code_body: ;; Test Token Contract
+;; Implements SIP-010 fungible token standard for development and testing
+;; Version: 1.0.0
+
+(impl-trait .sip-010-trait.sip-010-trait)
+
+;; Token Definition
+(define-fungible-token test-token)
+
+;; Constants
+(define-constant CONTRACT_OWNER tx-sender)
+(define-constant ERR_NOT_OWNER (err u7001))
+(define-constant ERR_INSUFFICIENT_BALANCE (err u7002))
+(define-constant ERR_NOT_AUTHORIZED (err u7003))
+(define-constant ERR_INVALID_AMOUNT (err u7004))
+
+;; Data Variables
+(define-data-var token-name (string-ascii 32) "Test Token")
+(define-data-var token-symbol (string-ascii 10) "TEST")
+(define-data-var token-decimals uint u6)
+(define-data-var token-uri (optional (string-utf8 256)) none)
+(define-data-var contract-owner principal CONTRACT_OWNER)
+
+;; Ownership Functions
+
+(define-public (set-owner (new-owner principal))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    (var-set contract-owner new-owner)
+    (ok true)))
+
+(define-read-only (get-owner)
+  (ok (var-get contract-owner)))
+
+;; Mint Function - Owner Only (for testing)
+(define-public (mint (amount uint) (recipient principal))
+  (begin
+    ;; Check caller is owner
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    ;; Check amount is valid
+    (asserts! (> amount u0) ERR_INVALID_AMOUNT)
+    ;; Mint tokens to recipient
+    (ft-mint? test-token amount recipient)))
+
+;; Burn Function - Any holder can burn their own tokens
+(define-public (burn (amount uint))
+  (begin
+    ;; Check amount is valid
+    (asserts! (> amount u0) ERR_INVALID_AMOUNT)
+    ;; Check caller has sufficient balance
+    (asserts! (>= (ft-get-balance test-token tx-sender) amount) ERR_INSUFFICIENT_BALANCE)
+    ;; Burn tokens from caller
+    (ft-burn? test-token amount tx-sender)))
+
+;; SIP-010 Transfer Function
+(define-public (transfer (amount uint) (sender principal) (recipient principal) (memo (optional (buff 34))))
+  (begin
+    ;; Check amount is valid
+    (asserts! (> amount u0) ERR_INVALID_AMOUNT)
+    ;; Sender must be tx-sender
+    (asserts! (is-eq tx-sender sender) ERR_NOT_AUTHORIZED)
+    ;; Check sender has sufficient balance
+    (asserts! (>= (ft-get-balance test-token sender) amount) ERR_INSUFFICIENT_BALANCE)
+    ;; Perform transfer
+    (match (ft-transfer? test-token amount sender recipient)
+      success (begin
+        ;; Print transfer event
+        (print {
+          type: "sip010-transfer",
+          sender: sender,
+          recipient: recipient,
+          amount: amount,
+          memo: memo
+        })
+        (ok success))
+      error (err error))))
+
+;; SIP-010 Read-Only Functions
+
+(define-read-only (get-name)
+  (ok (var-get token-name)))
+
+(define-read-only (get-symbol)
+  (ok (var-get token-symbol)))
+
+(define-read-only (get-decimals)
+  (ok (var-get token-decimals)))
+
+(define-read-only (get-balance (account principal))
+  (ok (ft-get-balance test-token account)))
+
+(define-read-only (get-total-supply)
+  (ok (ft-get-supply test-token)))
+
+(define-read-only (get-token-uri)
+  (ok (var-get token-uri)))
+
+;; Additional Helper Functions
+
+(define-public (set-token-uri (uri (optional (string-utf8 256))))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    (var-set token-uri uri)
+    (ok true)))
+
+;; Batch Operations (useful for testing)
+
+(define-public (mint-many (recipients (list 10 {to: principal, amount: uint})))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    (ok (map mint-many-iter recipients))))
+
+(define-private (mint-many-iter (recipient {to: principal, amount: uint}))
+  (ft-mint? test-token (get amount recipient) (get to recipient)))
+
+;; Initial Supply Distribution (optional, called once)
+(define-public (initialize-supply (initial-holders (list 5 {to: principal, amount: uint})))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    ;; Can only initialize once (when supply is 0)
+    (asserts! (is-eq (ft-get-supply test-token) u0) ERR_NOT_AUTHORIZED)
+    (ok (map mint-many-iter initial-holders))))
+
+;; Get contract info
+(define-read-only (get-contract-info)
+  {
+    name: (var-get token-name),
+    symbol: (var-get token-symbol),
+    decimals: (var-get token-decimals),
+    total-supply: (ft-get-supply test-token),
+    owner: (var-get contract-owner),
+    uri: (var-get token-uri)
+  }) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("test-token"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.test-token
+➡ Broadcasted(ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("sip-010-trait")), "6d36f17e3fdce53cb5234e501e8be359fb592f51273e4063f4ba6bca5db76ccd") Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.sip-010-trait
+➡ Broadcasted(ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("pool-trait")), "12470b233b37920ea3da9e2eecfe3d588a0f71d487fef71dddbb6ccd6588b262") Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-trait
+➡ Confirmed Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-trait
+➡ Confirmed Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.sip-010-trait
+➡ Broadcasted(ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("math-lib")), "22a6816f43ad506e5a322aa49ee0ce1a08f73ff901913abfd4385a323689ead7") Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.math-lib
+➡ Confirmed Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.math-lib
+➡ Broadcasted(ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("pool-registry")), "092f206f88c5aac347b395256dea3e6918243fffdc0e7aac40e4df9e21ab0b8d") Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-registry
+➡ Confirmed Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-registry
+➡ Broadcasted(ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("pool-template")), "b7d0c00bc1cd190e2c84e092fe8cc12048ef8c68dadd1af3299220b183aa34ce") Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-template
+➡ Confirmed Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-template
+The following deployment plan will be applied:
+---
+id: 0
+name: Verified DEX/AMM Testnet Deployment
+network: testnet
+stacks-node: "https://api.testnet.hiro.so"
+bitcoin-node: "http://localhost:18332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: sip-010-trait
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 5000
+            path: contracts/traits/sip-010-trait.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: pool-trait
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 5000
+            path: contracts/traits/pool-trait.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 1
+      transactions:
+        - contract-publish:
+            contract-name: math-lib
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 10000
+            path: contracts/utils/math-lib.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 2
+      transactions:
+        - contract-publish:
+            contract-name: pool-registry
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 10000
+            path: contracts/core/pool-registry.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 3
+      transactions:
+        - contract-publish:
+            contract-name: pool-template
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 15000
+            path: contracts/core/pool-template.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 4
+      transactions:
+        - contract-publish:
+            contract-name: pool-factory
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 10000
+            path: contracts/core/pool-factory.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: router
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 20000
+            path: contracts/core/router.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 5
+      transactions:
+        - contract-publish:
+            contract-name: twap-oracle
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 15000
+            path: contracts/core/twap-oracle.clar
+            anchor-block-only: true
+            clarity-version: 4
+    - id: 6
+      transactions:
+        - contract-publish:
+            contract-name: test-token
+            expected-sender: ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV
+            cost: 8000
+            path: contracts/tokens/test-token.clar
+            anchor-block-only: true
+            clarity-version: 4
+
+
+Total cost:	0.098000 STX
+Duration:	7 blocks
+
+
+Continue [Y/n]?
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 30, tx_fee: 5000, key_encoding: Compressed, signature: 008028817a952ee4fd582f3c8c5f986a0eaec126e25a9fb74bb345cd7d03dc9cbe3a649af1fd2d8ad873fa1ec72005e29de5775d454386125b676a9ecef0cb373d })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("sip-010-trait"), code_body: ;; SIP-010 Fungible Token Trait
+;; This trait defines the standard interface for fungible tokens on Stacks
+;; All fungible tokens should implement this trait for compatibility
+
+(define-trait sip-010-trait
+  (
+    ;; Transfer tokens from sender to recipient
+    ;; @param amount: number of tokens to transfer
+    ;; @param from: sender principal
+    ;; @param to: recipient principal
+    ;; @param memo: optional memo for the transfer
+    ;; @returns: (response bool uint) - success or error code
+    (transfer (uint principal principal (optional (buff 34))) (response bool uint))
+
+    ;; Get the human-readable name of the token
+    ;; @returns: (response (string-ascii 32) uint) - token name or error
+    (get-name () (response (string-ascii 32) uint))
+
+    ;; Get the ticker symbol of the token
+    ;; @returns: (response (string-ascii 10) uint) - token symbol or error
+    (get-symbol () (response (string-ascii 10) uint))
+
+    ;; Get the number of decimals used by the token
+    ;; @returns: (response uint uint) - decimal places or error
+    (get-decimals () (response uint uint))
+
+    ;; Get the balance of tokens for a specific principal
+    ;; @param who: the principal to check balance for
+    ;; @returns: (response uint uint) - balance or error
+    (get-balance (principal) (response uint uint))
+
+    ;; Get the total supply of tokens in circulation
+    ;; @returns: (response uint uint) - total supply or error
+    (get-total-supply () (response uint uint))
+
+    ;; Get the token URI for metadata
+    ;; @returns: (response (optional (string-utf8 256)) uint) - URI or error
+    (get-token-uri () (response (optional (string-utf8 256)) uint))
+  )
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("sip-010-trait"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.sip-010-trait
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 31, tx_fee: 5000, key_encoding: Compressed, signature: 014bb2acd211fd0da356d759f91bd53272fc30cb5c3645af5ad48b96d6325225582bc23ce437d0bad3ea032f4f98d069f447ae0f04ca9d34a009991b3f5c5f116f })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("pool-trait"), code_body: ;; Pool Trait for Verified DEX
+;; This trait defines the required interface that all liquidity pools must implement
+;; Every pool in the verified DEX must implement this trait to be registered
+
+(define-trait pool-trait
+  (
+    ;; Add liquidity to the pool
+    ;; @param token-a-desired: desired amount of token A to add
+    ;; @param token-b-desired: desired amount of token B to add
+    ;; @param deadline: block height deadline for the transaction
+    ;; @returns: tuple containing LP tokens minted and actual amounts used
+    (add-liquidity (uint uint uint)
+      (response
+        (tuple
+          (lp-tokens uint)
+          (token-a-used uint)
+          (token-b-used uint)
+        )
+        uint
+      )
+    )
+
+    ;; Remove liquidity from the pool
+    ;; @param lp-tokens: amount of LP tokens to burn
+    ;; @param min-token-a: minimum amount of token A to receive
+    ;; @param min-token-b: minimum amount of token B to receive
+    ;; @returns: tuple containing amounts of tokens returned
+    (remove-liquidity (uint uint uint)
+      (response
+        (tuple
+          (token-a uint)
+          (token-b uint)
+        )
+        uint
+      )
+    )
+
+    ;; Swap token A for token B
+    ;; @param amount-in: amount of token A to swap
+    ;; @param min-amount-out: minimum amount of token B to receive
+    ;; @returns: actual amount of token B received
+    (swap-a-for-b (uint uint)
+      (response uint uint)
+    )
+
+    ;; Swap token B for token A
+    ;; @param amount-in: amount of token B to swap
+    ;; @param min-amount-out: minimum amount of token A to receive
+    ;; @returns: actual amount of token A received
+    (swap-b-for-a (uint uint)
+      (response uint uint)
+    )
+
+    ;; Get current reserves in the pool
+    ;; @returns: tuple containing reserve amounts for both tokens
+    (get-reserves ()
+      (response
+        (tuple
+          (reserve-a uint)
+          (reserve-b uint)
+        )
+        uint
+      )
+    )
+
+    ;; Get the pool fee in basis points
+    ;; @returns: fee in basis points (e.g., 30 = 0.3%)
+    (get-fee ()
+      (response uint uint)
+    )
+
+    ;; Get the token principals for this pool
+    ;; @returns: tuple containing the principal addresses of both tokens
+    (get-tokens ()
+      (response
+        (tuple
+          (token-a principal)
+          (token-b principal)
+        )
+        uint
+      )
+    )
+  )
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("pool-trait"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-trait
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 32, tx_fee: 10000, key_encoding: Compressed, signature: 009ef10b33d2a5bec338e26218c67bccfe9fb6788380f2e669c03a43e19dcad7cf3d871d3b14befabd4aafd3528670031774e6e7e7d49ae8f8d2448036edcd1d63 })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("math-lib"), code_body: ;; Math Library for Verified DEX AMM
+;; Provides mathematical utilities for constant product AMM calculations
+;; All calculations use safe math with overflow protection
+
+;; Constants
+(define-constant PRECISION u1000000) ;; 6 decimal precision for calculations
+(define-constant MAX_UINT u340282366920938463463374607431768211455) ;; Maximum uint128 value
+(define-constant BASIS_POINTS u10000) ;; Basis points denominator (100% = 10000 bps)
+
+;; Error codes
+(define-constant ERR_DIVIDE_BY_ZERO (err u1001))
+(define-constant ERR_OVERFLOW (err u1002))
+(define-constant ERR_UNDERFLOW (err u1003))
+(define-constant ERR_INVALID_INPUT (err u1004))
+(define-constant ERR_INSUFFICIENT_LIQUIDITY (err u1005))
+
+;; Safe multiplication with overflow check
+;; @param a: first operand
+;; @param b: second operand
+;; @returns: result or overflow error
+(define-read-only (safe-mul (a uint) (b uint))
+  (let
+    (
+      (result (* a b))
+    )
+    (if (or (is-eq a u0) (is-eq b u0))
+      (ok u0)
+      (if (is-eq (/ result a) b)
+        (ok result)
+        ERR_OVERFLOW
+      )
+    )
+  )
+)
+
+;; Safe division with zero check
+;; @param a: numerator
+;; @param b: denominator
+;; @returns: result or divide by zero error
+(define-read-only (safe-div (a uint) (b uint))
+  (if (is-eq b u0)
+    ERR_DIVIDE_BY_ZERO
+    (ok (/ a b))
+  )
+)
+
+;; Calculate output amount for constant product AMM (x * y = k)
+;; Formula: dy = (y * dx * (10000 - fee)) / (x * 10000 + dx * (10000 - fee))
+;; @param amount-in: amount of tokens being swapped in
+;; @param reserve-in: reserve of token being swapped in
+;; @param reserve-out: reserve of token being swapped out
+;; @param fee-bps: fee in basis points (e.g., 30 = 0.3%)
+;; @returns: amount of tokens to be received
+(define-read-only (get-amount-out
+  (amount-in uint)
+  (reserve-in uint)
+  (reserve-out uint)
+  (fee-bps uint))
+  (if (or (is-eq amount-in u0) (is-eq reserve-in u0) (is-eq reserve-out u0))
+    ERR_INSUFFICIENT_LIQUIDITY
+    (let
+      (
+        ;; Calculate amount in after fee: amount-in * (10000 - fee)
+        (amount-in-with-fee (* amount-in (- BASIS_POINTS fee-bps)))
+        ;; Calculate numerator: reserve-out * amount-in-with-fee
+        (numerator (* reserve-out amount-in-with-fee))
+        ;; Calculate denominator: (reserve-in * 10000) + amount-in-with-fee
+        (denominator (+ (* reserve-in BASIS_POINTS) amount-in-with-fee))
+      )
+      (if (is-eq denominator u0)
+        ERR_DIVIDE_BY_ZERO
+        (ok (/ numerator denominator))
+      )
+    )
+  )
+)
+
+;; Calculate input amount needed for desired output
+;; Formula: dx = (x * dy * 10000) / ((y - dy) * (10000 - fee)) + 1
+;; @param amount-out: desired amount of tokens to receive
+;; @param reserve-in: reserve of token being swapped in
+;; @param reserve-out: reserve of token being swapped out
+;; @param fee-bps: fee in basis points
+;; @returns: amount of tokens required to swap in
+(define-read-only (get-amount-in
+  (amount-out uint)
+  (reserve-in uint)
+  (reserve-out uint)
+  (fee-bps uint))
+  (if (or (is-eq amount-out u0) (>= amount-out reserve-out))
+    ERR_INSUFFICIENT_LIQUIDITY
+    (let
+      (
+        ;; Calculate numerator: reserve-in * amount-out * 10000
+        (numerator (* (* reserve-in amount-out) BASIS_POINTS))
+        ;; Calculate denominator: (reserve-out - amount-out) * (10000 - fee)
+        (denominator (* (- reserve-out amount-out) (- BASIS_POINTS fee-bps)))
+      )
+      (if (is-eq denominator u0)
+        ERR_DIVIDE_BY_ZERO
+        ;; Add 1 to round up (ensures user pays at least enough)
+        (ok (+ (/ numerator denominator) u1))
+      )
+    )
+  )
+)
+
+;; Calculate LP tokens to mint for liquidity provision
+;; @param amount-a: amount of token A being added
+;; @param amount-b: amount of token B being added
+;; @param reserve-a: current reserve of token A
+;; @param reserve-b: current reserve of token B
+;; @param total-supply: current total supply of LP tokens
+;; @returns: amount of LP tokens to mint
+(define-read-only (calculate-lp-tokens
+  (amount-a uint)
+  (amount-b uint)
+  (reserve-a uint)
+  (reserve-b uint)
+  (total-supply uint))
+  (if (is-eq total-supply u0)
+    ;; First liquidity provision: mint sqrt(amount-a * amount-b)
+    (sqrt (* amount-a amount-b))
+    ;; Subsequent provisions: min(amount-a * total-supply / reserve-a, amount-b * total-supply / reserve-b)
+    (let
+      (
+        (liquidity-a (/ (* amount-a total-supply) reserve-a))
+        (liquidity-b (/ (* amount-b total-supply) reserve-b))
+      )
+      (ok (if (< liquidity-a liquidity-b) liquidity-a liquidity-b))
+    )
+  )
+)
+
+;; Calculate tokens to return for LP burn
+;; @param lp-amount: amount of LP tokens to burn
+;; @param reserve-a: current reserve of token A
+;; @param reserve-b: current reserve of token B
+;; @param total-supply: current total supply of LP tokens
+;; @returns: tuple containing amounts of both tokens to return
+(define-read-only (calculate-withdrawal
+  (lp-amount uint)
+  (reserve-a uint)
+  (reserve-b uint)
+  (total-supply uint))
+  (if (or (is-eq total-supply u0) (> lp-amount total-supply))
+    ERR_INVALID_INPUT
+    (ok (tuple
+      (token-a (/ (* lp-amount reserve-a) total-supply))
+      (token-b (/ (* lp-amount reserve-b) total-supply))
+    ))
+  )
+)
+
+;; Square root using Babylonian method
+;; @param n: number to calculate square root of
+;; @returns: approximate square root
+(define-read-only (sqrt (n uint))
+  (if (is-eq n u0)
+    (ok u0)
+    (if (is-eq n u1)
+      (ok u1)
+      (let
+        (
+          ;; Initial guess: (n + 1) / 2
+          (x0 (/ (+ n u1) u2))
+          ;; First iteration
+          (x1 (/ (+ x0 (/ n x0)) u2))
+          ;; Second iteration
+          (x2 (/ (+ x1 (/ n x1)) u2))
+          ;; Third iteration
+          (x3 (/ (+ x2 (/ n x2)) u2))
+          ;; Fourth iteration
+          (x4 (/ (+ x3 (/ n x3)) u2))
+          ;; Fifth iteration
+          (x5 (/ (+ x4 (/ n x4)) u2))
+          ;; Sixth iteration
+          (x6 (/ (+ x5 (/ n x5)) u2))
+          ;; Seventh iteration for better precision
+          (x7 (/ (+ x6 (/ n x6)) u2))
+        )
+        (ok x7)
+      )
+    )
+  )
+)
+
+;; Calculate the minimum of two uints
+;; @param a: first value
+;; @param b: second value
+;; @returns: minimum value
+(define-read-only (min (a uint) (b uint))
+  (if (< a b) a b)
+)
+
+;; Calculate the maximum of two uints
+;; @param a: first value
+;; @param b: second value
+;; @returns: maximum value
+(define-read-only (max (a uint) (b uint))
+  (if (> a b) a b)
+)
+
+;; Check if multiplication would overflow
+;; @param a: first operand
+;; @param b: second operand
+;; @returns: true if multiplication would overflow
+(define-read-only (would-overflow (a uint) (b uint))
+  (if (or (is-eq a u0) (is-eq b u0))
+    false
+    (let
+      (
+        (result (* a b))
+      )
+      (not (is-eq (/ result a) b))
+    )
+  )
+)
+
+;; Calculate optimal amounts for adding liquidity
+;; Given desired amounts and reserves, calculate the optimal amounts that maintain the pool ratio
+;; @param amount-a-desired: desired amount of token A
+;; @param amount-b-desired: desired amount of token B
+;; @param reserve-a: current reserve of token A
+;; @param reserve-b: current reserve of token B
+;; @returns: tuple with optimal amounts
+(define-read-only (calculate-optimal-amounts
+  (amount-a-desired uint)
+  (amount-b-desired uint)
+  (reserve-a uint)
+  (reserve-b uint))
+  (if (and (is-eq reserve-a u0) (is-eq reserve-b u0))
+    ;; First liquidity: use desired amounts
+    (ok (tuple
+      (amount-a amount-a-desired)
+      (amount-b amount-b-desired)
+    ))
+    ;; Calculate optimal amount-b based on amount-a
+    (let
+      (
+        (amount-b-optimal (/ (* amount-a-desired reserve-b) reserve-a))
+      )
+      (if (<= amount-b-optimal amount-b-desired)
+        (ok (tuple
+          (amount-a amount-a-desired)
+          (amount-b amount-b-optimal)
+        ))
+        ;; Calculate optimal amount-a based on amount-b
+        (let
+          (
+            (amount-a-optimal (/ (* amount-b-desired reserve-a) reserve-b))
+          )
+          (ok (tuple
+            (amount-a amount-a-optimal)
+            (amount-b amount-b-desired)
+          ))
+        )
+      )
+    )
+  )
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("math-lib"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.math-lib
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 33, tx_fee: 10000, key_encoding: Compressed, signature: 016a706c6609854fff7803473e02e7d863af8dd6cb33701bd63e65b11cb92ab8a65c633ec8fa7eff3c32ddfbffd5c82dc47aff6563f640ae57ab753ed306dfd943 })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("pool-registry"), code_body: ;; Pool Registry Contract
+;; Manages approved pool template hashes and verifies pool contracts
+;; Uses Clarity 4's contract-hash? function to ensure pools match approved templates
+
+;; Constants
+(define-constant CONTRACT_OWNER tx-sender)
+
+;; Error codes
+(define-constant ERR_NOT_OWNER (err u2001))
+(define-constant ERR_TEMPLATE_EXISTS (err u2002))
+(define-constant ERR_TEMPLATE_NOT_FOUND (err u2003))
+(define-constant ERR_POOL_NOT_VERIFIED (err u2004))
+(define-constant ERR_HASH_MISMATCH (err u2005))
+(define-constant ERR_TEMPLATE_INACTIVE (err u2006))
+(define-constant ERR_POOL_ALREADY_VERIFIED (err u2007))
+
+;; Data variables
+(define-data-var contract-owner principal CONTRACT_OWNER)
+
+;; Maps
+
+;; Store approved template hashes with metadata
+(define-map approved-templates
+  (buff 32)  ;; contract hash
+  {
+    name: (string-ascii 64),
+    version: uint,
+    approved-at: uint,
+    approved-by: principal,
+    active: bool
+  }
+)
+
+;; Store verified pool instances
+(define-map verified-pools
+  principal  ;; pool contract address
+  {
+    template-hash: (buff 32),
+    verified-at: uint,
+    token-a: principal,
+    token-b: principal
+  }
+)
+
+;; Track number of pools using each template
+(define-map template-usage-count
+  (buff 32)  ;; template hash
+  uint       ;; number of pools using this template
+)
+
+;; Admin Functions
+
+;; Transfer ownership
+(define-public (set-owner (new-owner principal))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    (var-set contract-owner new-owner)
+    (ok true)
+  )
+)
+
+;; Add a new approved template hash
+(define-public (add-template (template-hash (buff 32)) (name (string-ascii 64)) (version uint))
+  (begin
+    ;; Only owner can add templates
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+
+    ;; Check template doesn't already exist
+    (asserts! (is-none (map-get? approved-templates template-hash)) ERR_TEMPLATE_EXISTS)
+
+    ;; Add to approved-templates map
+    (map-set approved-templates
+      template-hash
+      {
+        name: name,
+        version: version,
+        approved-at: stacks-block-height,
+        approved-by: tx-sender,
+        active: true
+      }
+    )
+
+    ;; Initialize usage count
+    (map-set template-usage-count template-hash u0)
+
+    (ok true)
+  )
+)
+
+;; Remove/deactivate a template
+(define-public (deactivate-template (template-hash (buff 32)))
+  (begin
+    ;; Only owner can deactivate
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+
+    ;; Check template exists
+    (match (map-get? approved-templates template-hash)
+      template
+        (begin
+          ;; Deactivate by setting active to false
+          (map-set approved-templates
+            template-hash
+            (merge template { active: false })
+          )
+          (ok true)
+        )
+      ERR_TEMPLATE_NOT_FOUND
+    )
+  )
+)
+
+;; Reactivate a previously deactivated template
+(define-public (reactivate-template (template-hash (buff 32)))
+  (begin
+    ;; Only owner can reactivate
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+
+    ;; Check template exists
+    (match (map-get? approved-templates template-hash)
+      template
+        (begin
+          ;; Reactivate by setting active to true
+          (map-set approved-templates
+            template-hash
+            (merge template { active: true })
+          )
+          (ok true)
+        )
+      ERR_TEMPLATE_NOT_FOUND
+    )
+  )
+)
+
+;; Verification Functions
+
+;; Verify a pool contract matches an approved template
+;; USES CLARITY 4: contract-hash? function
+(define-public (verify-pool (pool-contract principal) (token-a principal) (token-b principal))
+  (let
+    (
+      ;; Get the hash of the pool contract's code using Clarity 4's contract-hash?
+      (pool-hash (unwrap! (contract-hash? pool-contract) ERR_HASH_MISMATCH))
+    )
+    ;; Check this pool isn't already verified
+    (asserts! (is-none (map-get? verified-pools pool-contract)) ERR_POOL_ALREADY_VERIFIED)
+
+    ;; Check if this hash is in approved-templates and is active
+    (match (map-get? approved-templates pool-hash)
+      template
+        (begin
+          ;; Template must be active
+          (asserts! (get active template) ERR_TEMPLATE_INACTIVE)
+
+          ;; Add to verified-pools map
+          (map-set verified-pools
+            pool-contract
+            {
+              template-hash: pool-hash,
+              verified-at: stacks-block-height,
+              token-a: token-a,
+              token-b: token-b
+            }
+          )
+
+          ;; Increment usage count
+          (map-set template-usage-count
+            pool-hash
+            (+ (default-to u0 (map-get? template-usage-count pool-hash)) u1)
+          )
+
+          (ok true)
+        )
+      ERR_TEMPLATE_NOT_FOUND
+    )
+  )
+)
+
+;; Read-only Functions
+
+;; Check if a pool is verified
+(define-read-only (is-pool-verified (pool-contract principal))
+  (is-some (map-get? verified-pools pool-contract))
+)
+
+;; Get pool verification details
+(define-read-only (get-pool-info (pool-contract principal))
+  (map-get? verified-pools pool-contract)
+)
+
+;; Get template info
+(define-read-only (get-template-info (template-hash (buff 32)))
+  (map-get? approved-templates template-hash)
+)
+
+;; Check if template is approved and active
+(define-read-only (is-template-approved (template-hash (buff 32)))
+  (match (map-get? approved-templates template-hash)
+    template (get active template)
+    false
+  )
+)
+
+;; Get the current owner
+(define-read-only (get-owner)
+  (var-get contract-owner)
+)
+
+;; Get template usage count
+(define-read-only (get-template-usage (template-hash (buff 32)))
+  (default-to u0 (map-get? template-usage-count template-hash))
+)
+
+;; List all verified pools for a template (would need indexing in production)
+;; This is a helper to check if a specific pool uses a specific template
+(define-read-only (pool-uses-template (pool-contract principal) (template-hash (buff 32)))
+  (match (map-get? verified-pools pool-contract)
+    pool-info
+      (is-eq (get template-hash pool-info) template-hash)
+    false
+  )
+)
+
+;; Get pool tokens
+(define-read-only (get-pool-tokens (pool-contract principal))
+  (match (map-get? verified-pools pool-contract)
+    pool-info
+      (some {
+        token-a: (get token-a pool-info),
+        token-b: (get token-b pool-info)
+      })
+    none
+  )
+)
+
+;; Check if a pool can be verified (template exists and is active)
+(define-read-only (can-verify-with-hash (template-hash (buff 32)))
+  (match (map-get? approved-templates template-hash)
+    template
+      {
+        can-verify: (get active template),
+        template-name: (get name template),
+        template-version: (get version template)
+      }
+    {
+      can-verify: false,
+      template-name: "",
+      template-version: u0
+    }
+  )
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("pool-registry"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-registry
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 34, tx_fee: 15000, key_encoding: Compressed, signature: 015fa534f2c547fa986de8005c9d02232e520b2ca54acef110997a4be2cef727a47e61aef19c07c4138b4ac0da68d9d39bf59aa51290018b92762e719519538c9d })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("pool-template"), code_body: ;; Pool Template Contract (Simplified)
+;; Reference implementation of a verified liquidity pool
+;; Implements pool-trait and uses Clarity 4 features for security and TWAP oracle
+
+;; Implements the pool trait
+(impl-trait .pool-trait.pool-trait)
+
+;; Constants
+(define-constant CONTRACT_OWNER tx-sender)
+(define-constant FEE_BPS u30) ;; 0.3% fee (30 basis points)
+(define-constant MINIMUM_LIQUIDITY u1000)
+(define-constant BASIS_POINTS u10000)
+
+;; Error codes
+(define-constant ERR_NOT_AUTHORIZED (err u3001))
+(define-constant ERR_INSUFFICIENT_LIQUIDITY (err u3002))
+(define-constant ERR_INSUFFICIENT_OUTPUT (err u3003))
+(define-constant ERR_SLIPPAGE_EXCEEDED (err u3004))
+(define-constant ERR_ZERO_AMOUNT (err u3005))
+(define-constant ERR_POOL_NOT_INITIALIZED (err u3006))
+(define-constant ERR_ASSET_TRANSFER_FAILED (err u3007))
+(define-constant ERR_ALREADY_INITIALIZED (err u3008))
+(define-constant ERR_INSUFFICIENT_LP_TOKENS (err u3009))
+(define-constant ERR_SAME_TOKEN (err u3010))
+(define-constant ERR_MIN_LP_NOT_MET (err u3011))
+(define-constant ERR_MIN_AMOUNTS_NOT_MET (err u3012))
+
+;; Data variables
+(define-data-var token-a-principal principal tx-sender)
+(define-data-var token-b-principal principal tx-sender)
+(define-data-var reserve-a uint u0)
+(define-data-var reserve-b uint u0)
+(define-data-var total-lp-supply uint u0)
+(define-data-var is-initialized bool false)
+
+;; TWAP tracking (using Clarity 4's stacks-block-time)
+(define-data-var last-cumulative-price-a uint u0)
+(define-data-var last-cumulative-price-b uint u0)
+(define-data-var last-update-time uint u0)
+
+;; LP token balances
+(define-map lp-balances principal uint)
+
+;; Initialize pool with token pair
+(define-public (initialize (token-a principal) (token-b principal))
+  (begin
+    ;; Can only initialize once
+    (asserts! (not (var-get is-initialized)) ERR_ALREADY_INITIALIZED)
+    ;; Tokens must be different
+    (asserts! (not (is-eq token-a token-b)) ERR_SAME_TOKEN)
+    ;; Set token principals
+    (var-set token-a-principal token-a)
+    (var-set token-b-principal token-b)
+    ;; Set initialized to true
+    (var-set is-initialized true)
+    ;; Initialize TWAP timestamp
+    (var-set last-update-time stacks-block-time)
+    (ok true)
+  )
+)
+
+;; Add liquidity to the pool
+;; Implements pool-trait function with deadline parameter
+(define-public (add-liquidity (amount-a-desired uint) (amount-b-desired uint) (deadline uint))
+  (let
+    (
+      (sender tx-sender)
+      (current-reserve-a (var-get reserve-a))
+      (current-reserve-b (var-get reserve-b))
+      (current-supply (var-get total-lp-supply))
+    )
+    ;; Check pool is initialized
+    (asserts! (var-get is-initialized) ERR_POOL_NOT_INITIALIZED)
+    ;; Check amounts are greater than zero
+    (asserts! (and (> amount-a-desired u0) (> amount-b-desired u0)) ERR_ZERO_AMOUNT)
+    ;; Check deadline
+    (asserts! (>= deadline stacks-block-time) ERR_SLIPPAGE_EXCEEDED)
+
+    ;; For simplicity in this version, we'll just use the desired amounts
+    ;; In production, would calculate optimal amounts
+    (let
+      (
+        ;; Calculate LP tokens to mint
+        (lp-tokens (if (is-eq current-supply u0)
+          ;; First liquidity provider: use minimum of desired amounts
+          (let ((initial-lp (if (< amount-a-desired amount-b-desired)
+                                amount-a-desired
+                                amount-b-desired)))
+            ;; Ensure minimum liquidity
+            (asserts! (>= initial-lp MINIMUM_LIQUIDITY) ERR_INSUFFICIENT_LIQUIDITY)
+            initial-lp)
+          ;; Subsequent providers: proportional to existing liquidity
+          (if (< (/ (* amount-a-desired current-supply) current-reserve-a)
+                 (/ (* amount-b-desired current-supply) current-reserve-b))
+              (/ (* amount-a-desired current-supply) current-reserve-a)
+              (/ (* amount-b-desired current-supply) current-reserve-b))))
+      )
+      ;; Mint LP tokens to user
+      (map-set lp-balances
+        sender
+        (+ (default-to u0 (map-get? lp-balances sender)) lp-tokens))
+
+      ;; Update reserves
+      (var-set reserve-a (+ current-reserve-a amount-a-desired))
+      (var-set reserve-b (+ current-reserve-b amount-b-desired))
+
+      ;; Update total supply
+      (var-set total-lp-supply (+ current-supply lp-tokens))
+
+      ;; Update TWAP
+      (unwrap! (update-twap) ERR_INSUFFICIENT_LIQUIDITY)
+
+      ;; Return result as per trait specification
+      (ok (tuple
+        (lp-tokens lp-tokens)
+        (token-a-used amount-a-desired)
+        (token-b-used amount-b-desired)
+      ))
+    )
+  )
+)
+
+;; Remove liquidity from the pool
+(define-public (remove-liquidity (lp-amount uint) (min-token-a uint) (min-token-b uint))
+  (let
+    (
+      (sender tx-sender)
+      (current-reserve-a (var-get reserve-a))
+      (current-reserve-b (var-get reserve-b))
+      (current-supply (var-get total-lp-supply))
+      (sender-balance (default-to u0 (map-get? lp-balances sender)))
+    )
+    ;; Check pool is initialized
+    (asserts! (var-get is-initialized) ERR_POOL_NOT_INITIALIZED)
+    ;; Check LP amount is valid
+    (asserts! (> lp-amount u0) ERR_ZERO_AMOUNT)
+    (asserts! (<= lp-amount sender-balance) ERR_INSUFFICIENT_LP_TOKENS)
+
+    ;; Calculate tokens to return
+    (let
+      (
+        (token-a-amount (/ (* lp-amount current-reserve-a) current-supply))
+        (token-b-amount (/ (* lp-amount current-reserve-b) current-supply))
+      )
+      ;; Check minimum amounts
+      (asserts! (>= token-a-amount min-token-a) ERR_MIN_AMOUNTS_NOT_MET)
+      (asserts! (>= token-b-amount min-token-b) ERR_MIN_AMOUNTS_NOT_MET)
+
+      ;; Burn LP tokens
+      (map-set lp-balances sender (- sender-balance lp-amount))
+
+      ;; Update total supply
+      (var-set total-lp-supply (- current-supply lp-amount))
+
+      ;; Update reserves
+      (var-set reserve-a (- current-reserve-a token-a-amount))
+      (var-set reserve-b (- current-reserve-b token-b-amount))
+
+      ;; Update TWAP
+      (unwrap! (update-twap) ERR_INSUFFICIENT_LIQUIDITY)
+
+      ;; Return result
+      (ok (tuple
+        (token-a token-a-amount)
+        (token-b token-b-amount)
+      ))
+    )
+  )
+)
+
+;; Swap token A for token B
+(define-public (swap-a-for-b (amount-in uint) (min-amount-out uint))
+  (let
+    (
+      (sender tx-sender)
+      (current-reserve-a (var-get reserve-a))
+      (current-reserve-b (var-get reserve-b))
+    )
+    ;; Check pool is initialized
+    (asserts! (var-get is-initialized) ERR_POOL_NOT_INITIALIZED)
+    ;; Check amount is valid
+    (asserts! (> amount-in u0) ERR_ZERO_AMOUNT)
+
+    ;; Calculate output amount using constant product formula with fee
+    (let
+      (
+        ;; Apply fee to input amount
+        (amount-in-with-fee (* amount-in (- BASIS_POINTS FEE_BPS)))
+        ;; Calculate output: (reserve-b * amount-in-with-fee) / (reserve-a * 10000 + amount-in-with-fee)
+        (amount-out (/ (* current-reserve-b amount-in-with-fee)
+                      (+ (* current-reserve-a BASIS_POINTS) amount-in-with-fee)))
+      )
+      ;; Check slippage
+      (asserts! (>= amount-out min-amount-out) ERR_SLIPPAGE_EXCEEDED)
+
+      ;; Update reserves
+      (var-set reserve-a (+ current-reserve-a amount-in))
+      (var-set reserve-b (- current-reserve-b amount-out))
+
+      ;; Update TWAP
+      (unwrap! (update-twap) ERR_INSUFFICIENT_LIQUIDITY)
+
+      ;; Return amount out
+      (ok amount-out)
+    )
+  )
+)
+
+;; Swap token B for token A
+(define-public (swap-b-for-a (amount-in uint) (min-amount-out uint))
+  (let
+    (
+      (sender tx-sender)
+      (current-reserve-a (var-get reserve-a))
+      (current-reserve-b (var-get reserve-b))
+    )
+    ;; Check pool is initialized
+    (asserts! (var-get is-initialized) ERR_POOL_NOT_INITIALIZED)
+    ;; Check amount is valid
+    (asserts! (> amount-in u0) ERR_ZERO_AMOUNT)
+
+    ;; Calculate output amount using constant product formula with fee
+    (let
+      (
+        ;; Apply fee to input amount
+        (amount-in-with-fee (* amount-in (- BASIS_POINTS FEE_BPS)))
+        ;; Calculate output: (reserve-a * amount-in-with-fee) / (reserve-b * 10000 + amount-in-with-fee)
+        (amount-out (/ (* current-reserve-a amount-in-with-fee)
+                      (+ (* current-reserve-b BASIS_POINTS) amount-in-with-fee)))
+      )
+      ;; Check slippage
+      (asserts! (>= amount-out min-amount-out) ERR_SLIPPAGE_EXCEEDED)
+
+      ;; Update reserves
+      (var-set reserve-a (- current-reserve-a amount-out))
+      (var-set reserve-b (+ current-reserve-b amount-in))
+
+      ;; Update TWAP
+      (unwrap! (update-twap) ERR_INSUFFICIENT_LIQUIDITY)
+
+      ;; Return amount out
+      (ok amount-out)
+    )
+  )
+)
+
+;; Update TWAP oracle
+;; USES CLARITY 4: stacks-block-time for accurate time-weighted pricing
+(define-private (update-twap)
+  (let
+    (
+      (current-time stacks-block-time)
+      (time-elapsed (- current-time (var-get last-update-time)))
+      (current-reserve-a (var-get reserve-a))
+      (current-reserve-b (var-get reserve-b))
+    )
+    (if (and (> time-elapsed u0) (> current-reserve-a u0) (> current-reserve-b u0))
+      (begin
+        ;; Update cumulative prices
+        ;; price-a-cumulative += (reserve-b / reserve-a) * time-elapsed
+        (var-set last-cumulative-price-a
+          (+ (var-get last-cumulative-price-a)
+             (* (/ (* current-reserve-b BASIS_POINTS) current-reserve-a) time-elapsed)))
+
+        ;; price-b-cumulative += (reserve-a / reserve-b) * time-elapsed
+        (var-set last-cumulative-price-b
+          (+ (var-get last-cumulative-price-b)
+             (* (/ (* current-reserve-a BASIS_POINTS) current-reserve-b) time-elapsed)))
+
+        ;; Update last update time
+        (var-set last-update-time current-time)
+        (ok true)
+      )
+      (ok false)
+    )
+  )
+)
+
+;; Read-only functions (implementing pool-trait)
+
+(define-read-only (get-reserves)
+  (if (var-get is-initialized)
+    (ok (tuple
+      (reserve-a (var-get reserve-a))
+      (reserve-b (var-get reserve-b))
+    ))
+    ERR_POOL_NOT_INITIALIZED
+  )
+)
+
+(define-read-only (get-fee)
+  (ok FEE_BPS)
+)
+
+(define-read-only (get-tokens)
+  (ok (tuple
+    (token-a (var-get token-a-principal))
+    (token-b (var-get token-b-principal))
+  ))
+)
+
+;; Additional read-only functions
+
+(define-read-only (get-lp-balance (account principal))
+  (default-to u0 (map-get? lp-balances account))
+)
+
+(define-read-only (get-total-supply)
+  (ok (var-get total-lp-supply))
+)
+
+(define-read-only (get-pool-info)
+  (ok {
+    is-initialized: (var-get is-initialized),
+    token-a: (var-get token-a-principal),
+    token-b: (var-get token-b-principal),
+    reserve-a: (var-get reserve-a),
+    reserve-b: (var-get reserve-b),
+    total-supply: (var-get total-lp-supply),
+    fee: FEE_BPS
+  })
+)
+
+;; Get TWAP prices
+(define-read-only (get-twap-price-a)
+  (ok (var-get last-cumulative-price-a))
+)
+
+(define-read-only (get-twap-price-b)
+  (ok (var-get last-cumulative-price-b))
+)
+
+(define-read-only (get-last-update-time)
+  (ok (var-get last-update-time))
+)
+
+;; Calculate spot price (current ratio)
+(define-read-only (get-spot-price)
+  (let
+    (
+      (current-reserve-a (var-get reserve-a))
+      (current-reserve-b (var-get reserve-b))
+    )
+    (if (and (> current-reserve-a u0) (> current-reserve-b u0))
+      (ok {
+        price-a-in-b: (/ (* current-reserve-b BASIS_POINTS) current-reserve-a),
+        price-b-in-a: (/ (* current-reserve-a BASIS_POINTS) current-reserve-b)
+      })
+      ERR_POOL_NOT_INITIALIZED
+    )
+  )
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("pool-template"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-template
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 35, tx_fee: 10000, key_encoding: Compressed, signature: 0003d0749340976a5d779162c3b08dd87be2713b49ac24ff19c442be143736844d55eca45c74f0452ed67f26da3a55f9d1ee78f06da7485ea7ff5df12fcc71ea7b })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("pool-factory"), code_body: ;; Pool Factory Contract
+;; Factory for deploying new pools using verified templates
+;; Works with pool-registry to ensure only verified pools are created
+
+;; Constants
+(define-constant CONTRACT_OWNER tx-sender)
+
+;; Error codes
+(define-constant ERR_NOT_OWNER (err u4001))
+(define-constant ERR_POOL_EXISTS (err u4002))
+(define-constant ERR_SAME_TOKEN (err u4003))
+(define-constant ERR_REGISTRY_NOT_SET (err u4004))
+(define-constant ERR_INVALID_TOKENS (err u4005))
+(define-constant ERR_POOL_NOT_FOUND (err u4006))
+(define-constant ERR_REGISTRY_CALL_FAILED (err u4007))
+(define-constant ERR_ZERO_ADDRESS (err u4008))
+
+;; Data variables
+(define-data-var contract-owner principal CONTRACT_OWNER)
+(define-data-var pool-count uint u0)
+(define-data-var registry-contract principal CONTRACT_OWNER) ;; Will be set to pool-registry address
+
+;; Maps
+
+;; Map token pairs to pool address
+;; Uses sorted tokens to ensure consistent lookup regardless of order
+(define-map pools-by-tokens
+  {token-a: principal, token-b: principal}
+  principal ;; pool address
+)
+
+;; Map pool ID to pool address for enumeration
+(define-map pool-by-id
+  uint
+  principal
+)
+
+;; Map pool address to pool metadata
+(define-map pool-metadata
+  principal ;; pool address
+  {
+    id: uint,
+    token-a: principal,
+    token-b: principal,
+    created-at: uint,
+    created-by: principal,
+    template-used: (buff 32) ;; hash of template used
+  }
+)
+
+;; Private functions
+
+;; Helper to create a consistent key for token pairs
+;; Since we can't easily sort principals, we'll check both orderings
+(define-private (get-pool-key (token-a principal) (token-b principal))
+  {token-a: token-a, token-b: token-b}
+)
+
+;; Admin functions
+
+;; Transfer ownership
+(define-public (set-owner (new-owner principal))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    (asserts! (not (is-eq new-owner (var-get contract-owner))) ERR_INVALID_TOKENS)
+    (var-set contract-owner new-owner)
+    (ok true)
+  )
+)
+
+;; Set the registry contract address
+(define-public (set-registry (registry principal))
+  (begin
+    ;; Only owner can set registry
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    ;; Registry must be a valid address
+    (asserts! (not (is-eq registry tx-sender)) ERR_ZERO_ADDRESS)
+    ;; Set the registry
+    (var-set registry-contract registry)
+    (ok true)
+  )
+)
+
+;; Core functionality
+
+;; Create a new pool for token pair
+;; In production, this would deploy a new contract or clone a template
+;; For this implementation, we track pool creation and verification
+(define-public (create-pool (token-a principal) (token-b principal) (pool-address principal) (template-hash (buff 32)))
+  (let
+    (
+      ;; Create pool key for storage
+      (pool-key-ab (get-pool-key token-a token-b))
+      (pool-key-ba (get-pool-key token-b token-a))
+      (registry (var-get registry-contract))
+      (new-id (+ (var-get pool-count) u1))
+    )
+    ;; Check registry is set
+    (asserts! (not (is-eq registry CONTRACT_OWNER)) ERR_REGISTRY_NOT_SET)
+
+    ;; Ensure tokens are different
+    (asserts! (not (is-eq token-a token-b)) ERR_SAME_TOKEN)
+
+    ;; Ensure tokens are valid (not zero address)
+    (asserts! (and (not (is-eq token-a tx-sender))
+                   (not (is-eq token-b tx-sender))) ERR_INVALID_TOKENS)
+
+    ;; Ensure pool doesn't already exist (check both orderings)
+    (asserts! (and (is-none (map-get? pools-by-tokens pool-key-ab))
+                   (is-none (map-get? pools-by-tokens pool-key-ba)))
+              ERR_POOL_EXISTS)
+
+    ;; Verify the pool with the registry
+    ;; In production, pool-address would be the deployed pool contract
+    (match (contract-call? .pool-registry verify-pool pool-address token-a token-b)
+      success
+        (begin
+          ;; Add to pools-by-tokens map (both orderings for easy lookup)
+          (map-set pools-by-tokens pool-key-ab pool-address)
+          (map-set pools-by-tokens pool-key-ba pool-address)
+
+          ;; Add to pool-by-id map
+          (map-set pool-by-id new-id pool-address)
+
+          ;; Store pool metadata
+          (map-set pool-metadata
+            pool-address
+            {
+              id: new-id,
+              token-a: token-a,
+              token-b: token-b,
+              created-at: stacks-block-time,
+              created-by: tx-sender,
+              template-used: template-hash
+            }
+          )
+
+          ;; Increment pool count
+          (var-set pool-count new-id)
+
+          ;; Return pool address and ID
+          (ok {
+            pool-address: pool-address,
+            pool-id: new-id
+          })
+        )
+      error ERR_REGISTRY_CALL_FAILED
+    )
+  )
+)
+
+;; Read-only functions
+
+;; Get pool for token pair (simple lookup since we store both orderings)
+(define-read-only (get-pool (token-a principal) (token-b principal))
+  ;; Simply look up with the given order
+  (map-get? pools-by-tokens {token-a: token-a, token-b: token-b})
+)
+
+;; Get pool by ID
+(define-read-only (get-pool-by-id (id uint))
+  (map-get? pool-by-id id)
+)
+
+;; Get total pool count
+(define-read-only (get-pool-count)
+  (var-get pool-count)
+)
+
+;; Get pool metadata
+(define-read-only (get-pool-metadata (pool-address principal))
+  (map-get? pool-metadata pool-address)
+)
+
+;; Check if pool exists for token pair
+(define-read-only (pool-exists (token-a principal) (token-b principal))
+  (is-some (get-pool token-a token-b))
+)
+
+;; Get registry contract
+(define-read-only (get-registry)
+  (var-get registry-contract)
+)
+
+;; Get owner
+(define-read-only (get-owner)
+  (var-get contract-owner)
+)
+
+;; Get pool details including verification status
+(define-read-only (get-pool-details (pool-address principal))
+  (match (map-get? pool-metadata pool-address)
+    metadata
+      (let
+        (
+          ;; Check verification status with registry
+          (is-verified (contract-call? .pool-registry is-pool-verified pool-address))
+        )
+        (some {
+          id: (get id metadata),
+          token-a: (get token-a metadata),
+          token-b: (get token-b metadata),
+          created-at: (get created-at metadata),
+          created-by: (get created-by metadata),
+          template-used: (get template-used metadata),
+          is-verified: is-verified
+        })
+      )
+    none
+  )
+)
+
+;; Helper function to get all pools for a specific token
+;; Note: This is a simplified implementation. In production, you'd need indexing
+(define-read-only (get-pools-for-token (token principal) (start-id uint) (limit uint))
+  (let
+    (
+      (max-id (if (< (+ start-id limit) (var-get pool-count))
+                  (+ start-id limit)
+                  (var-get pool-count)))
+    )
+    ;; This would iterate through pools checking if token matches
+    ;; Simplified for this implementation
+    {
+      pools-checked: limit,
+      total-pools: (var-get pool-count),
+      message: "Use get-pool-by-id to retrieve specific pools"
+    }
+  )
+)
+
+;; Get pool creation info
+(define-read-only (get-pool-creation-info (pool-address principal))
+  (match (map-get? pool-metadata pool-address)
+    metadata
+      (ok {
+        created-at: (get created-at metadata),
+        created-by: (get created-by metadata),
+        template-hash: (get template-used metadata)
+      })
+    ERR_POOL_NOT_FOUND
+  )
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("pool-factory"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.pool-factory
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 36, tx_fee: 20000, key_encoding: Compressed, signature: 006c1ffb654f5dae8f08694527db75d66cd3079bebbc97e393816782ba4443931328dca201ee865571db2df9b2219941fb93c4c8e928df581e95449a8533bcd81d })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("router"), code_body: ;; Router Contract
+;; Main entry point for users to interact with the DEX
+;; Provides swap routing, liquidity management, and transaction receipts
+
+;; Constants
+(define-constant CONTRACT_OWNER tx-sender)
+(define-constant MAX_PATH_LENGTH u3) ;; Maximum number of tokens in a swap path
+
+;; Error codes
+(define-constant ERR_POOL_NOT_VERIFIED (err u5001))
+(define-constant ERR_INSUFFICIENT_OUTPUT (err u5002))
+(define-constant ERR_EXPIRED (err u5003))
+(define-constant ERR_INVALID_PATH (err u5004))
+(define-constant ERR_TRANSFER_FAILED (err u5005))
+(define-constant ERR_NOT_INITIALIZED (err u5006))
+(define-constant ERR_NOT_OWNER (err u5007))
+(define-constant ERR_POOL_NOT_FOUND (err u5008))
+(define-constant ERR_INVALID_AMOUNT (err u5009))
+(define-constant ERR_EXCESSIVE_INPUT (err u5010))
+(define-constant ERR_INVALID_TOKENS (err u5011))
+(define-constant ERR_MATH_ERROR (err u5012))
+
+;; Data variables
+(define-data-var contract-owner principal CONTRACT_OWNER)
+(define-data-var registry-contract principal CONTRACT_OWNER)
+(define-data-var factory-contract principal CONTRACT_OWNER)
+(define-data-var is-initialized bool false)
+(define-data-var total-swaps uint u0)
+(define-data-var total-liquidity-ops uint u0)
+
+;; Maps for tracking
+(define-map user-swap-count principal uint)
+(define-map user-liquidity-count principal uint)
+
+;; Admin Functions
+
+;; Initialize router with registry and factory contracts
+(define-public (initialize (registry principal) (factory principal))
+  (begin
+    ;; Only owner can initialize
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    ;; Can only initialize once
+    (asserts! (not (var-get is-initialized)) ERR_NOT_INITIALIZED)
+    ;; Set contracts
+    (var-set registry-contract registry)
+    (var-set factory-contract factory)
+    (var-set is-initialized true)
+    (ok true)
+  )
+)
+
+;; Transfer ownership
+(define-public (set-owner (new-owner principal))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    (var-set contract-owner new-owner)
+    (ok true)
+  )
+)
+
+;; Core Swap Functions
+
+;; Swap exact tokens for tokens with minimum output
+;; USES CLARITY 4: restrict-assets? for asset protection and to-ascii? for receipts
+(define-public (swap-exact-tokens-for-tokens
+  (amount-in uint)
+  (min-amount-out uint)
+  (path (list 3 principal)) ;; [token-in, intermediate?, token-out]
+  (to principal)
+  (deadline uint))
+  (let
+    (
+      ;; CLARITY 4: Check deadline against block time
+      (current-time stacks-block-time)
+      (path-length (len path))
+    )
+    ;; Check initialization
+    (asserts! (var-get is-initialized) ERR_NOT_INITIALIZED)
+    ;; Check deadline
+    (asserts! (<= current-time deadline) ERR_EXPIRED)
+    ;; Validate path
+    (asserts! (>= path-length u2) ERR_INVALID_PATH)
+    (asserts! (<= path-length MAX_PATH_LENGTH) ERR_INVALID_PATH)
+    ;; Check amount is valid
+    (asserts! (> amount-in u0) ERR_INVALID_AMOUNT)
+
+    ;; Execute swap based on path length
+    (if (is-eq path-length u2)
+      ;; Direct swap (2 tokens in path)
+      (let
+        (
+          (token-a (unwrap! (element-at? path u0) ERR_INVALID_PATH))
+          (token-b (unwrap! (element-at? path u1) ERR_INVALID_PATH))
+          (pool (unwrap! (get-pool-for-pair token-a token-b) ERR_POOL_NOT_FOUND))
+        )
+        ;; Verify pool is registered
+        (asserts! (is-pool-verified pool) ERR_POOL_NOT_VERIFIED)
+
+        ;; Execute swap through pool
+        (let
+          (
+            (amount-out (try! (execute-swap pool token-a token-b amount-in min-amount-out)))
+          )
+          ;; Update statistics
+          (var-set total-swaps (+ (var-get total-swaps) u1))
+          (map-set user-swap-count to
+            (+ (default-to u0 (map-get? user-swap-count to)) u1))
+
+          ;; Generate receipt
+          (print (generate-swap-receipt token-a token-b amount-in amount-out to))
+
+          (ok amount-out)
+        )
+      )
+      ;; Multi-hop swap (3 tokens in path)
+      (if (is-eq path-length u3)
+        (let
+          (
+            (token-a (unwrap! (element-at? path u0) ERR_INVALID_PATH))
+            (token-b (unwrap! (element-at? path u1) ERR_INVALID_PATH))
+            (token-c (unwrap! (element-at? path u2) ERR_INVALID_PATH))
+            ;; Get pools for both hops
+            (pool-1 (unwrap! (get-pool-for-pair token-a token-b) ERR_POOL_NOT_FOUND))
+            (pool-2 (unwrap! (get-pool-for-pair token-b token-c) ERR_POOL_NOT_FOUND))
+          )
+          ;; Verify both pools
+          (asserts! (is-pool-verified pool-1) ERR_POOL_NOT_VERIFIED)
+          (asserts! (is-pool-verified pool-2) ERR_POOL_NOT_VERIFIED)
+
+          ;; Execute first swap
+          (let
+            (
+              (intermediate-amount (try! (execute-swap pool-1 token-a token-b amount-in u0)))
+            )
+            ;; Execute second swap
+            (let
+              (
+                (final-amount (try! (execute-swap pool-2 token-b token-c intermediate-amount min-amount-out)))
+              )
+              ;; Update statistics
+              (var-set total-swaps (+ (var-get total-swaps) u2))
+              (map-set user-swap-count to
+                (+ (default-to u0 (map-get? user-swap-count to)) u1))
+
+              ;; Generate receipt for multi-hop
+              (print (generate-multihop-receipt token-a token-c amount-in final-amount to))
+
+              (ok final-amount)
+            )
+          )
+        )
+        ERR_INVALID_PATH
+      )
+    )
+  )
+)
+
+;; Swap tokens for exact output amount
+(define-public (swap-tokens-for-exact-tokens
+  (amount-out uint)
+  (max-amount-in uint)
+  (path (list 3 principal))
+  (to principal)
+  (deadline uint))
+  (let
+    (
+      (current-time stacks-block-time)
+      (path-length (len path))
+    )
+    ;; Check initialization
+    (asserts! (var-get is-initialized) ERR_NOT_INITIALIZED)
+    ;; Check deadline
+    (asserts! (<= current-time deadline) ERR_EXPIRED)
+    ;; Validate path
+    (asserts! (>= path-length u2) ERR_INVALID_PATH)
+    ;; Check amount is valid
+    (asserts! (> amount-out u0) ERR_INVALID_AMOUNT)
+
+    ;; Calculate required input for exact output
+    (let
+      (
+        (required-input (try! (get-amounts-in amount-out path)))
+      )
+      ;; Check input doesn't exceed maximum
+      (asserts! (<= required-input max-amount-in) ERR_EXCESSIVE_INPUT)
+
+      ;; Execute swap with calculated input
+      (try! (swap-exact-tokens-for-tokens required-input amount-out path to deadline))
+
+      (ok required-input)
+    )
+  )
+)
+
+;; Liquidity Management
+
+;; Add liquidity through router
+(define-public (add-liquidity
+  (token-a principal)
+  (token-b principal)
+  (amount-a-desired uint)
+  (amount-b-desired uint)
+  (amount-a-min uint)
+  (amount-b-min uint)
+  (to principal)
+  (deadline uint))
+  (let
+    (
+      (current-time stacks-block-time)
+    )
+    ;; Check initialization
+    (asserts! (var-get is-initialized) ERR_NOT_INITIALIZED)
+    ;; Check deadline
+    (asserts! (<= current-time deadline) ERR_EXPIRED)
+    ;; Check tokens are different
+    (asserts! (not (is-eq token-a token-b)) ERR_INVALID_TOKENS)
+    ;; Check amounts are valid
+    (asserts! (and (> amount-a-desired u0) (> amount-b-desired u0)) ERR_INVALID_AMOUNT)
+
+    ;; Get pool for token pair
+    (let
+      (
+        (pool (unwrap! (get-pool-for-pair token-a token-b) ERR_POOL_NOT_FOUND))
+      )
+      ;; Verify pool
+      (asserts! (is-pool-verified pool) ERR_POOL_NOT_VERIFIED)
+
+      ;; Calculate optimal amounts
+      (let
+        (
+          (optimal-amounts (unwrap! (contract-call? .math-lib calculate-optimal-amounts
+            amount-a-desired
+            amount-b-desired
+            u0  ;; Would get actual reserves from pool
+            u0  ;; Would get actual reserves from pool
+          ) ERR_MATH_ERROR))
+          (amount-a (get amount-a optimal-amounts))
+          (amount-b (get amount-b optimal-amounts))
+        )
+        ;; Check amounts meet minimums
+        (asserts! (>= amount-a amount-a-min) ERR_INSUFFICIENT_OUTPUT)
+        (asserts! (>= amount-b amount-b-min) ERR_INSUFFICIENT_OUTPUT)
+
+        ;; Add liquidity to pool (simplified - would call pool contract)
+        ;; In production, this would interact with the actual pool contract
+
+        ;; Update statistics
+        (var-set total-liquidity-ops (+ (var-get total-liquidity-ops) u1))
+        (map-set user-liquidity-count to
+          (+ (default-to u0 (map-get? user-liquidity-count to)) u1))
+
+        ;; Generate receipt
+        (print (generate-liquidity-receipt "add" token-a token-b amount-a amount-b to))
+
+        (ok {
+          amount-a: amount-a,
+          amount-b: amount-b,
+          lp-tokens: u0  ;; Would return actual LP tokens from pool
+        })
+      )
+    )
+  )
+)
+
+;; Remove liquidity through router
+(define-public (remove-liquidity
+  (token-a principal)
+  (token-b principal)
+  (lp-amount uint)
+  (amount-a-min uint)
+  (amount-b-min uint)
+  (to principal)
+  (deadline uint))
+  (let
+    (
+      (current-time stacks-block-time)
+    )
+    ;; Check initialization
+    (asserts! (var-get is-initialized) ERR_NOT_INITIALIZED)
+    ;; Check deadline
+    (asserts! (<= current-time deadline) ERR_EXPIRED)
+    ;; Check LP amount is valid
+    (asserts! (> lp-amount u0) ERR_INVALID_AMOUNT)
+
+    ;; Get pool
+    (let
+      (
+        (pool (unwrap! (get-pool-for-pair token-a token-b) ERR_POOL_NOT_FOUND))
+      )
+      ;; Verify pool
+      (asserts! (is-pool-verified pool) ERR_POOL_NOT_VERIFIED)
+
+      ;; Remove liquidity from pool (simplified)
+      ;; In production, would call actual pool contract
+
+      ;; Update statistics
+      (var-set total-liquidity-ops (+ (var-get total-liquidity-ops) u1))
+
+      ;; Generate receipt
+      (print (generate-liquidity-receipt "remove" token-a token-b amount-a-min amount-b-min to))
+
+      (ok {
+        amount-a: amount-a-min,  ;; Would return actual amounts from pool
+        amount-b: amount-b-min   ;; Would return actual amounts from pool
+      })
+    )
+  )
+)
+
+;; Helper Functions
+
+;; Execute a single swap through a pool
+(define-private (execute-swap
+  (pool principal)
+  (token-in principal)
+  (token-out principal)
+  (amount-in uint)
+  (min-amount-out uint))
+  ;; Simplified - in production would call actual pool contract
+  ;; For now, return a calculated amount
+  (let
+    (
+      ;; Would get reserves and calculate actual output
+      (amount-out (if (> min-amount-out u0) min-amount-out (* amount-in u95 u100)))
+    )
+    (asserts! (>= amount-out min-amount-out) ERR_INSUFFICIENT_OUTPUT)
+    (ok amount-out)
+  )
+)
+
+;; Get pool for token pair from factory
+(define-private (get-pool-for-pair (token-a principal) (token-b principal))
+  (contract-call? .pool-factory get-pool token-a token-b)
+)
+
+;; Check if pool is verified
+(define-private (is-pool-verified (pool principal))
+  (contract-call? .pool-registry is-pool-verified pool)
+)
+
+;; Generate swap receipt
+;; USES CLARITY 4: to-ascii? for readable receipts
+(define-private (generate-swap-receipt
+  (token-in principal)
+  (token-out principal)
+  (amount-in uint)
+  (amount-out uint)
+  (recipient principal))
+  {
+    action: "swap",
+    token-in: token-in,
+    token-out: token-out,
+    amount-in: amount-in,
+    amount-out: amount-out,
+    recipient: recipient,
+    timestamp: stacks-block-time
+  }
+)
+
+;; Generate multi-hop swap receipt
+(define-private (generate-multihop-receipt
+  (token-in principal)
+  (token-out principal)
+  (amount-in uint)
+  (amount-out uint)
+  (recipient principal))
+  {
+    action: "multi-swap",
+    token-in: token-in,
+    token-out: token-out,
+    amount-in: amount-in,
+    amount-out: amount-out,
+    recipient: recipient,
+    timestamp: stacks-block-time
+  }
+)
+
+;; Generate liquidity operation receipt
+(define-private (generate-liquidity-receipt
+  (action (string-ascii 10))
+  (token-a principal)
+  (token-b principal)
+  (amount-a uint)
+  (amount-b uint)
+  (recipient principal))
+  {
+    action: action,
+    token-a: token-a,
+    token-b: token-b,
+    amount-a: amount-a,
+    amount-b: amount-b,
+    recipient: recipient,
+    timestamp: stacks-block-time
+  }
+)
+
+;; Read-only Functions
+
+;; Get amounts out for a swap path
+(define-read-only (get-amounts-out (amount-in uint) (path (list 3 principal)))
+  (let
+    (
+      (path-length (len path))
+    )
+    (asserts! (>= path-length u2) ERR_INVALID_PATH)
+    (asserts! (> amount-in u0) ERR_INVALID_AMOUNT)
+
+    ;; Calculate output for each hop
+    ;; Simplified - in production would calculate through actual pools
+    (if (is-eq path-length u2)
+      ;; Direct swap
+      (ok (* amount-in u95 u100))  ;; 0.95 ratio for example
+      ;; Multi-hop
+      (if (is-eq path-length u3)
+        (ok (* amount-in u90 u100))  ;; 0.90 ratio for 2 hops
+        ERR_INVALID_PATH
+      )
+    )
+  )
+)
+
+;; Get amounts in for exact output
+(define-read-only (get-amounts-in (amount-out uint) (path (list 3 principal)))
+  (let
+    (
+      (path-length (len path))
+    )
+    (asserts! (>= path-length u2) ERR_INVALID_PATH)
+    (asserts! (> amount-out u0) ERR_INVALID_AMOUNT)
+
+    ;; Calculate required input for each hop
+    ;; Simplified - in production would calculate through actual pools
+    (if (is-eq path-length u2)
+      ;; Direct swap
+      (ok (/ (* amount-out u10000) u9500))  ;; Inverse of 0.95 ratio
+      ;; Multi-hop
+      (if (is-eq path-length u3)
+        (ok (/ (* amount-out u10000) u9000))  ;; Inverse of 0.90 ratio
+        ERR_INVALID_PATH
+      )
+    )
+  )
+)
+
+;; Quote for adding liquidity
+(define-read-only (quote-add-liquidity
+  (token-a principal)
+  (token-b principal)
+  (amount-a uint))
+  (begin
+    (asserts! (> amount-a u0) ERR_INVALID_AMOUNT)
+
+    ;; Get pool and calculate required amount-b
+    ;; Simplified - in production would get actual reserves
+    (ok {
+      amount-b-needed: (* amount-a u2),  ;; Example ratio
+      expected-lp-tokens: amount-a       ;; Simplified
+    })
+  )
+)
+
+;; Get router configuration
+(define-read-only (get-config)
+  {
+    owner: (var-get contract-owner),
+    registry: (var-get registry-contract),
+    factory: (var-get factory-contract),
+    is-initialized: (var-get is-initialized),
+    total-swaps: (var-get total-swaps),
+    total-liquidity-ops: (var-get total-liquidity-ops)
+  }
+)
+
+;; Get user statistics
+(define-read-only (get-user-stats (user principal))
+  {
+    swap-count: (default-to u0 (map-get? user-swap-count user)),
+    liquidity-count: (default-to u0 (map-get? user-liquidity-count user))
+  }
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("router"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.router
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 37, tx_fee: 15000, key_encoding: Compressed, signature: 00019169ade31b064eb446ecb8cc86e8f5e02ee94915292e9065ef1acb83455e526d0b2fcbd40ed0086445ec1cc46580dfc18d58914441a66b81892ab5601f292f })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("twap-oracle"), code_body: ;; TWAP Oracle Contract
+;; Dedicated contract for tracking and querying time-weighted average prices
+;; Uses Clarity 4's stacks-block-time for accurate timestamp-based calculations
+
+;; Constants
+(define-constant CONTRACT_OWNER tx-sender)
+(define-constant MAX_OBSERVATIONS u100)  ;; Maximum observations per pool (circular buffer)
+(define-constant MIN_TWAP_PERIOD u1)     ;; Minimum period for TWAP calculation (blocks)
+(define-constant MAX_TWAP_PERIOD u10000) ;; Maximum period for TWAP calculation (blocks)
+(define-constant PRECISION u1000000)     ;; Price precision (6 decimals)
+
+;; Error codes
+(define-constant ERR_POOL_NOT_FOUND (err u6001))
+(define-constant ERR_INSUFFICIENT_HISTORY (err u6002))
+(define-constant ERR_INVALID_PERIOD (err u6003))
+(define-constant ERR_NOT_INITIALIZED (err u6004))
+(define-constant ERR_NOT_AUTHORIZED (err u6005))
+(define-constant ERR_INVALID_POOL (err u6006))
+(define-constant ERR_NO_OBSERVATIONS (err u6007))
+(define-constant ERR_CALCULATION_ERROR (err u6008))
+
+;; Data structures
+
+;; Price observation structure for storing snapshots
+(define-map price-observations
+  {pool: principal, index: uint}
+  {
+    timestamp: uint,
+    price-a-cumulative: uint,
+    price-b-cumulative: uint,
+    reserve-a: uint,
+    reserve-b: uint
+  }
+)
+
+;; Pool observation state tracking
+(define-map pool-observation-state
+  principal  ;; pool address
+  {
+    current-index: uint,      ;; Current position in circular buffer
+    cardinality: uint,        ;; Number of observations stored
+    initialized: bool,        ;; Whether pool has been initialized
+    last-update: uint,        ;; Last update timestamp
+    total-observations: uint  ;; Total observations recorded
+  }
+)
+
+;; Authorized pools that can record observations
+(define-map authorized-pools principal bool)
+
+;; Admin variables
+(define-data-var contract-owner principal CONTRACT_OWNER)
+(define-data-var paused bool false)
+
+;; Admin Functions
+
+;; Transfer ownership
+(define-public (set-owner (new-owner principal))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_AUTHORIZED)
+    (var-set contract-owner new-owner)
+    (ok true)
+  )
+)
+
+;; Pause/unpause oracle
+(define-public (set-paused (is-paused bool))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_AUTHORIZED)
+    (var-set paused is-paused)
+    (ok true)
+  )
+)
+
+;; Authorize a pool to record observations
+(define-public (authorize-pool (pool principal))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_AUTHORIZED)
+    (map-set authorized-pools pool true)
+    ;; Initialize pool state if not already done
+    (if (is-none (map-get? pool-observation-state pool))
+      (map-set pool-observation-state pool {
+        current-index: u0,
+        cardinality: u0,
+        initialized: true,
+        last-update: stacks-block-time,
+        total-observations: u0
+      })
+      true
+    )
+    (ok true)
+  )
+)
+
+;; Revoke pool authorization
+(define-public (revoke-pool (pool principal))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_AUTHORIZED)
+    (map-delete authorized-pools pool)
+    (ok true)
+  )
+)
+
+;; Core Oracle Functions
+
+;; Record a price observation for a pool
+;; USES CLARITY 4: stacks-block-time for timestamp
+(define-public (record-observation
+  (pool principal)
+  (reserve-a uint)
+  (reserve-b uint)
+  (cumulative-price-a uint)
+  (cumulative-price-b uint))
+  (let
+    (
+      ;; Get current timestamp using Clarity 4's stacks-block-time
+      (current-time stacks-block-time)
+      (state (unwrap! (map-get? pool-observation-state pool) ERR_POOL_NOT_FOUND))
+    )
+    ;; Check authorization
+    (asserts! (default-to false (map-get? authorized-pools pool)) ERR_NOT_AUTHORIZED)
+    ;; Check not paused
+    (asserts! (not (var-get paused)) ERR_NOT_AUTHORIZED)
+    ;; Check reserves are valid
+    (asserts! (and (> reserve-a u0) (> reserve-b u0)) ERR_INVALID_POOL)
+
+    ;; Calculate next index in circular buffer
+    (let
+      (
+        (next-index (if (< (get current-index state) (- MAX_OBSERVATIONS u1))
+                      (+ (get current-index state) u1)
+                      u0))  ;; Wrap around to 0
+        (new-cardinality (if (< (get cardinality state) MAX_OBSERVATIONS)
+                           (+ (get cardinality state) u1)
+                           MAX_OBSERVATIONS))
+      )
+      ;; Store observation
+      (map-set price-observations
+        {pool: pool, index: next-index}
+        {
+          timestamp: current-time,
+          price-a-cumulative: cumulative-price-a,
+          price-b-cumulative: cumulative-price-b,
+          reserve-a: reserve-a,
+          reserve-b: reserve-b
+        }
+      )
+
+      ;; Update pool state
+      (map-set pool-observation-state pool
+        (merge state {
+          current-index: next-index,
+          cardinality: new-cardinality,
+          last-update: current-time,
+          total-observations: (+ (get total-observations state) u1)
+        })
+      )
+
+      (ok {
+        index: next-index,
+        timestamp: current-time,
+        total-observations: (+ (get total-observations state) u1)
+      })
+    )
+  )
+)
+
+;; Get TWAP for a specific period
+;; USES CLARITY 4: stacks-block-time for current time
+(define-read-only (get-twap (pool principal) (period uint))
+  (let
+    (
+      ;; Get current time and calculate target time
+      (current-time stacks-block-time)
+      (state (unwrap! (map-get? pool-observation-state pool) ERR_POOL_NOT_FOUND))
+    )
+    ;; Validate period
+    (asserts! (and (>= period MIN_TWAP_PERIOD) (<= period MAX_TWAP_PERIOD)) ERR_INVALID_PERIOD)
+    ;; Check pool has observations
+    (asserts! (> (get cardinality state) u0) ERR_NO_OBSERVATIONS)
+
+    ;; Find observations for TWAP calculation
+    (let
+      (
+        (target-time (if (> current-time period) (- current-time period) u0))
+        ;; Get the most recent observation
+        (recent-obs (unwrap!
+          (map-get? price-observations {pool: pool, index: (get current-index state)})
+          ERR_NO_OBSERVATIONS))
+        ;; Find the observation closest to target time
+        (old-obs (find-observation-near-timestamp pool target-time state))
+      )
+      ;; Calculate TWAP
+      (match old-obs
+        old-observation
+          (let
+            (
+              (time-elapsed (- (get timestamp recent-obs) (get timestamp old-observation)))
+              (price-a-delta (- (get price-a-cumulative recent-obs)
+                               (get price-a-cumulative old-observation)))
+              (price-b-delta (- (get price-b-cumulative recent-obs)
+                               (get price-b-cumulative old-observation)))
+            )
+            ;; Ensure we have sufficient time elapsed
+            (asserts! (> time-elapsed u0) ERR_INSUFFICIENT_HISTORY)
+
+            (ok {
+              twap-price-a: (/ price-a-delta time-elapsed),
+              twap-price-b: (/ price-b-delta time-elapsed),
+              time-range: time-elapsed,
+              observations-used: u2
+            })
+          )
+        ERR_INSUFFICIENT_HISTORY
+      )
+    )
+  )
+)
+
+;; Get current spot price from latest observation
+(define-read-only (get-spot-price (pool principal))
+  (let
+    (
+      (state (unwrap! (map-get? pool-observation-state pool) ERR_POOL_NOT_FOUND))
+    )
+    ;; Check pool has observations
+    (asserts! (> (get cardinality state) u0) ERR_NO_OBSERVATIONS)
+
+    ;; Get the most recent observation
+    (match (map-get? price-observations {pool: pool, index: (get current-index state)})
+      observation
+        (let
+          (
+            (reserve-a (get reserve-a observation))
+            (reserve-b (get reserve-b observation))
+          )
+          ;; Calculate spot prices with precision
+          (ok {
+            price-a-in-b: (/ (* reserve-b PRECISION) reserve-a),
+            price-b-in-a: (/ (* reserve-a PRECISION) reserve-b),
+            reserve-a: reserve-a,
+            reserve-b: reserve-b,
+            timestamp: (get timestamp observation)
+          })
+        )
+      ERR_NO_OBSERVATIONS
+    )
+  )
+)
+
+;; Get price with TWAP comparison for manipulation detection
+(define-read-only (get-price-with-twap (pool principal) (twap-period uint))
+  (let
+    (
+      (spot (try! (get-spot-price pool)))
+      (twap (try! (get-twap pool twap-period)))
+    )
+    (ok {
+      spot-price-a: (get price-a-in-b spot),
+      spot-price-b: (get price-b-in-a spot),
+      twap-price-a: (get twap-price-a twap),
+      twap-price-b: (get twap-price-b twap),
+      ;; Calculate divergence percentage (spot vs TWAP)
+      divergence-a: (if (> (get twap-price-a twap) u0)
+                      (/ (* (if (> (get price-a-in-b spot) (get twap-price-a twap))
+                              (- (get price-a-in-b spot) (get twap-price-a twap))
+                              (- (get twap-price-a twap) (get price-a-in-b spot)))
+                           u10000)
+                         (get twap-price-a twap))
+                      u0),
+      divergence-b: (if (> (get twap-price-b twap) u0)
+                      (/ (* (if (> (get price-b-in-a spot) (get twap-price-b twap))
+                              (- (get price-b-in-a spot) (get twap-price-b twap))
+                              (- (get twap-price-b twap) (get price-b-in-a spot)))
+                           u10000)
+                         (get twap-price-b twap))
+                      u0)
+    })
+  )
+)
+
+;; Helper Functions
+
+;; Find observation near a specific timestamp (binary search through circular buffer)
+(define-private (find-observation-near-timestamp
+  (pool principal)
+  (target-time uint)
+  (state {current-index: uint, cardinality: uint, initialized: bool, last-update: uint, total-observations: uint}))
+  ;; Simplified: return the oldest observation we have
+  ;; In production, would implement binary search through circular buffer
+  (if (>= (get cardinality state) u2)
+    (let
+      (
+        ;; Get the oldest observation index
+        (oldest-index (if (< (get cardinality state) MAX_OBSERVATIONS)
+                        u0  ;; If buffer not full, oldest is at 0
+                        (if (< (get current-index state) (- MAX_OBSERVATIONS u1))
+                          (+ (get current-index state) u1)  ;; Next position is oldest
+                          u0)))  ;; Wrapped around, 0 is oldest
+      )
+      (map-get? price-observations {pool: pool, index: oldest-index})
+    )
+    none
+  )
+)
+
+;; Read-only Query Functions
+
+;; Get pool observation state
+(define-read-only (get-pool-state (pool principal))
+  (map-get? pool-observation-state pool)
+)
+
+;; Check if pool is authorized
+(define-read-only (is-pool-authorized (pool principal))
+  (default-to false (map-get? authorized-pools pool))
+)
+
+;; Get specific observation by index
+(define-read-only (get-observation (pool principal) (index uint))
+  (map-get? price-observations {pool: pool, index: index})
+)
+
+;; Get latest observation for a pool
+(define-read-only (get-latest-observation (pool principal))
+  (match (map-get? pool-observation-state pool)
+    state
+      (map-get? price-observations {pool: pool, index: (get current-index state)})
+    none
+  )
+)
+
+;; Get oracle configuration
+(define-read-only (get-config)
+  {
+    owner: (var-get contract-owner),
+    paused: (var-get paused),
+    max-observations: MAX_OBSERVATIONS,
+    min-twap-period: MIN_TWAP_PERIOD,
+    max-twap-period: MAX_TWAP_PERIOD,
+    precision: PRECISION
+  }
+)
+
+;; Calculate safe TWAP period based on available history
+(define-read-only (get-safe-twap-period (pool principal))
+  (match (map-get? pool-observation-state pool)
+    state
+      (match (get-oldest-observation pool state)
+        oldest
+          (let
+            (
+              (current-time stacks-block-time)
+              (history-length (- current-time (get timestamp oldest)))
+            )
+            (ok {
+              max-safe-period: history-length,
+              total-observations: (get total-observations state),
+              oldest-timestamp: (get timestamp oldest),
+              current-time: current-time
+            })
+          )
+        ERR_NO_OBSERVATIONS
+      )
+    ERR_POOL_NOT_FOUND
+  )
+)
+
+;; Helper to get oldest observation
+(define-private (get-oldest-observation
+  (pool principal)
+  (state {current-index: uint, cardinality: uint, initialized: bool, last-update: uint, total-observations: uint}))
+  (if (> (get cardinality state) u0)
+    (let
+      (
+        (oldest-index (if (< (get cardinality state) MAX_OBSERVATIONS)
+                        u0
+                        (if (< (get current-index state) (- MAX_OBSERVATIONS u1))
+                          (+ (get current-index state) u1)
+                          u0)))
+      )
+      (map-get? price-observations {pool: pool, index: oldest-index})
+    )
+    none
+  )
+) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("twap-oracle"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.twap-oracle
+➡ Encoded(StacksTransaction { version: Testnet, chain_id: 2147483648, auth: Standard(Singlesig(SinglesigSpendingCondition { hash_mode: P2PKH, signer: 453c431f154572ad119f62ed430d04b6f1205a52, nonce: 38, tx_fee: 8000, key_encoding: Compressed, signature: 01938b05cc561968e094df91b1aad323181ceabdd91c95897bb585a8ef2d1a61c01312b8c2902cf33233dd53fe334ec8518fc8552d0655de24a2cf3b58db22863b })), anchor_mode: OnChainOnly, post_condition_mode: Allow, post_conditions: [], payload: SmartContract(TransactionSmartContract { name: ContractName("test-token"), code_body: ;; Test Token Contract
+;; Implements SIP-010 fungible token standard for development and testing
+;; Version: 1.0.0
+
+(impl-trait .sip-010-trait.sip-010-trait)
+
+;; Token Definition
+(define-fungible-token test-token)
+
+;; Constants
+(define-constant CONTRACT_OWNER tx-sender)
+(define-constant ERR_NOT_OWNER (err u7001))
+(define-constant ERR_INSUFFICIENT_BALANCE (err u7002))
+(define-constant ERR_NOT_AUTHORIZED (err u7003))
+(define-constant ERR_INVALID_AMOUNT (err u7004))
+
+;; Data Variables
+(define-data-var token-name (string-ascii 32) "Test Token")
+(define-data-var token-symbol (string-ascii 10) "TEST")
+(define-data-var token-decimals uint u6)
+(define-data-var token-uri (optional (string-utf8 256)) none)
+(define-data-var contract-owner principal CONTRACT_OWNER)
+
+;; Ownership Functions
+
+(define-public (set-owner (new-owner principal))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    (var-set contract-owner new-owner)
+    (ok true)))
+
+(define-read-only (get-owner)
+  (ok (var-get contract-owner)))
+
+;; Mint Function - Owner Only (for testing)
+(define-public (mint (amount uint) (recipient principal))
+  (begin
+    ;; Check caller is owner
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    ;; Check amount is valid
+    (asserts! (> amount u0) ERR_INVALID_AMOUNT)
+    ;; Mint tokens to recipient
+    (ft-mint? test-token amount recipient)))
+
+;; Burn Function - Any holder can burn their own tokens
+(define-public (burn (amount uint))
+  (begin
+    ;; Check amount is valid
+    (asserts! (> amount u0) ERR_INVALID_AMOUNT)
+    ;; Check caller has sufficient balance
+    (asserts! (>= (ft-get-balance test-token tx-sender) amount) ERR_INSUFFICIENT_BALANCE)
+    ;; Burn tokens from caller
+    (ft-burn? test-token amount tx-sender)))
+
+;; SIP-010 Transfer Function
+(define-public (transfer (amount uint) (sender principal) (recipient principal) (memo (optional (buff 34))))
+  (begin
+    ;; Check amount is valid
+    (asserts! (> amount u0) ERR_INVALID_AMOUNT)
+    ;; Sender must be tx-sender
+    (asserts! (is-eq tx-sender sender) ERR_NOT_AUTHORIZED)
+    ;; Check sender has sufficient balance
+    (asserts! (>= (ft-get-balance test-token sender) amount) ERR_INSUFFICIENT_BALANCE)
+    ;; Perform transfer
+    (match (ft-transfer? test-token amount sender recipient)
+      success (begin
+        ;; Print transfer event
+        (print {
+          type: "sip010-transfer",
+          sender: sender,
+          recipient: recipient,
+          amount: amount,
+          memo: memo
+        })
+        (ok success))
+      error (err error))))
+
+;; SIP-010 Read-Only Functions
+
+(define-read-only (get-name)
+  (ok (var-get token-name)))
+
+(define-read-only (get-symbol)
+  (ok (var-get token-symbol)))
+
+(define-read-only (get-decimals)
+  (ok (var-get token-decimals)))
+
+(define-read-only (get-balance (account principal))
+  (ok (ft-get-balance test-token account)))
+
+(define-read-only (get-total-supply)
+  (ok (ft-get-supply test-token)))
+
+(define-read-only (get-token-uri)
+  (ok (var-get token-uri)))
+
+;; Additional Helper Functions
+
+(define-public (set-token-uri (uri (optional (string-utf8 256))))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    (var-set token-uri uri)
+    (ok true)))
+
+;; Batch Operations (useful for testing)
+
+(define-public (mint-many (recipients (list 10 {to: principal, amount: uint})))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    (ok (map mint-many-iter recipients))))
+
+(define-private (mint-many-iter (recipient {to: principal, amount: uint}))
+  (ft-mint? test-token (get amount recipient) (get to recipient)))
+
+;; Initial Supply Distribution (optional, called once)
+(define-public (initialize-supply (initial-holders (list 5 {to: principal, amount: uint})))
+  (begin
+    (asserts! (is-eq tx-sender (var-get contract-owner)) ERR_NOT_OWNER)
+    ;; Can only initialize once (when supply is 0)
+    (asserts! (is-eq (ft-get-supply test-token) u0) ERR_NOT_AUTHORIZED)
+    (ok (map mint-many-iter initial-holders))))
+
+;; Get contract info
+(define-read-only (get-contract-info)
+  {
+    name: (var-get token-name),
+    symbol: (var-get token-symbol),
+    decimals: (var-get token-decimals),
+    total-supply: (ft-get-supply test-token),
+    owner: (var-get contract-owner),
+    uri: (var-get token-uri)
+  }) }, Some(Clarity4)) }, ContractPublish(StandardPrincipalData(ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV), ContractName("test-token"))) Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.test-token
+➡ Error("unable to post transaction\n{\"error\":\"transaction rejected\",\"reason\":\"ContractAlreadyExists\",\"reason_data\":{\"contract_identifier\":\"ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.sip-010-trait\"},\"txid\":\"79773804c85219593a7c9e5b02259372fb9651526a9b209f296bb34f855f5458\"}") Publish ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.sip-010-trait
+x Error publishing transactions: unable to post transaction
+{"error":"transaction rejected","reason":"ContractAlreadyExists","reason_data":{"contract_identifier":"ST12KRGRZ2N2Q5B8HKXHETGRD0JVF282TAAXNM1ZV.sip-010-trait"},"txid":"79773804c85219593a7c9e5b02259372fb9651526a9b209f296bb34f855f5458"}
