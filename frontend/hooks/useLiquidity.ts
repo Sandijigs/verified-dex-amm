@@ -1,20 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { useWallet } from './useWallet'
-import { CONTRACT_ADDRESSES } from '@/lib/contracts/addresses'
-import { CURRENT_NETWORK } from '@/lib/stacks/network'
-import {
-  makeContractCall,
-  AnchorMode,
-  PostConditionMode,
-  uintCV,
-  principalCV,
-} from '@stacks/transactions'
-import { openContractCall } from '@stacks/connect'
+import { useWalletConnect } from '@/providers/WalletConnectProvider'
+import { uintCV } from '@stacks/transactions'
 
 export function useLiquidity() {
-  const { userSession, address } = useWallet()
+  const { callContract, connected } = useWalletConnect()
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -23,13 +14,13 @@ export function useLiquidity() {
    */
   const addLiquidity = async (
     poolAddress: string,
-    tokenA: string,
-    tokenB: string,
+    _tokenA: string,
+    _tokenB: string,
     amountA: string,
     amountB: string,
     minLiquidity: string
   ) => {
-    if (!userSession.isUserSignedIn()) {
+    if (!connected) {
       setError('Please connect your wallet first')
       return
     }
@@ -44,7 +35,6 @@ export function useLiquidity() {
       const minLiquidityMicro = Math.floor(parseFloat(minLiquidity) * 1_000_000)
 
       const functionArgs = [
-        principalCV(poolAddress),
         uintCV(amountAMicro),
         uintCV(amountBMicro),
         uintCV(minLiquidityMicro),
@@ -53,14 +43,13 @@ export function useLiquidity() {
       // In production, call the pool contract's add-liquidity function
       const [contractAddress, contractName] = poolAddress.split('.')
 
-      const txOptions = {
-        network: CURRENT_NETWORK,
-        anchorMode: AnchorMode.Any,
+      // Use the WalletConnect provider's callContract method
+      const txId = await callContract({
         contractAddress,
         contractName,
         functionName: 'add-liquidity',
         functionArgs,
-        postConditionMode: PostConditionMode.Deny,
+        postConditions: [],
         onFinish: (data: any) => {
           console.log('Add liquidity transaction submitted:', data.txId)
           setIsLoading(false)
@@ -69,9 +58,9 @@ export function useLiquidity() {
           setError('Transaction cancelled')
           setIsLoading(false)
         },
-      }
+      })
 
-      await openContractCall(txOptions)
+      console.log('Add liquidity initiated with txId:', txId)
     } catch (err) {
       console.error('Add liquidity error:', err)
       setError(err instanceof Error ? err.message : 'Failed to add liquidity')
@@ -88,7 +77,7 @@ export function useLiquidity() {
     minAmountA: string,
     minAmountB: string
   ) => {
-    if (!userSession.isUserSignedIn()) {
+    if (!connected) {
       setError('Please connect your wallet first')
       return
     }
@@ -110,14 +99,13 @@ export function useLiquidity() {
 
       const [contractAddress, contractName] = poolAddress.split('.')
 
-      const txOptions = {
-        network: CURRENT_NETWORK,
-        anchorMode: AnchorMode.Any,
+      // Use the WalletConnect provider's callContract method
+      const txId = await callContract({
         contractAddress,
         contractName,
         functionName: 'remove-liquidity',
         functionArgs,
-        postConditionMode: PostConditionMode.Deny,
+        postConditions: [],
         onFinish: (data: any) => {
           console.log('Remove liquidity transaction submitted:', data.txId)
           setIsLoading(false)
@@ -126,9 +114,9 @@ export function useLiquidity() {
           setError('Transaction cancelled')
           setIsLoading(false)
         },
-      }
+      })
 
-      await openContractCall(txOptions)
+      console.log('Remove liquidity initiated with txId:', txId)
     } catch (err) {
       console.error('Remove liquidity error:', err)
       setError(err instanceof Error ? err.message : 'Failed to remove liquidity')
@@ -139,7 +127,7 @@ export function useLiquidity() {
   /**
    * Get user's liquidity position in a pool
    */
-  const getLiquidityPosition = async (poolAddress: string, userAddress: string) => {
+  const getLiquidityPosition = async (_poolAddress: string, _userAddress: string) => {
     try {
       // In production, query the pool contract for user's LP token balance
       return {

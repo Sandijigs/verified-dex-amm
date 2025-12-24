@@ -1,20 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { useWallet } from './useWallet'
-import { CONTRACT_ADDRESSES, DEPLOYER_ADDRESS } from '@/lib/contracts/addresses'
-import { CURRENT_NETWORK } from '@/lib/stacks/network'
-import {
-  makeContractCall,
-  AnchorMode,
-  PostConditionMode,
-  uintCV,
-  principalCV,
-} from '@stacks/transactions'
-import { openContractCall } from '@stacks/connect'
+import { useWalletConnect } from '@/providers/WalletConnectProvider'
+import { CONTRACT_ADDRESSES } from '@/lib/contracts/addresses'
+import { uintCV, principalCV } from '@stacks/transactions'
 
 export function useSwap() {
-  const { userSession, address } = useWallet()
+  const { callContract, connected } = useWalletConnect()
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -26,9 +18,9 @@ export function useSwap() {
     tokenOut: string,
     amountIn: string,
     minAmountOut: string,
-    slippage: number
+    _slippage: number
   ) => {
-    if (!userSession.isUserSignedIn()) {
+    if (!connected) {
       setError('Please connect your wallet first')
       return
     }
@@ -55,14 +47,13 @@ export function useSwap() {
 
       const [contractAddress, contractName] = CONTRACT_ADDRESSES.ROUTER.split('.')
 
-      const txOptions = {
-        network: CURRENT_NETWORK,
-        anchorMode: AnchorMode.Any,
+      // Use the WalletConnect provider's callContract method
+      const txId = await callContract({
         contractAddress,
         contractName,
         functionName: 'swap-tokens',
         functionArgs,
-        postConditionMode: PostConditionMode.Deny,
+        postConditions: [],
         onFinish: (data: any) => {
           console.log('Swap transaction submitted:', data.txId)
           setIsLoading(false)
@@ -71,9 +62,9 @@ export function useSwap() {
           setError('Transaction cancelled')
           setIsLoading(false)
         },
-      }
+      })
 
-      await openContractCall(txOptions)
+      console.log('Swap initiated with txId:', txId)
     } catch (err) {
       console.error('Swap error:', err)
       setError(err instanceof Error ? err.message : 'Failed to execute swap')
