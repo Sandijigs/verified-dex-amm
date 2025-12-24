@@ -4,7 +4,9 @@ import { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { X, Plus, Info } from 'lucide-react'
+import { useLiquidity } from '@/hooks/useLiquidity'
+import { useWalletConnect } from '@/providers/WalletConnectProvider'
+import { CONTRACT_ADDRESSES } from '@/lib/contracts/addresses'
 
 interface AddLiquidityModalProps {
   poolId: string | null
@@ -14,15 +16,45 @@ interface AddLiquidityModalProps {
 export function AddLiquidityModal({ poolId, onClose }: AddLiquidityModalProps) {
   const [amountA, setAmountA] = useState('')
   const [amountB, setAmountB] = useState('')
+  const { addLiquidity, isLoading, error } = useLiquidity()
+  const { connected, connectWallet } = useWalletConnect()
 
   // Mock data - will be replaced with real pool data
   const tokenA = 'STX'
   const tokenB = 'TEST'
 
-  const handleAddLiquidity = () => {
-    // TODO: Implement actual liquidity addition
-    console.log('Adding liquidity:', { amountA, amountB })
-    onClose()
+  const handleAddLiquidity = async () => {
+    if (!connected) {
+      await connectWallet()
+      return
+    }
+
+    if (!amountA || !amountB) {
+      console.error('Please enter both amounts')
+      return
+    }
+
+    try {
+      // Use the pool contract from poolId or default to pool-template
+      const poolContract = poolId || CONTRACT_ADDRESSES.POOL_TEMPLATE || `${process.env.NEXT_PUBLIC_DEPLOYER_ADDRESS}.pool-template`
+
+      await addLiquidity(
+        poolContract,
+        tokenA,
+        tokenB,
+        amountA,
+        amountB,
+        '0' // minLiquidity - could calculate based on slippage
+      )
+
+      console.log('Liquidity added successfully')
+      // Reset form
+      setAmountA('')
+      setAmountB('')
+      onClose()
+    } catch (err) {
+      console.error('Failed to add liquidity:', err)
+    }
   }
 
   return (
