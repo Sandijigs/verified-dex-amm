@@ -13,8 +13,8 @@ export function Header() {
 
   const navItems = [
     { href: '/swap', label: 'Swap' },
-    { href: '/pool', label: 'Pools' },
-    { href: '/liquidity', label: 'Liquidity' },
+    { href: '/pools', label: 'Pools' },
+    { href: '/analytics', label: 'Analytics' },
   ]
 
   return (

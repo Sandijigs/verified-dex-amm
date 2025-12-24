@@ -1,0 +1,111 @@
+'use client'
+
+import { useState } from 'react'
+import { useWallet } from './useWallet'
+import { CONTRACT_ADDRESSES, DEPLOYER_ADDRESS } from '@/lib/contracts/addresses'
+import { CURRENT_NETWORK } from '@/lib/stacks/network'
+import {
+  makeContractCall,
+  AnchorMode,
+  PostConditionMode,
+  uintCV,
+  principalCV,
+} from '@stacks/transactions'
+import { openContractCall } from '@stacks/connect'
+
+export function useSwap() {
+  const { userSession, address } = useWallet()
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  /**
+   * Execute a token swap through the router contract
+   */
+  const executeSwap = async (
+    tokenIn: string,
+    tokenOut: string,
+    amountIn: string,
+    minAmountOut: string,
+    slippage: number
+  ) => {
+    if (!userSession.isUserSignedIn()) {
+      setError('Please connect your wallet first')
+      return
+    }
+
+    setIsLoading(true)
+    setError(null)
+
+    try {
+      // Convert amounts to micro-units (1 token = 1,000,000 micro-units)
+      const amountInMicro = Math.floor(parseFloat(amountIn) * 1_000_000)
+      const minAmountOutMicro = Math.floor(parseFloat(minAmountOut) * 1_000_000)
+
+      // Calculate deadline (current time + 10 minutes)
+      const deadline = Math.floor(Date.now() / 1000) + 600
+
+      // Build the contract call
+      const functionArgs = [
+        principalCV(tokenIn),
+        principalCV(tokenOut),
+        uintCV(amountInMicro),
+        uintCV(minAmountOutMicro),
+        uintCV(deadline),
+      ]
+
+      const [contractAddress, contractName] = CONTRACT_ADDRESSES.ROUTER.split('.')
+
+      const txOptions = {
+        network: CURRENT_NETWORK,
+        anchorMode: AnchorMode.Any,
+        contractAddress,
+        contractName,
+        functionName: 'swap-tokens',
+        functionArgs,
+        postConditionMode: PostConditionMode.Deny,
+        onFinish: (data: any) => {
+          console.log('Swap transaction submitted:', data.txId)
+          setIsLoading(false)
+        },
+        onCancel: () => {
+          setError('Transaction cancelled')
+          setIsLoading(false)
+        },
+      }
+
+      await openContractCall(txOptions)
+    } catch (err) {
+      console.error('Swap error:', err)
+      setError(err instanceof Error ? err.message : 'Failed to execute swap')
+      setIsLoading(false)
+    }
+  }
+
+  /**
+   * Get quote for a swap (mock implementation)
+   * In production, this would call the router to get actual quote
+   */
+  const getQuote = async (tokenIn: string, tokenOut: string, amountIn: string) => {
+    try {
+      // Mock quote - in production, call contract read-only function
+      // For now, use simple 1:1 ratio
+      const quote = {
+        amountOut: amountIn,
+        priceImpact: 0.1,
+        fee: parseFloat(amountIn) * 0.003,
+        route: [tokenIn, tokenOut],
+      }
+      return quote
+    } catch (err) {
+      console.error('Quote error:', err)
+      return null
+    }
+  }
+
+  return {
+    executeSwap,
+    getQuote,
+    isLoading,
+    error,
+  }
+}
