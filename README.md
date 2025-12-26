@@ -15,6 +15,7 @@ Built for the **Talent Protocol Builder Challenge** 🏆
 | **Week 1** | Smart Contracts | Clarity 4 (contract-hash?, stacks-block-time) | ✅ Deployed | [TESTNET_DEPLOYMENT.md](TESTNET_DEPLOYMENT.md) |
 | **Week 2** | Chainhooks | @hirosystems/chainhooks-client | ✅ Active | [chainhooks/package.json](chainhooks/package.json) |
 | **Week 3** | WalletConnect | @stacks/connect v8.2.0 | ✅ Integrated | [frontend/package.json](frontend/package.json) |
+| **Phase 1** | sBTC + Yield Farming | VDEX Token, sBTC Pool, LP Staking | 🔄 **DEPLOYING** | [PHASE1_DEPLOYMENT_STATUS.md](PHASE1_DEPLOYMENT_STATUS.md) |
 
 **🔑 WalletConnect Project ID:** `973aec75d9c96397c8ccd94d62bada81`
 
