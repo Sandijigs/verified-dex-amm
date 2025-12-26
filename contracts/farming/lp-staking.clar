@@ -74,6 +74,14 @@
 (define-map lp-token-to-pool principal uint)
 
 ;; ============================================
+;; HELPER FUNCTIONS
+;; ============================================
+
+(define-read-only (get-contract-principal)
+  (as-contract tx-sender)
+)
+
+;; ============================================
 ;; INITIALIZATION
 ;; ============================================
 
@@ -306,8 +314,8 @@
             true
           )
 
-          ;; Transfer LP tokens from user to contract
-          (try! (contract-call? lp-token transfer amount user (as-contract tx-sender) none))
+          ;; Transfer LP tokens from user to this contract
+          (unwrap! (contract-call? lp-token transfer amount user (get-contract-principal) none) ERR_TRANSFER_FAILED)
 
           ;; Update user info
           (let (
@@ -376,7 +384,7 @@
           )
 
           ;; Transfer LP tokens back to user
-          (try! (as-contract (contract-call? lp-token transfer amount (as-contract tx-sender) user none)))
+          (unwrap! (as-contract (contract-call? lp-token transfer amount tx-sender user none)) ERR_TRANSFER_FAILED)
 
           ;; Update user info
           (let (
@@ -475,7 +483,7 @@
           (asserts! (> staked-amount u0) ERR_INSUFFICIENT_STAKE)
 
           ;; Transfer LP tokens back without rewards
-          (try! (as-contract (contract-call? lp-token transfer staked-amount (as-contract tx-sender) user none)))
+          (unwrap! (as-contract (contract-call? lp-token transfer staked-amount tx-sender user none)) ERR_TRANSFER_FAILED)
 
           ;; Clear user info
           (map-set user-info {pool-id: pool-id, user: user} {

@@ -156,7 +156,7 @@
     (print {
       event: "pool-initialized",
       pool: "STX-sBTC",
-      contract: (as-contract tx-sender)
+      initialized-by: tx-sender
     })
 
     (ok true)
