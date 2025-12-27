@@ -68,18 +68,28 @@ epoch = 'latest'
 # Phase 1: sBTC Integration + Yield Farming
 [contracts.vdex-token]
 path = 'contracts/tokens/vdex-token.clar'
-clarity_version = 4
-epoch = 'latest'
+clarity_version = 2
+epoch = '2.4'
 
 [contracts.sbtc-pool]
 path = 'contracts/core/sbtc-pool.clar'
-clarity_version = 4
-epoch = 'latest'
+clarity_version = 2
+epoch = '2.4'
 
 [contracts.lp-staking]
 path = 'contracts/farming/lp-staking.clar'
-clarity_version = 4
-epoch = 'latest'
+clarity_version = 2
+epoch = '2.4'
+
+[contracts.sbtc-pool-simple]
+path = 'contracts/core/sbtc-pool-simple.clar'
+clarity_version = 2
+epoch = '2.4'
+
+[contracts.lp-staking-simple]
+path = 'contracts/farming/lp-staking-simple.clar'
+clarity_version = 2
+epoch = '2.4'
 
 [repl.analysis]
 passes = ['check_checker']

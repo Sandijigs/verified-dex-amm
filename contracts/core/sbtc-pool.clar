@@ -46,6 +46,7 @@
 ;; ============================================
 
 (define-data-var is-initialized bool false)
+(define-data-var contract-address (optional principal) none)
 (define-data-var reserve-stx uint u0)
 (define-data-var reserve-sbtc uint u0)
 (define-data-var total-lp-supply uint u0)
@@ -151,6 +152,7 @@
     (asserts! (not (var-get is-initialized)) ERR_ALREADY_INITIALIZED)
 
     (var-set is-initialized true)
+    (var-set contract-address (some (as-contract tx-sender)))
     (var-set last-update-block block-height)
 
     (print {
@@ -221,8 +223,8 @@
             (initial-lp (get guess sqrt-result))
           )
             (asserts! (>= initial-lp MINIMUM_LIQUIDITY) ERR_MIN_LIQUIDITY)
-            ;; Lock minimum liquidity permanently
-            (try! (mint-lp (as-contract tx-sender) MINIMUM_LIQUIDITY))
+            ;; Lock minimum liquidity permanently - burned to contract
+            (try! (mint-lp CONTRACT_OWNER MINIMUM_LIQUIDITY))
             (- initial-lp MINIMUM_LIQUIDITY)
           )
           ;; Subsequent liquidity provision
@@ -242,10 +244,10 @@
       (asserts! (>= lp-tokens-to-mint min-lp-tokens) ERR_SLIPPAGE_TOO_HIGH)
 
       ;; Transfer STX from user to contract
-      (try! (stx-transfer? stx-amount tx-sender (as-contract tx-sender)))
+      (unwrap-panic (stx-transfer? stx-amount tx-sender (unwrap-panic (var-get contract-address))))
 
       ;; Transfer sBTC from user to contract
-      (try! (contract-call? SBTC_CONTRACT transfer sbtc-amount tx-sender (as-contract tx-sender) none))
+      (unwrap-panic (contract-call? SBTC_CONTRACT transfer sbtc-amount tx-sender (unwrap-panic (var-get contract-address)) none))
 
       ;; Update reserves
       (var-set reserve-stx (+ stx-reserve stx-amount))
@@ -301,10 +303,10 @@
       (var-set reserve-sbtc (- sbtc-reserve sbtc-to-return))
 
       ;; Transfer STX to user
-      (try! (as-contract (stx-transfer? stx-to-return (as-contract tx-sender) tx-sender)))
+      (try! (as-contract (stx-transfer? stx-to-return tx-sender tx-sender)))
 
       ;; Transfer sBTC to user
-      (try! (as-contract (contract-call? SBTC_CONTRACT transfer sbtc-to-return (as-contract tx-sender) tx-sender none)))
+      (try! (as-contract (contract-call? SBTC_CONTRACT transfer sbtc-to-return tx-sender tx-sender none)))
 
       ;; Update oracle
       (try! (update-oracle))
@@ -349,7 +351,7 @@
       (asserts! (<= sbtc-out sbtc-reserve) ERR_INSUFFICIENT_SBTC)
 
       ;; Transfer STX from user to contract
-      (try! (stx-transfer? stx-amount tx-sender (as-contract tx-sender)))
+      (unwrap-panic (stx-transfer? stx-amount tx-sender (unwrap-panic (var-get contract-address))))
 
       ;; Update reserves
       (var-set reserve-stx (+ stx-reserve stx-amount))
@@ -357,7 +359,7 @@
       (var-set protocol-fee-stx (+ (var-get protocol-fee-stx) protocol-fee))
 
       ;; Transfer sBTC to user
-      (try! (as-contract (contract-call? SBTC_CONTRACT transfer sbtc-out (as-contract tx-sender) tx-sender none)))
+      (try! (as-contract (contract-call? SBTC_CONTRACT transfer sbtc-out tx-sender tx-sender none)))
 
       ;; Update oracle
       (try! (update-oracle))
@@ -398,7 +400,7 @@
       (asserts! (<= stx-out stx-reserve) ERR_INSUFFICIENT_STX)
 
       ;; Transfer sBTC from user to contract
-      (try! (contract-call? SBTC_CONTRACT transfer sbtc-amount tx-sender (as-contract tx-sender) none))
+      (unwrap-panic (contract-call? SBTC_CONTRACT transfer sbtc-amount tx-sender (unwrap-panic (var-get contract-address)) none))
 
       ;; Update reserves
       (var-set reserve-sbtc (+ sbtc-reserve sbtc-amount))
@@ -406,7 +408,7 @@
       (var-set protocol-fee-sbtc (+ (var-get protocol-fee-sbtc) protocol-fee))
 
       ;; Transfer STX to user
-      (try! (as-contract (stx-transfer? stx-out (as-contract tx-sender) tx-sender)))
+      (try! (as-contract (stx-transfer? stx-out tx-sender tx-sender)))
 
       ;; Update oracle
       (try! (update-oracle))

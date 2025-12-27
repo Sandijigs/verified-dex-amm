@@ -40,6 +40,7 @@
 ;; ============================================
 
 (define-data-var is-initialized bool false)
+(define-data-var contract-address (optional principal) none)
 (define-data-var next-pool-id uint u0)
 (define-data-var total-allocation-points uint u0)
 (define-data-var reward-per-block uint DEFAULT_REWARD_PER_BLOCK)
@@ -74,14 +75,6 @@
 (define-map lp-token-to-pool principal uint)
 
 ;; ============================================
-;; HELPER FUNCTIONS
-;; ============================================
-
-(define-read-only (get-contract-principal)
-  (as-contract tx-sender)
-)
-
-;; ============================================
 ;; INITIALIZATION
 ;; ============================================
 
@@ -91,6 +84,7 @@
     (asserts! (not (var-get is-initialized)) ERR_ALREADY_INITIALIZED)
 
     (var-set is-initialized true)
+    (var-set contract-address (some (as-contract tx-sender)))
     (var-set start-block start-block-height)
 
     (print {
@@ -315,7 +309,7 @@
           )
 
           ;; Transfer LP tokens from user to this contract
-          (unwrap! (contract-call? lp-token transfer amount user (get-contract-principal) none) ERR_TRANSFER_FAILED)
+          (unwrap! (contract-call? lp-token transfer amount user (unwrap-panic (var-get contract-address)) none) ERR_TRANSFER_FAILED)
 
           ;; Update user info
           (let (
