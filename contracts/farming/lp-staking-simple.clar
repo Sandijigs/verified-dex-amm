@@ -103,19 +103,6 @@
   )
 )
 
-(define-private (calculate-pending-rewards (user principal))
-  (match (map-get? user-stakes user)
-    stake
-    (let (
-      (user-amount (get amount stake))
-      (user-checkpoint (get reward-checkpoint stake))
-      (current-reward-per-token (var-get reward-per-token))
-    )
-      (* user-amount (- current-reward-per-token user-checkpoint))
-    )
-    u0
-  )
-)
 
 ;; ============================================
 ;; STAKING FUNCTIONS
@@ -137,7 +124,7 @@
       ;; Claim pending rewards if user has existing stake
       (if (> current-amount u0)
         (let (
-          (pending (calculate-pending-rewards user))
+          (pending (* current-amount (- (var-get reward-per-token) (get reward-checkpoint user-data))))
         )
           (if (> pending u0)
             (try! (contract-call? VDEX_TOKEN mint pending user))
@@ -193,7 +180,7 @@
 
       ;; Claim all pending rewards
       (let (
-        (pending (calculate-pending-rewards user))
+        (pending (* current-amount (- (var-get reward-per-token) (get reward-checkpoint user-data))))
       )
         (if (> pending u0)
           (try! (contract-call? VDEX_TOKEN mint pending user))
@@ -239,7 +226,8 @@
     (let (
       (user tx-sender)
       (user-data (unwrap! (map-get? user-stakes user) ERR_NO_REWARDS))
-      (pending (calculate-pending-rewards user))
+      (user-amount (get amount user-data))
+      (pending (* user-amount (- (var-get reward-per-token) (get reward-checkpoint user-data))))
     )
       ;; Check for rewards
       (asserts! (> pending u0) ERR_NO_REWARDS)
@@ -272,31 +260,28 @@
 )
 
 (define-read-only (get-pending-rewards (user principal))
-  (let (
-    (total (var-get total-staked))
-  )
-    (if (> total u0)
-      (let (
-        (current-block block-height)
-        (last-block (var-get last-update-block))
-        (blocks-passed (- current-block last-block))
-        (total-rewards (* blocks-passed REWARD_PER_BLOCK))
-        (reward-increase (/ total-rewards total))
-        (projected-reward-per-token (+ (var-get reward-per-token) reward-increase))
-      )
-        (match (map-get? user-stakes user)
-          stake
-          (let (
-            (user-amount (get amount stake))
-            (user-checkpoint (get reward-checkpoint stake))
-          )
-            (ok (* user-amount (- projected-reward-per-token user-checkpoint)))
-          )
-          (ok u0)
-        )
-      )
-      (ok u0)
+  (match (map-get? user-stakes user)
+    stake
+    (let (
+      (total (var-get total-staked))
+      (user-amount (get amount stake))
+      (user-checkpoint (get reward-checkpoint stake))
     )
+      (if (> total u0)
+        (let (
+          (current-block block-height)
+          (last-block (var-get last-update-block))
+          (blocks-passed (- current-block last-block))
+          (total-rewards (* blocks-passed REWARD_PER_BLOCK))
+          (reward-increase (/ total-rewards total))
+          (projected-reward-per-token (+ (var-get reward-per-token) reward-increase))
+        )
+          (ok (* user-amount (- projected-reward-per-token user-checkpoint)))
+        )
+        (ok u0)
+      )
+    )
+    (ok u0)
   )
 )
 

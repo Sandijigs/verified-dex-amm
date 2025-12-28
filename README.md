@@ -2,8 +2,6 @@
 
 A production-ready decentralized exchange (DEX) and automated market maker (AMM) built on Stacks blockchain, showcasing Clarity 4's advanced features. **Now with Hiro Chainhooks integration for real-time event monitoring and full WalletConnect support!**
 
-Built for the **Talent Protocol Builder Challenge** 🏆
-
 **✅ WALLETCONNECT INTEGRATED** - Full multi-wallet support with @stacks/connect v8+
 
 ---
@@ -376,21 +374,17 @@ MIT
 
 ---
 
-## 🏆 Built for Talent Protocol Builder Challenge
-
 **Features:**
 
-- ✅ **Week 1:** Full DEX/AMM implementation with Clarity 4
-- ✅ **Week 1:** Deployed to Stacks Testnet (all contracts live)
-- ✅ **Week 1:** Clarity 4 features (`contract-hash?`, `stacks-block-time`)
-- ✅ **Week 2:** Hiro Chainhooks integration for event monitoring
-- ✅ **Week 2:** Real-time metrics tracking for users and fees
-- ✅ **Week 3:** WalletConnect integration (@stacks/connect v8.2.0)
-- ✅ **Week 3:** Full trading interface with multi-wallet support
+- ✅ Full DEX/AMM implementation with Clarity 4
+- ✅ Deployed to Stacks Testnet (all contracts live)
+- ✅Clarity 4 features (`contract-hash?`, `stacks-block-time`)
+- ✅ Hiro Chainhooks integration for event monitoring
+- ✅ Real-time metrics tracking for users and fees
+- ✅ WalletConnect integration (@stacks/connect v8.2.0)
+- ✅ Full trading interface with multi-wallet support
 - ✅ Comprehensive testing (20/20 tests passing)
 - ✅ Production-ready code with documentation
-
-**Evidence for AI Scanning:**
 
 ### Week 1 - Smart Contracts
 

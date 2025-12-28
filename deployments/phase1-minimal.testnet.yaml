@@ -1,0 +1,29 @@
+---
+id: 5
+name: Phase 1 Minimal - sBTC Pool + LP Staking
+network: testnet
+stacks-node: "https://api.testnet.hiro.so"
+bitcoin-node: "http://bitcoind.testnet:18332"
+plan:
+  batches:
+    # Batch 0: Deploy MINIMAL sBTC pool
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: sbtc-pool-minimal
+            expected-sender: ST1WPQWDNG2H8VMG93PW3JM74SGXVTA38ETGZ64F8
+            cost: 60000
+            path: contracts/core/sbtc-pool-minimal.clar
+            anchor-block-only: true
+            clarity-version: 2
+
+    # Batch 1: Deploy MINIMAL LP staking
+    - id: 1
+      transactions:
+        - contract-publish:
+            contract-name: lp-staking-minimal
+            expected-sender: ST1WPQWDNG2H8VMG93PW3JM74SGXVTA38ETGZ64F8
+            cost: 50000
+            path: contracts/farming/lp-staking-minimal.clar
+            anchor-block-only: true
+            clarity-version: 2
