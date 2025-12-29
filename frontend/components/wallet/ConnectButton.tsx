@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { showConnect } from '@stacks/connect'
 import { Button } from '@/components/ui/button'
 import { Wallet, LogOut } from 'lucide-react'
 import { useWallet } from '@/hooks/useWallet'
@@ -21,6 +20,9 @@ export function ConnectButton() {
   const handleConnect = async () => {
     setIsConnecting(true)
     try {
+      // Dynamic import to ensure proper module loading
+      const { showConnect } = await import('@stacks/connect')
+
       await showConnect({
         appDetails: {
           name: 'Verified DEX',
