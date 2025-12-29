@@ -91,6 +91,16 @@ path = 'contracts/farming/lp-staking-simple.clar'
 clarity_version = 2
 epoch = '2.4'
 
+[contracts.sbtc-pool-minimal]
+path = 'contracts/core/sbtc-pool-minimal.clar'
+clarity_version = 2
+epoch = '2.4'
+
+[contracts.lp-staking-final]
+path = 'contracts/farming/lp-staking-final.clar'
+clarity_version = 2
+epoch = '2.4'
+
 [repl.analysis]
 passes = ['check_checker']
 

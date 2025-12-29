@@ -1,0 +1,16 @@
+---
+id: 1
+name: Deploy SIP-010 Trait Only
+network: mainnet
+stacks-node: "https://api.mainnet.hiro.so"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: sip-010-trait
+            expected-sender: SP1WPQWDNG2H8VMG93PW3JM74SGXVTA38EVCH7GYS
+            cost: 10000
+            path: contracts/traits/sip-010-trait.clar
+            anchor-block-only: true
+            clarity-version: 2

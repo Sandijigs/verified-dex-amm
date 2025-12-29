@@ -15,3 +15,8 @@ coverage
 *.info
 costs-reports.json
 node_modules
+
+# Contract interaction scripts (contains sensitive operations)
+interact-contracts.ts
+interact-contracts.js
+contract-interaction-guide.md

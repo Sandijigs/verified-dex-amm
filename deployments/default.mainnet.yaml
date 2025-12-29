@@ -1,0 +1,61 @@
+---
+id: 1
+name: Phase 1 Mainnet - Traits + sBTC Integration + Yield Farming
+network: mainnet
+stacks-node: "https://api.hiro.so"
+plan:
+  batches:
+    # Batch 0: Deploy required trait (dependency)
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: sip-010-trait
+            expected-sender: SP1WPQWDNG2H8VMG93PW3JM74SGXVTA38EVCH7GYS
+            cost: 10000
+            path: contracts/traits/sip-010-trait.clar
+            anchor-block-only: true
+            clarity-version: 2
+
+    # Batch 1: Deploy test token (used by sbtc-pool for testing)
+    - id: 1
+      transactions:
+        - contract-publish:
+            contract-name: test-token
+            expected-sender: SP1WPQWDNG2H8VMG93PW3JM74SGXVTA38EVCH7GYS
+            cost: 30000
+            path: contracts/tokens/test-token.clar
+            anchor-block-only: true
+            clarity-version: 2
+
+    # Batch 2: Deploy VDEX token
+    - id: 2
+      transactions:
+        - contract-publish:
+            contract-name: vdex-token
+            expected-sender: SP1WPQWDNG2H8VMG93PW3JM74SGXVTA38EVCH7GYS
+            cost: 150000
+            path: contracts/tokens/vdex-token.clar
+            anchor-block-only: true
+            clarity-version: 2
+
+    # Batch 3: Deploy sBTC pool (using minimal version that worked on testnet)
+    - id: 3
+      transactions:
+        - contract-publish:
+            contract-name: sbtc-pool-minimal
+            expected-sender: SP1WPQWDNG2H8VMG93PW3JM74SGXVTA38EVCH7GYS
+            cost: 180000
+            path: contracts/core/sbtc-pool-minimal.clar
+            anchor-block-only: true
+            clarity-version: 2
+
+    # Batch 4: Deploy LP staking (using final version that worked on testnet)
+    - id: 4
+      transactions:
+        - contract-publish:
+            contract-name: lp-staking-final
+            expected-sender: SP1WPQWDNG2H8VMG93PW3JM74SGXVTA38EVCH7GYS
+            cost: 200000
+            path: contracts/farming/lp-staking-final.clar
+            anchor-block-only: true
+            clarity-version: 2
