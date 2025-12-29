@@ -15,13 +15,13 @@ import {
 } from '@/components/ui/dropdown-menu'
 
 export function ConnectButton() {
-  const { address, isConnected, disconnect, balance } = useWallet()
+  const { address, isConnected, disconnect, balance, userSession } = useWallet()
   const [isConnecting, setIsConnecting] = useState(false)
 
   const handleConnect = async () => {
     setIsConnecting(true)
     try {
-      showConnect({
+      await showConnect({
         appDetails: {
           name: 'Verified DEX',
           icon: window.location.origin + '/logo.svg',
@@ -34,7 +34,7 @@ export function ConnectButton() {
         onCancel: () => {
           setIsConnecting(false)
         },
-        userSession: undefined, // Will be handled by the provider
+        userSession: userSession,
       })
     } catch (error) {
       console.error('Connection error:', error)
