@@ -17,30 +17,35 @@ export function ConnectButton() {
   const { address, isConnected, disconnect, balance, userSession } = useWallet()
   const [isConnecting, setIsConnecting] = useState(false)
 
-  const handleConnect = async () => {
+  const handleConnect = () => {
     setIsConnecting(true)
-    try {
-      // Dynamic import to ensure proper module loading
-      const { showConnect } = await import('@stacks/connect')
 
-      await showConnect({
-        appDetails: {
-          name: 'Verified DEX',
-          icon: window.location.origin + '/logo.svg',
-        },
-        redirectTo: '/',
-        onFinish: () => {
-          setIsConnecting(false)
-          window.location.reload()
-        },
-        onCancel: () => {
-          setIsConnecting(false)
-        },
-        userSession: userSession,
+    if (typeof window !== 'undefined') {
+      import('@stacks/connect').then((mod) => {
+        // Use authenticate which is the recommended method for @stacks/connect v8+
+        const { authenticate } = mod
+
+        authenticate({
+          appDetails: {
+            name: 'Verified DEX',
+            icon: window.location.origin + '/logo.svg',
+          },
+          redirectTo: '/',
+          onFinish: (payload) => {
+            console.log('Authentication successful:', payload)
+            setIsConnecting(false)
+            window.location.reload()
+          },
+          onCancel: () => {
+            console.log('Authentication cancelled')
+            setIsConnecting(false)
+          },
+          userSession: userSession,
+        })
+      }).catch((error) => {
+        console.error('Connection error:', error)
+        setIsConnecting(false)
       })
-    } catch (error) {
-      console.error('Connection error:', error)
-      setIsConnecting(false)
     }
   }
 
