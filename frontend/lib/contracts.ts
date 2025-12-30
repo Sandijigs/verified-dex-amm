@@ -1,9 +1,9 @@
 // Phase 1 Deployed Contracts Configuration
-// Network: Stacks Testnet
-// Deployer: ST1WPQWDNG2H8VMG93PW3JM74SGXVTA38ETGZ64F8
+// Network: Stacks Mainnet
+// Deployer: SP1WPQWDNG2H8VMG93PW3JM74SGXVTA38EVCH7GYS
 
-export const NETWORK = 'testnet';
-export const DEPLOYER_ADDRESS = 'ST1WPQWDNG2H8VMG93PW3JM74SGXVTA38ETGZ64F8';
+export const NETWORK = 'mainnet';
+export const DEPLOYER_ADDRESS = 'SP1WPQWDNG2H8VMG93PW3JM74SGXVTA38EVCH7GYS';
 
 // Contract Addresses
 export const CONTRACTS = {
