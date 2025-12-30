@@ -20,3 +20,7 @@ node_modules
 interact-contracts.ts
 interact-contracts.js
 contract-interaction-guide.md
+run-interact.sh
+interact-onchain.ts
+query-contracts.ts
+check-deployed.ts
